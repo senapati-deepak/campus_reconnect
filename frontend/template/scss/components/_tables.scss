@@ -1,0 +1,42 @@
+.table {
+  margin-bottom: 0;
+  @extend .table-bordered;
+  th {
+    color: $dark-text-color;
+    border-top: 0;
+  }
+  td {
+    color: color(gray);
+  }
+  th,
+  td {
+    border-left: 0;
+    border-right: 0;
+    @extend .px-3;
+  }
+  &.table-bordered {
+    thead {
+      th {
+        border-bottom-width: 0;
+      }
+    }
+  }
+  tr {
+    &.bg-dark {
+      th,
+      td {
+        color: $white;
+      }
+    }
+  }
+
+  &.dataTable {
+    .btn {
+      padding: 0.1rem 1rem;
+      vertical-align: top;
+    }
+  }
+  .dataTables_paginate {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+.footer {
+  background: #e6e6e6;
+  color: theme-color(dark);
+  margin-left: $sidebar-width-lg;
+  padding: 1rem;
+  transition: all .8s ease;
+  width: calc(100% - #{$sidebar-width-lg});
+  a {
+    color: theme-color(dark);
+  }
+  @media (max-width: 991px) {
+    margin-left: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,61 @@
+body {
+  font-size: 1rem;
+  font-family: 'source-sans-pro-regular', sans-serif;
+}
+.display-1 {
+  @media (max-width: 991px) {
+    font-size: 4rem;
+  }
+}
+.display-2 {
+  @media (max-width: 991px) {
+    font-size: 3.5rem;
+  }
+}
+.display-3 {
+  @media (max-width: 991px) {
+    font-size: 3rem;
+  }
+}
+.display-4 {
+  @media (max-width: 991px) {
+    font-size: 2.5rem;
+  }
+}
+.error-page {
+  h1 {
+    font-size: 12rem;
+    @media (max-width: 991px) {
+      font-size: 8rem;
+    }
+  }
+}
+.page-title {
+  color: theme-color(dark);
+  margin: .5rem 0 1.5rem 0;
+  font-size: 1.375rem;
+  font-family: 'roboto-medium', sans-serif;
+}
+.card-title {
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+}
+h2,h3,h4,h5,h6 {
+  font-family: 'roboto-medium', sans-serif;
+}
+h5 {
+  font-size: 1rem;
+}
+.bold-text {
+  font-family: 'roboto-regular', sans-serif;
+}
+.table {
+  th {
+    font-family: 'roboto-medium', sans-serif;
+    font-weight: 500;
+  }
+  td {
+    font-family: 'source-sans-pro-regular', sans-serif;
+    font-size: 1rem;
+  }
+}

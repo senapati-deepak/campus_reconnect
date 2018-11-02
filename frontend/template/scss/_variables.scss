@@ -1,0 +1,55 @@
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #58d8a3;
+$cyan:    #17a2b8;
+$white:   #ffffff;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: #464a4c,
+  gray-light: #636c72,
+  gray-lighter: #eceeef,
+  gray-lightest: #f7f7f9,
+  gray-dark: #292b2c
+);
+
+$theme-colors: (
+  primary: #7774e7,
+  secondary: $gray-600,
+  success: #37c936,
+  info: #0f9aee,
+  warning: #ffcc00,
+  danger: #ff3c7e,
+  light: $gray-100,
+  dark: #302f3f
+);
+
+$white-smoke: #f0f0f0;
+$light-text-color: #636c72;
+$dark-text-color: #2f323e;
+$nav-text-color: rgba(22, 22, 23, .95);
+$content-bg: #f4f6f9;
+$horizontal-menu-bg: #e6e6e6;
+$navbar-height: 4.375rem;
+$sidebar-width-lg: 235px;
+$sidebar-width-mini: 185px;
+$sidebar-width-icon: 70px;
+$boxed-container-width: 96%;
+$border-property: 1px solid rgba(128, 128, 128, 0.16);

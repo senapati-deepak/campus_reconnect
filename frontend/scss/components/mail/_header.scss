@@ -1,0 +1,111 @@
+.body-header{
+	border-bottom: 1px solid rgba(128, 128, 128, .14);
+	padding: 40px 0 15px;
+	.header-top{
+		display: flex;
+		display: -webkit-flex;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		@include media-breakpoint-down(sm){
+			-webkit-justify-content: center;
+  			justify-content: center;
+  			-webkit-flex-direction: column-reverse;
+  			flex-direction: column-reverse;
+  			-webkit-align-items: center;
+  			align-items: center;
+		}
+		.search-wrapper{
+			border: 1px solid rgba(128, 128, 128, 0.2);
+			padding: 0;
+			overflow: hidden;
+			min-width:85%;
+			@include border-radius(25px);
+			@include media-breakpoint-down(sm){
+				min-width:100%;
+			}
+			input.mail-search{
+				border-radius:0;
+				border:none;
+				padding:0 20px;
+				min-width: 0;
+			}
+			input[type="submit"]{
+				border-radius: 0;
+				padding: 7px 30px;
+				font-size: 15px;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+				line-height: 23px;
+				background: #2b99ff;
+				color: $f;
+				&:hover{
+					background: $blue-hover;
+				}
+				@include media-breakpoint-down(sm){
+					padding: 4px 22px;
+				}
+			}
+		}
+	}
+	.user{
+		max-width:40px;
+		max-height:40px;
+		i{
+		font-size: 32px;
+		color: #2e383e;
+		line-height: 27px;
+		}
+		img{
+			width:100%;
+			max-width:100%;
+			@include border-radius(100%);
+			border: 2px solid #ececec;
+		}
+		@include media-breakpoint-down(sm){
+			margin-bottom: 20px;
+			max-width:60px;
+			max-height:60px;
+		}
+	}
+	.selectall-checkbox-btn{
+		padding:35px 0 10px 0;
+		display: inline-flex;
+		i{
+			display:inline-block;
+			padding: 0 0 0 21px;
+			font-size: 22px;
+			margin-top: -8px;
+			color: $blue;
+		}
+		input[type="checkbox"] + label::before{
+			margin-left: 14.035%;
+		}
+		input[type="checkbox"] + label {
+			padding-left: 43%;
+			color: $brand-color-2;
+			white-space: nowrap;
+		}
+	}
+	.mail-options{
+		padding-top: 15px;
+		ul{
+			list-style-type: none;
+			padding-left: 0;
+			li{
+				display:inline-block;
+				margin-right: 25px;
+				a{
+					display:inline-block;
+					color:grey;
+					font-size:15px;
+					i{
+						font-size:16px;
+						display:inline-block;
+						color:$blue;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}

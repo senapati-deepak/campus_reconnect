@@ -1,0 +1,50 @@
+.custom-legend-container {
+  position:relative;
+  .legend-right,
+  .legend-top{
+    position:absolute;
+    width:100%;
+    ul {
+      padding-left: 0;
+      li {
+        cursor:pointer;
+        margin: 10px 4px;
+        color: $light-text-color;
+        @media (max-width: 991px) {
+          font-size: 12px;
+        }
+        span {
+          position:relative;
+          width: 12px;
+          height: 8px;
+          margin-right: 15px;
+          color:white;
+          z-index:2;
+          display: inline-block;
+          @media (max-width: 991px) {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  .legend-right {
+    top: 10%;
+    left: calc(100% + 10%);
+    height: 80%;
+    width: 50%;
+  }
+  .legend-top{
+    top:0;
+    left: 0;
+    ul {
+      li {
+        display: inline-block;
+      }
+    }
+    + canvas {
+      position: absolute;
+      top: 45px;
+    }
+  }
+}

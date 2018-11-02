@@ -1,0 +1,13 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+%ellipsor{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width:100%;
+	white-space: nowrap;
+}

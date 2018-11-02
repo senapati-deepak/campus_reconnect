@@ -1,0 +1,92 @@
+.email-wrapper{
+	.mail-body{
+		height:100%;
+		padding-bottom: 35px;
+		@media (max-width:769px){
+			margin-left: 0;
+		}
+		@include media-breakpoint-down(sm){
+			padding:0 0 0 60px;
+		}
+		a{
+			text-decoration: none;
+		}
+		.mail-list{
+			border-bottom: 1px solid rgba(128, 128, 128, 0.14);
+			display: flex;
+    	flex-direction: row;
+			padding: 15px 0 8px 0;
+			.checkbox-wrapper{
+				@extend .col-xl-1;
+				@extend .col-lg-1;
+				@extend .col-md-1;
+				@extend .col-sm-1;
+				@extend .col-1;
+				@extend .d-flex;
+				@extend .justify-content-center;
+				padding: 0;
+				input[type="checkbox"] + label::before{
+					margin-top: 8px;
+				}
+				@include media-breakpoint-down(sm){
+					padding: 0 0 0 15px;
+				}
+			}
+			.content{
+				@extend .col-xl-10;
+				@extend .col-lg-10;
+				@extend .col-md-10;
+				@extend .col-sm-8;
+				@extend .col-8;
+				p.sender-name{
+					margin-bottom: 0;
+					font-weight:600;
+					font-size:15px;
+					color: rgba(32, 71, 92, 0.91);
+				}
+				p.message_text{
+					margin: 0;
+					font-size: 14px;
+					max-width: 90%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					color: rgba(0, 0, 0, 0.67);
+				}
+			}
+			.details{
+				@extend .col-xl-1;
+				@extend .col-lg-1;
+				@extend .col-md-1;
+				@extend .col-sm-3;
+				@extend .col-3;
+				@extend .d-flex;
+				@extend .justify-content-end;
+				p.date{
+					text-align: right;
+					margin: auto 15px auto 0px;
+					color: rgba(0, 0, 0, 0.32);
+					font-size: 13px;
+					font-weight: 400;
+					white-space:nowrap;
+				}
+				i{
+					margin: auto 0px auto 0;
+					color:#ddd;
+				}
+				i.favorite{
+					color: #fbbc08;
+				}
+			}
+		}
+		.mail-list.new_mail{
+			background: rgb(242,245,249);
+			.details{
+				p.date{
+					color: rgba(0, 0, 0, 0.60);
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}

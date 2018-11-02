@@ -1,0 +1,24 @@
+.editable-container {
+  &.editable-inline {
+    max-width: 100%;
+    .editableform {
+      max-width: 100%;
+      .control-group {
+        max-width: 100%;
+        .editable-input {
+          max-width: 100%;
+          input,
+          textarea {
+            max-width: 100%;
+          }
+        }
+        .editable-buttons {
+          @media (max-width: 991px) {
+            display: block;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

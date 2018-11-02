@@ -1,0 +1,72 @@
+.todo-wrapper,.list-wrapper {
+  max-height: 320px;
+  position: relative;
+  .add-items {
+    outline: 0;
+    height: auto;
+    margin-bottom: 5%;
+    border: 1px solid theme-color(primary);
+    overflow: hidden;
+    @include border-radius(5px);
+  }
+
+  input[type="text"] {
+    outline: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border-radius: 0;
+    border: none;
+  }
+
+  .add {
+    outline: 0;
+    float: right;
+    @include border-radius(0px 5px 5px 0px);
+  }
+
+  ul {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+
+    li {
+      @extend .d-flex;
+      @extend .align-items-center;
+      @extend .justify-content-start;
+      font-weight: 500;
+      color: darken(color(gray-light), 20%);
+      border-bottom:$border-property;;
+    }
+  }
+
+  hr {
+    border-bottom: 0;
+    margin: 15px 0;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 15px;
+  }
+
+  .remove {
+    @extend .ml-auto;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 15px;
+    margin: 0px 0 0;
+    font-weight: 600;
+    color: theme-color(warning);
+    text-decoration: none;
+
+  }
+
+  .completed {
+    text-decoration: line-through;
+    text-decoration-color: theme-color(primary);
+
+    .remove{
+      text-decoration: none !important;
+    }
+  }
+}

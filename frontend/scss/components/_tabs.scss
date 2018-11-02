@@ -1,0 +1,37 @@
+.pws_tabs_container{
+	ul.pws_tabs_controll{
+		li{
+			a{
+				border:1px solid color(teal);
+				border-bottom: none;
+				background: #fff;
+				color: color(teal);
+				padding: .6em 1.3em;
+				@include border-radius(5px 5px 0px 0px);
+				&:hover{
+					background: #fff;
+					color: color(teal);
+				}
+				&.pws_tab_active{
+					background: color(teal);
+					color: #fff;
+				}
+				@media (max-width: 991px) {
+					font-size: 0.9rem;
+    			padding: .6em .4em;
+				}
+			}
+		}
+	}
+	.demo-tabs{
+		border:1px solid color(teal);
+		@include border-radius(0px 5px 5px 5px);
+		overflow: hidden;
+		background: $white-smoke;
+		margin-bottom: 45px;
+		padding-top: 2rem;
+		.CodeMirror{
+			margin-bottom: 20px;
+		}
+	}
+}

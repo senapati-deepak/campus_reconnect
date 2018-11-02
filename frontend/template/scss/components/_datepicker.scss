@@ -1,0 +1,81 @@
+.datepicker.datepicker-dropdown,.datepicker.datepicker-inline{
+	width:30%;
+	max-width: 500px;
+	min-width: 250px;
+	.datepicker-days{
+		padding: 0.8rem 0.7rem;
+		table.table-condensed{
+			width:100%;
+			thead{
+				tr{
+					th{
+						&.prev{
+							color:grey;
+							padding-bottom:0.5rem;
+							padding-top:0.5rem;
+						}
+						&.datepicker-switch{
+							color:theme-color(primary);
+							padding-bottom:0.5rem;
+							padding-top:0.5rem;
+						}
+						&.next{
+							color:grey;
+							padding-bottom:0.5rem;
+							padding-top:0.5rem;
+						}
+						&.dow{
+
+						}
+					}
+				}
+			}
+			tbody{
+				position: relative;
+				top: 13px;
+				td{
+					&.day{
+						&.active{
+							background:theme-color(primary);
+							color:#fff;
+						}
+					}
+					&.old.day{}
+					&.new.day{}
+				}
+			}
+		}
+	}
+}
+
+
+
+.datepicker.datepicker-inline{
+	width:100%;
+	max-width: 100%;
+	min-width: 250px;
+	thead{
+		tr{
+			th{
+				&.prev{
+					color:grey;
+					padding-bottom:0.5rem;
+					padding-top:0.5rem;
+				}
+				&.datepicker-switch{
+					color:theme-color(primary);
+					padding-bottom:0.5rem;
+					padding-top:0.5rem;
+				}
+				&.next{
+					color:grey;
+					padding-bottom:0.5rem;
+					padding-top:0.5rem;
+				}
+				&.dow{
+
+				}
+			}
+		}
+	}
+}

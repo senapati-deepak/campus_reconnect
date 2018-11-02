@@ -1,0 +1,9 @@
+.owl-carousel{
+  .item{
+    background: rgb(77,199,160);
+    margin: 5px;
+    padding: 15%;
+    color: #fff;
+    @include border-radius(7px);
+  }
+}

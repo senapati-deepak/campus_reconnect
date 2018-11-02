@@ -1,0 +1,56 @@
+.card {
+  border: 0;
+  border-radius: 3px;
+  .card-body {
+    padding: 1.9rem 1.5rem;
+    + .card-body {
+      padding-top: 0;
+    }
+  }
+  &.card-social {
+    text-align: center;
+    .highlight-icon {
+      font-size: 3.25rem;
+    }
+  }
+
+	&.card-rounded{
+		@include border-radius(5px);
+	}
+
+	&.card-statistics {
+		.highlight-icon {
+      &:before {
+        font-size: 3.125rem;
+        @media (max-width: 991px) {
+          font-size: 2rem;
+        }
+      }
+		}
+    .highlight-icon-small {
+      &:before {
+        font-size: 2.5rem;
+      }
+    }
+		p {
+			margin-bottom: 0;
+		}
+    .highlight-text {
+      font-size: 18px;
+      @media (max-width: 991px) {
+        font-size: 14px;
+      }
+    }
+    .statistics-number {
+      font-family: 'source-sans-pro-bold', sans-serif;
+    }
+	}
+  &.card-faded {
+    background: #b5b0b2;
+    border-color: #b5b0b2;
+  }
+  &.card-circle-progress {
+    color: $white;
+    text-align: center;
+  }
+}
