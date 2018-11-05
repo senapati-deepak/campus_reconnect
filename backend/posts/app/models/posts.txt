@@ -3,12 +3,14 @@
         "_id" : ObjectId("5bdea3cc406abab46426fbef"),
         "body" : "Blah blah",
         "user" : ObjectId("5bdea39d406abab46426fbee"),
-        "date" : "20/10/18"
+        "date" : "20/10/18",
+        "likes": 0
     },
     {
         "_id" : ObjectId("5bdea3cc406abab46426fbf0"),
         "body" : "Blah blah",
         "user" : ObjectId("5bdea39d406abab46426fbee"),
-        "date" : "20/10/18"
+        "date" : "20/10/18",
+        "likes": 0
     }
 ]

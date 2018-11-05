@@ -7,7 +7,8 @@ var mongoose = require('mongoose');
 var index = require('./app/routes/index');
 var api = require('./app/routes/api');
 var session 	= require('express-session');
-// var ioServer 	= require('./app/socket')(app);
+var ioServer 	= require('./app/socket')(app);
+
 
 var port = process.env.PORT || 3000;
 
@@ -46,7 +47,6 @@ app.use(function(req, res, next) {
     res.status(404).sendFile(process.cwd() + '/app/views/404.htm');
 });
 
-app.listen(3000, function(err) {
-    if(err) throw err;
-    console.log("Server running on port 3000...");
+app.listen(port,function(){
+  console.log("Server running at port "+ port);
 });

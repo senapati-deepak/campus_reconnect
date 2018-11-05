@@ -3,6 +3,14 @@
  * Encapsulates all code for emitting and listening to socket events
  *
  */
+var mongoose = require('mongoose');
+
+var ObjectId = mongoose.Types.ObjectId;
+
+
+var postModel = require("../models/posts");
+var userModel = require("../models/users");
+
 var ioEvents = function(io) {
     // // Chatroom namespace
 	io.on('connection', function(socket) {
@@ -15,9 +23,20 @@ var ioEvents = function(io) {
         });
 
         // 	// When a new message arrives
-        socket.on('new-message', function(message) {
-			console.log(message);
-            io.emit('add-message', message);
+        socket.on('new-like', function(data) {
+			console.log(data);
+			var id = data.id;
+			console.log("action", data.action);
+			var t = data.action === true ? 1 : -1;
+			postModel.findById(id, function(err, doc) {
+				if(err) throw err;
+				doc.likes += t;
+				doc.save(function(err, doc) {
+				if(err) throw err;
+				console.log(doc);
+				});
+			});
+            socket.broadcast.emit('new-like', data);
         });
 
     });
