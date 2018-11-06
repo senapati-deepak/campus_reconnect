@@ -1,0 +1,140 @@
+.post-box,
+.feed-card {
+    width: 65%;
+    margin: auto;
+    margin-bottom: 40px;
+    background-color: white;
+    border: 1px solid aliceblue;
+    overflow: hidden;
+    box-shadow: 4px 4px 6px rgb(190, 188, 188);
+}
+
+#exampleTextarea {
+    border: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: #0f9aee;
+    font-size: 14px;
+    margin: 0px 20px 10px 5px;
+    padding: 5px;
+    font-weight: 900;
+    float: right;
+    border-radius: 10%;
+}
+
+.btn-primary:hover {
+    background-color: #047fcc;
+    cursor: pointer;
+}
+
+.uploader {
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 900;
+    margin-left: 20px;
+    border: 0px solid rgb(182, 182, 182);
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(94, 93, 93);
+    cursor: pointer;
+}
+
+.uploader:hover {
+    background-color: rgb(241, 239, 239);
+}
+
+hr {
+    width: 90%;
+    background-color: rgb(231, 228, 228);
+}
+
+.feed-card {
+    margin-bottom: 20px;
+    box-shadow: 4px 2px 6px rgb(190, 188, 188);
+    padding-bottom: 0px;
+}
+
+.feed-card>hr {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.feed-head {
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 0px;
+}
+
+.feed-head>img {
+    height: 40px;
+    border-radius: 100%;
+}
+
+.feed-head>div>h1 {
+    font-size: 15px;
+    font-weight: 900;
+    margin-top: 1px;
+    margin-bottom: 4px;
+}
+
+.feed-head>div>p {
+    font-size: 12px;
+    color: rgb(145, 145, 145);
+}
+
+.feed-body {
+    padding: 0px 30px;
+}
+
+.feed-body>p {
+    color: rgb(109, 109, 109);
+    font-size: 13px;
+}
+
+.feed-footer {
+    margin-bottom: 5px;
+}
+
+.feed-footer>button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    color: rgb(116, 115, 115);
+}
+
+.feed-comments {
+    background-color: rgb(217, 237, 255);
+    padding-left: 50px;
+    padding-top: 10px;
+    margin: 0px;
+}
+
+.feed-comments>div>img {
+    height: 30px;
+    border-radius: 100%;
+}
+
+.feed-comments>div>div>h1 {
+    font-size: 13px;
+    font-weight: 900;
+    margin-top: 1px;
+    margin-bottom: 2px;
+}
+
+.feed-comments>div>div>p {
+    font-size: 9px;
+    color: rgb(145, 145, 145);
+}
+
+.feed-comments-body {
+    padding: 0px 30px 0px 50px;
+}
+
+.feed-comments-body>p {
+    color: rgb(150, 150, 150);
+    font-size: 13px;
+    margin-bottom: 0px;
+}
