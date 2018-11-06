@@ -1,0 +1,14 @@
+[
+    {
+        "_id" : ObjectId("5bdea39d406abab46426fbee"),
+        "name" : "NVS",
+        "dob" : "1/02/1998",
+        "email" : "nvs@mail.com",
+        "contact" : 12345,
+        "password" : "nvs",
+        "posts" : [
+                ObjectId("5bdea3cc406abab46426fbef"),
+                ObjectId("5bdea3cc406abab46426fbf0")
+        ]
+    }
+]
