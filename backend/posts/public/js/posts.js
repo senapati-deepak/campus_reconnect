@@ -10,6 +10,13 @@ $(document).ready(function(){
         });
     });
 
+    $("#logout-btn").click(function(event) {
+        event.preventDefault();
+        $.get("/api/logout", function(data, status) {
+            console.log(data);
+            location.href = "/login";
+        });
+    });
 
     $(".like").click(function(event) {
         event.preventDefault();
@@ -23,11 +30,9 @@ $(document).ready(function(){
             action: action,
             id: id
         };
-        var temp = lou === "LIKE"? "UNLIKE" : "LIKE";
-        $btn.text(temp);
         $.post("/api/new-like", data, function(data, status) {
             console.log(data);
-            location.href = "/posts"
+            location.href = "/posts";
         });
     });
 
