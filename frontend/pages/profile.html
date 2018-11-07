@@ -5,11 +5,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard - Campus ReConnect</title>
+    <title>Profile - Campus ReConnect</title>
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="stylesheet" href="../stylesheets/dashboard.css" />
+    <link rel="stylesheet" href="../stylesheets/profile.css" />
     <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
 
@@ -137,15 +138,102 @@
 
                 <div class="content-wrapper">
 
-                    <div class="post-box">
-                        <div class="form-group">
-                            <textarea class="form-control p-input" id="exampleTextarea" rows="3" placeholder="Write Something...."></textarea>
+                    <div class="feed-card profile-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="profile-card-img" src="../images/faces/face3.jpg" alt="">
+                                <div class="profile-card-name">
+                                    <h4>Person's Name</h4>
+                                    <p>Designation of the person</p>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <p class="profile-description">Describe Yourself in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis
+                                    mauris convallis, dapibus justo a.</p>
+                            </div>
                         </div>
-                        <hr>
-                        <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
 
+
+                        <div class="profile-card-details">
+                            <h4>Skills</h4>
+                            <div class="row">
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">HTML</h6>
+                                        <div class="circle-progress" data-value="0.9" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CSS</h5>
+                                        <div class="circle-progress" data-value="0.7" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">jQuery</h5>
+                                        <div class="circle-progress" data-value="0.5" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">JavaScript</h5>
+                                        <div class="circle-progress" data-value="0.3" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Boostrap</h5>
+                                        <div class="circle-progress" data-value="0.7" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Git</h5>
+                                        <div class="circle-progress" data-value="1.0" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Python</h5>
+                                        <div class="circle-progress" data-value="0.4" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Java</h5>
+                                        <div class="circle-progress" data-value="0.1" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h4>Experiences</h4>
+                            <ul class="experiences">
+                                <li>
+                                    <h6>Exp 1</h6>
+                                    <p>Description</p>
+                                </li>
+                                <li>
+                                    <h6>Exp 1</h6>
+                                    <p>Description</p>
+                                </li>
+                                <li>
+                                    <h6>Exp 1</h6>
+                                    <p>Description</p>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+
+                    </div>
+                    <br>
+                    <h4 class="posts-timeline">Posts Timeline</h4>
+                    <hr style="width: 65%;">
 
                     <div class="feed-card">
                         <div class="feed-head row">
@@ -190,9 +278,6 @@
                     </div>
 
 
-
-
-
                 </div>
 
 
@@ -211,13 +296,20 @@
     <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="../node_modules/jquery-circle-progress/dist/circle-progress.min.js"></script>
     <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="../js/sidebar-icon.js"></script>
     <script src="../js/off-canvas.js"></script>
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
     <script src="../js/comments.js"></script>
-
+    <script>
+        $('.circle-progress').circleProgress({
+            fill: {
+                color: "#fff"
+            }
+        });
+    </script>
 </body>
 
 </html>

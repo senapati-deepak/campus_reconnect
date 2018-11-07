@@ -1,0 +1,76 @@
+.profile-card {
+    background-image: url("../images/profile-bg.jpg");
+}
+
+.profile-card-img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    display: block;
+    margin: 10px auto;
+}
+
+.profile-card-name {
+    text-align: center;
+}
+
+.profile-card-name>h4 {
+    color: #0c6eac;
+}
+
+.profile-card-name>p {
+    font-size: 14px;
+    color: #888888;
+}
+
+.profile-description {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 25px;
+    color: rgb(105, 103, 103);
+}
+
+.profile-card-details {
+    background-color: rgb(217, 237, 255);
+    padding: 0px;
+}
+
+.profile-card-details>h4 {
+    padding: 20px 20px 0px;
+    text-decoration: underline;
+}
+
+.profile-card-details>.row {
+    margin: 20px 20px 0px;
+}
+
+.card-title {
+    font-size: 14px;
+}
+
+.card-circle-progress {
+    background-color: #2fa1e9;
+    border: 6px solid rgb(217, 237, 255);
+    border-radius: 30px;
+}
+
+.posts-timeline {
+    margin-left: 18%;
+}
+
+.experiences {
+    list-style-type: disc;
+    margin-bottom: 0px;
+}
+
+.experiences>li>h6 {
+    margin: 8px 0px 2px;
+}
+
+.experiences>li>p {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 0px;
+}

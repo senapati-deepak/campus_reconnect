@@ -22,7 +22,7 @@
     padding: 5px;
     font-weight: 900;
     float: right;
-    border-radius: 10%;
+    border-radius: 15px;
 }
 
 .btn-primary:hover {
@@ -70,7 +70,7 @@ hr {
 
 .feed-head>img {
     height: 40px;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .feed-head>div>h1 {
@@ -114,7 +114,8 @@ hr {
 
 .feed-comments>div>img {
     height: 30px;
-    border-radius: 100%;
+    width: 30px;
+    border-radius: 50%;
 }
 
 .feed-comments>div>div>h1 {
@@ -137,4 +138,15 @@ hr {
     color: rgb(150, 150, 150);
     font-size: 13px;
     margin-bottom: 0px;
+}
+
+#post-comment-area {
+    display: none;
+}
+
+#post-comment-area>input {
+    width: 85%;
+    margin: 5px 0px 5px 15px;
+    border: 1px solid rgb(192, 194, 196);
+    border-radius: 30px;
 }
