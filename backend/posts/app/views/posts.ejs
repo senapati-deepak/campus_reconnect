@@ -14,7 +14,7 @@
 
 <body>
 
-    
+    <button class="btn btn-danger" id="logout-btn">LOGOUT</button>
     <textarea class="form-control" placeholder="Type Here..." id="post-body"></textarea>
     <button class="btn btn-primary" id="post-btn">POST</button>
 
@@ -25,14 +25,17 @@
             <% var id = posts[i]._id %>
             <div class="card-heading bg-primary">By <%= posts[i].user.name %> on <%= posts[i].date %></div>
             <div class="card-body"><%= posts[i].body %></div>
-            <span id="lc<%=id%>"><%=posts[i].likes%></span>
-            <button class="btn btn-info col-md-2 like" id="l<%=id%>">LIKE</button>
+            <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
+            <% if(posts[i].likes.indexOf(user._id) === -1) { %>
+            <% var l = "LIKE" } else { %>
+            <% var l = "UNLIKE" } %>
+            <button class="btn btn-info col-md-2 like" id="l<%=id%>"><%=l%></button>
             <textarea class="form-control" rows="5" placeholder="Comment here..." id="cs<%=id%>"></textarea>
             <button class="btn btn-info col-md-2 comment" id="c<%=id%>">COMMENT</button>
             <div id="cd<%=id%>">
             <% for(var j = 0; j < posts[i].comments.length; j++) { %>
                 <div class="card col-md-6">
-                    <%= posts[i].comments[j] %>
+                    <%= posts[i].comments[j].comment %> by <%= posts[i].comments[j].user.name %>
                 </div>
             <%}%>
             </div>

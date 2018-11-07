@@ -5,8 +5,13 @@ var postSchema = new Schema({
     body: String,
     user: { type: Schema.Types.ObjectId, ref: 'user' },
     date: String,
-    likes: { type: Number, default: 0 },
-    comments: [{ type: String }]
+    likes: [{ type: Schema.Types.ObjectId, ref: 'user' }],
+    comments: [
+        {
+            user: {type: Schema.Types.ObjectId, ref: 'user'},
+            comment: String
+        }
+    ]
 });
 
 var postModel = mongoose.model('post', postSchema);
