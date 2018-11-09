@@ -25,7 +25,7 @@ var ioEvents = function(io) {
         // 	// When a new message arrives
         socket.on('new-message', function(message) {
 			console.log(message);
-            io.emit('add-message', message);
+            io.emit('add-message', {msg: message, user: socket.request.session.user});
 		});
 		
         // socket.on('new-like', function(data) {
@@ -52,7 +52,7 @@ var ioEvents = function(io) {
  * Uses Redis as Adapter for Socket.io
  *
  */
-var init = function(app){
+var init = function(app, sessionMiddleware){
 
 	var server 	= require('http').Server(app);
 	var io 		= require('socket.io')(server);
@@ -68,10 +68,10 @@ var init = function(app){
 	// let subClient = redis(port, host, { auth_pass: password, return_buffers: true, });
 	// io.adapter(adapter({ pubClient, subClient }));
 
-	// // Allow sockets to access session data
-	// io.use((socket, next) => {
-	// 	require('../session')(socket.request, {}, next);
-	// });
+	// Allow sockets to access session data
+	io.use((socket, next) => {
+		require('../session')(socket.request, {}, next);
+	});
 
 	// // Define all Events
 	ioEvents(io);

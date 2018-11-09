@@ -15,27 +15,34 @@
 <body>
 
     <button class="btn btn-danger" id="logout-btn">LOGOUT</button>
+    <a href="/profile/<%= user._id %>">PROFILE</a>
     <textarea class="form-control" placeholder="Type Here..." id="post-body"></textarea>
     <button class="btn btn-primary" id="post-btn">POST</button>
 
-    <div id="posts" class="card-group">
+    <div id="posts">
     
         <% for(var i = 0; i < posts.length; i++) { %>
-        <div class="card">
+        <div class="card col-md-6">
             <% var id = posts[i]._id %>
-            <div class="card-heading bg-primary">By <%= posts[i].user.name %> on <%= posts[i].date %></div>
+            <div class="card-heading">
+                By <a href="/profile/<%= posts[i].user._id %>"><%= posts[i].user.name %></a> on <%= posts[i].date %>
+                <% if(posts[i].user._id == user._id) { %>
+                <button class="btn btn-danger del-post" id="dp<%= posts[i]._id %>">DELETE</button> <% } %>
+            </div>
             <div class="card-body"><%= posts[i].body %></div>
             <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
             <% if(posts[i].likes.indexOf(user._id) === -1) { %>
             <% var l = "LIKE" } else { %>
             <% var l = "UNLIKE" } %>
             <button class="btn btn-info col-md-2 like" id="l<%=id%>"><%=l%></button>
-            <textarea class="form-control" rows="5" placeholder="Comment here..." id="cs<%=id%>"></textarea>
+            <textarea class="form-control" rows="2" placeholder="Comment here..." id="cs<%=id%>"></textarea>
             <button class="btn btn-info col-md-2 comment" id="c<%=id%>">COMMENT</button>
             <div id="cd<%=id%>">
-            <% for(var j = 0; j < posts[i].comments.length; j++) { %>
+            <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
                 <div class="card col-md-6">
-                    <%= posts[i].comments[j].comment %> by <%= posts[i].comments[j].user.name %>
+                    <%= posts[i].comments[j].comment %> by <a href="/profile/<%= posts[i].comments[j].user._id %>"><%= posts[i].comments[j].user.name %></a>
+                    <% if(posts[i].comments[j].user._id == user._id) { %>
+                    <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>">DELETE</button> <% } %>
                 </div>
             <%}%>
             </div>

@@ -10,7 +10,8 @@ $(document).ready(function(){
     });
     
     socket.on("add-message", function(data) {
-        $("#display-section").append("<div id=\"message\"><p>"+ data +"</p></div>");
+        console.log(data.user);
+        $("#display-section").append("<div id=\"message\"><p>"+ data.msg +"</p></div>");
     });
 
 

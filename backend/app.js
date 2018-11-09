@@ -6,11 +6,12 @@ var mongoose = require('mongoose');
 
 var index = require('./app/routes/index');
 var api = require('./app/routes/api');
-var session 	= require('express-session');
+var session 	= require('./app/session');
 var ioServer 	= require('./app/socket')(app);
 
 
 var port = process.env.PORT || 3000;
+
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
@@ -18,16 +19,10 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({
-  path: '/',
-  secret: 'very secret',
-  saveUninitialized: false,
-  resave:false
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//app.use(session);
+app.use(session);
 
 app.use('/', index);
 app.use('/api', api);

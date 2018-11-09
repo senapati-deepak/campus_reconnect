@@ -52,7 +52,7 @@ router.post('/new-post', function(req, res, next) {
   var newPost = new postModel(post);
   newPost.save(function(err, postDoc) {
     if (err) throw err;
-    userModel.findById(id, function(err, userDoc) {
+    userModel.findById(postDoc.user, function(err, userDoc) {
       userDoc.posts.push(ObjectId(postDoc._id));
       userDoc.save(function(err) {
         if(err) throw err;
@@ -102,6 +102,32 @@ router.get('/logout', function(req, res, next) {
   res.send("Logged out successfully!");
 });
 
+router.get('/del-post/:id', function(req, res, next) {
+  postModel.findByIdAndDelete(req.params.id, function(err, doc) {
+    if(err) throw err;
+    res.send("Post Deleted Successfull!");
+  });
+});
+
+router.get('/del-comm/:pid/:cid', function(req, res, next) {
+  postModel.findById(req.params.pid, function(err, doc) {
+    if(err) throw err;
+    for(var i = 0; i < doc.comments.length; i++) {
+      console.log(req.params.pid);
+      console.log(req.params.cid);
+      console.log(doc.comments[i]._id);
+      if(doc.comments[i]._id == req.params.cid) {
+        console.log("Found");
+        doc.comments.splice(i, 1);
+        break;
+      }
+    }
+    doc.save(function(err) {
+      if(err) throw err;
+      res.send("Successfully Deleted Comment!");
+    });
+  });
+});
 
 
 
