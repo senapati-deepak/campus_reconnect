@@ -1,0 +1,105 @@
+.content-wrapper {
+    padding-bottom: 0px;
+}
+
+.chat-card {
+    margin: 5px;
+    background-color: white;
+    border: 1px solid aliceblue;
+    box-shadow: 5px 5px 8px rgb(190, 188, 188);
+    height: 85%;
+    padding: 0px !important;
+}
+
+hr {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.header-separator {
+    border-color: black;
+    border-width: 2px;
+}
+
+.chat-card-heading {
+    margin: 10px 6px 10px;
+    font-size: 18px;
+}
+
+.chat-name-overview {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0px 7px 9px 0px;
+}
+
+h5 {
+    color: rgb(107, 107, 107);
+}
+
+#chat-area {
+    height: 64%;
+    overflow: auto;
+}
+
+#exampleTextarea {
+    border: none;
+    background-color: white;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #0f9aee;
+    font-size: 14px;
+    margin: 0px 20px 10px 5px;
+    padding: 5px;
+    font-weight: 900;
+    float: right;
+    border-radius: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #047fcc;
+    cursor: pointer;
+}
+
+.uploader {
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 900;
+    margin-left: 20px;
+    border: 0px solid rgb(182, 182, 182);
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(94, 93, 93);
+    cursor: pointer;
+}
+
+.uploader:hover {
+    background-color: rgb(241, 239, 239);
+}
+
+.chat-headimage {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 0px 7px 9px 0px;
+}
+
+#chat-area>h6 {
+    color: rgb(107, 107, 107);
+    margin-bottom: 0px;
+}
+
+#chat-area>p {
+    color: rgb(143, 143, 143);
+    font-size: 12px;
+    margin: 0px 0px 3px 30px;
+}
