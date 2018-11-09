@@ -47,6 +47,6 @@ app.use(function(req, res, next) {
     res.status(404).sendFile(process.cwd() + '/app/views/404.htm');
 });
 
-app.listen(port,function(){
+ioServer.listen(port,function(){
   console.log("Server running at port "+ port);
 });

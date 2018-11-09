@@ -31,8 +31,17 @@ router.get('/posts', function(req, res, next) {
     }
 });
 
+/* GET chat page. */
 router.get('/login', function(req, res, next) {
     res.render('login');
+});
+
+router.get('/chat', function(req, res, next) {
+    if(req.session.user) {
+        res.render('chat');
+    } else {
+        res.redirect("/login");
+    }
 });
 
 

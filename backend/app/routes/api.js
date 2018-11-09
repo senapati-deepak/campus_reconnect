@@ -50,9 +50,15 @@ router.post('/new-post', function(req, res, next) {
     date: new Date()
   };
   var newPost = new postModel(post);
-  newPost.save(function(err, doc) {
+  newPost.save(function(err, postDoc) {
     if (err) throw err;
-    res.json(doc);
+    userModel.findById(id, function(err, userDoc) {
+      userDoc.posts.push(ObjectId(postDoc._id));
+      userDoc.save(function(err) {
+        if(err) throw err;
+        res.json(postDoc);
+      });
+    });
   });
 });
 
