@@ -26,6 +26,7 @@ router.post('/login', function(req, res, next) {
   console.log("email", email);
   console.log("password", password);
   userModel.findOne({ email: email})
+                  .populate("connections", "name")
                   .exec(function(err, doc) {
                     if(err) throw err;
                     if(!doc) {

@@ -7,7 +7,8 @@ var userSchema = new Schema({
     email: String,
     contact: Number,
     password: String,
-    posts: [{type: Schema.Types.ObjectId, ref: 'post'}]
+    posts: [{type: Schema.Types.ObjectId, ref: 'post'}],
+    connections: [{type: Schema.Types.ObjectId, ref: 'user'}]
 });
 
 var userModel = mongoose.model('user', userSchema);

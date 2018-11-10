@@ -7,6 +7,7 @@ var router = express.Router();
 
 var postModel = require("../models/posts");
 var userModel = require("../models/users");
+var roomModel = require("../models/rooms");
 
 
 
@@ -54,7 +55,13 @@ router.get('/login', function(req, res, next) {
 
 router.get('/chat', function(req, res, next) {
     if(req.session.user) {
-        res.render('chat');
+        roomModel.find({ $where: "this.members.length > 2" })
+                .populate("members", "name")
+                .exec(function(err, doc) {
+                    if(err) throw err;
+                    console.log(doc);
+                    res.render('chat', { rooms: doc, userSession: req.session.user });
+                });
     } else {
         res.redirect("/login");
     }

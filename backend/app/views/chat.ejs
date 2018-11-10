@@ -8,20 +8,36 @@
     <title>Campus Re-Connect</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <!-- inject:css -->
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/chat.css">
     <!-- endinject -->
 </head>
 
 <body>
 
-    
+    <div class="row">
+        <div id="room-list" class="col-md-4 col-lg-4 col-sm-12">
+                <% for(var i = 0; i < rooms.length; i++) { %>
+                    <button class="btn btn-primary room-btn" id="<%= rooms[i]._id %>"> <%= rooms[i].name %> </button>
+                <% } %>
+        </div>
 
-    <div id="display-section">
-        
+        <div id="connection-list" class="col-md-4 col-lg-4 col-sm-12">
+                <% for(var i = 0; i < userSession.connections.length; i++) { %>
+                    <button class="btn btn-primary conn-btn" id="<%= userSession._id %><%= userSession.connections[i]._id %>"> <%= userSession.connections[i].name %> </button>
+                <% } %>
+        </div>
+
+
+        <div id="chat-tab" class="col-md-4 col-lg-4 col-sm-12">
+
+            <div id="display-section" class="bg-info">
+                
+            </div>
+            
+            <input id="msg" class="form form-control" type="text" placeholder="Type your message...">
+            <button id="send" class="btn btn-success">SEND</button> Talking To: <span id="recipient"></span>
+        </div>
     </div>
-    
-    <input id="msg" class="form form-control" type="text" placeholder="Type your message...">
-    <button id="send" class="btn btn-success">SEND</button>
 
 
 

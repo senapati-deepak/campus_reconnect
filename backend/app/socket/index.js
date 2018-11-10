@@ -10,12 +10,19 @@ var ObjectId = mongoose.Types.ObjectId;
 
 var postModel = require("../models/posts");
 var userModel = require("../models/users");
+var roomModel = require("../models/rooms");
+var messageModel = require("../models/messages");
+
+
+var userSocket = {};
 
 var ioEvents = function(io) {
-    // // Chatroom namespace
+	// // Chatroom namespace
 	io.on('connection', function(socket) {
 
+		var user = socket.request.session.user;
 
+		userSocket[user] = socket.id;
         console.log("A Socket connected");
         
         socket.on('disconnect', function() {
@@ -25,7 +32,54 @@ var ioEvents = function(io) {
         // 	// When a new message arrives
         socket.on('new-message', function(message) {
 			console.log(message);
-            io.emit('add-message', {msg: message, user: socket.request.session.user});
+			var msg = {
+				sender: socket.request.session.user,
+				time: new Date(),
+				body: message,
+				room: socket.roomId
+			};
+			var newMsg = new messageModel(msg);
+			newMsg.save(function(err, doc) {
+				if(err) throw err;
+				console.log(doc);
+			});
+            io.to(socket.roomId).emit('add-message', {msg: message, user: socket.request.session.user});
+		});
+
+		socket.on('join-room', function(data) {
+			console.log(data);
+			if(data.members) {
+				roomModel.findOne({ members: { $size: data.members.length, $all: data.members} })
+						.exec(function(err, doc) {
+							console.log(doc);
+							if(!doc) {
+								var members = [];
+								for(var i = 0; i < data.members.length; i++) {
+									members.push(ObjectId(data.members[i]));
+								}
+								var newRoom = new roomModel(members);
+								newRoom.save(function(err, rdoc) {
+									console.log("New-room", rdoc);
+									socket.roomId = rdoc._id;
+									socket.join(socket.roomId);
+									io.to(socket.roomId).emit("load-msgs", []);
+								});
+							} else {
+								socket.roomId = doc._id;
+								console.log(socket.roomId);
+								messageModel.find({ room: ObjectId(socket.roomId) })
+											.sort({time: 1})
+											.populate("sender", "name")
+											.exec(function(err, docs) {
+												console.log("Messages", docs);
+												socket.join(socket.roomId);
+												io.to(socket.roomId).emit("load-msgs", docs);
+											});
+							}
+						});
+			} else {
+
+			}
 		});
 		
         // socket.on('new-like', function(data) {
