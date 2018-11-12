@@ -1,10 +1,10 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
 
     $("#post-btn").click(function(event) {
         event.preventDefault();
         var postBody = $("#post-body").val();
-        $.post("/api/new-post", {postBody: postBody}, function(data, status) {
+        $.post("/api/new-post", { postBody: postBody }, function(data, status) {
             console.log(data);
             location.reload();
         });
@@ -23,10 +23,10 @@ $(document).ready(function(){
         $btn = $(this)
         var id = $btn.attr("id").slice(1);
         var lou = $btn.text();
-        console.log(lou); 
+        console.log(lou);
         var action = true;
-        action = lou === "LIKE"? true : false;
-        var data =  {
+        action = lou === "LIKE" ? true : false;
+        var data = {
             action: action,
             id: id
         };
@@ -41,10 +41,10 @@ $(document).ready(function(){
         $btn = $(this)
         var id = $btn.attr("id").slice(1);
         var cs = $("#cs" + id).val();
-        if(cs === "") {
+        if (cs === "") {
             alert("Write something...");
         } else {
-            var data =  {
+            var data = {
                 msg: cs,
                 id: id
             };
@@ -64,7 +64,7 @@ $(document).ready(function(){
             console.log(data);
             location.reload();
         });
-    }); 
+    });
 
 
     $(".del-comm").click(function(event) {
@@ -78,7 +78,7 @@ $(document).ready(function(){
             console.log(data);
             location.reload();
         });
-    }); 
+    });
 
 
 });

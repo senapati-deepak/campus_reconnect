@@ -264,6 +264,11 @@ svg:not(:root) {
     overflow: hidden;
 }
 
+.nav-logo-img {
+    height: 50px;
+    width: 80px;
+}
+
 a,
 area,
 button,

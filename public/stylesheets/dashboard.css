@@ -9,7 +9,7 @@
     box-shadow: 4px 4px 6px rgb(190, 188, 188);
 }
 
-#exampleTextarea {
+#post-body {
     border: none;
     background-color: white;
     overflow: hidden;
@@ -138,6 +138,32 @@ hr {
     color: rgb(150, 150, 150);
     font-size: 13px;
     margin-bottom: 0px;
+}
+
+.del-comm {
+    background-color: rgb(217, 237, 255);
+    color: rgb(185, 5, 5);
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.del-comm:hover {
+    background-color: rgb(217, 237, 255);
+    color: red;
+}
+
+.del-post {
+    background-color: white;
+    color: rgb(185, 5, 5);
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.del-post:hover {
+    background-color: white;
+    color: red;
 }
 
 #post-comment-area {
