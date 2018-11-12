@@ -1,69 +1,61 @@
-var map;
-if($('#map').length) {
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  };
+var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
+
+function locate() {
+    navigator.geolocation.getCurrentPosition(initialize, fail);
 }
-(function($) {
-  'use strict';
-  if($('#vmap').length) {
-    jQuery('#vmap').vectorMap({ map: 'world_en' });
-  }
-  if($('#vmap-regions').length) {
-    var activeNations = new Array("us", "de", "au", "gb", "ro", "br");
 
-    jQuery('#vmap-regions').vectorMap({
-      map: 'world_en',
-      backgroundColor: 'transparent',
-      borderOpacity: 0.01,
-      borderWidth: 2,
-      borderColor: '#000',
-      color: '#e2e2e2',
-      enableZoom: false,
-      hoverColor: '#2796E9',
-      hoverOpacity: null,
-      normalizeFunction: 'linear',
-      selectedColor: '#37c936',
-      selectedRegions: activeNations,
-      showTooltip: true,
-      onRegionClick: function(element, code, region) {
-        if (activeNations.indexOf(code) > -1) {
-          // dom interaction outside the map
-          // ...
-        } else {
-          element.preventDefault();
-        }
-      }
-    });
-  }
-  if ($("#WorldMap").length) {
-    var activeNations = new Array("us", "de", "au", "gb", "ro", "br");
+var label = [
+    ['person 1'],
+    ['person 2'],
+    ['person 3'],
+    ['person 4'],
+    ['person 5'],
+    ['person 6'],
+    ['person 7']
+]
 
-    jQuery('#WorldMap').vectorMap({
-      map: 'world_en',
-      backgroundColor: 'transparent',
-      borderOpacity: 0.01,
-      borderWidth: 2,
-      borderColor: '#000',
-      color: '#e2e2e2',
-      enableZoom: false,
-      hoverColor: '#2796E9',
-      hoverOpacity: null,
-      normalizeFunction: 'linear',
-      selectedColor: '#58D8A3',
-      selectedRegions: activeNations,
-      showTooltip: true,
-      onRegionClick: function(element, code, region) {
-        if (activeNations.indexOf(code) > -1) {
-          // dom interaction outside the map
-          // ...
-        } else {
-          element.preventDefault();
-        }
-      }
+function initialize(position) {
+    var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    var mapOptions = {
+        zoom: 16,
+        center: myLatLng,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+    var map = new google.maps.Map(document.getElementById('map_canvas'),
+        mapOptions);
+    var userMarker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: im
     });
-  }
-})(jQuery);
+
+    var southWest = new google.maps.LatLng(position.coords.latitude + 0.0004, position.coords.longitude + 0.0006);
+    var northEast = new google.maps.LatLng(position.coords.latitude - 0.0002, position.coords.longitude - 0.0003);
+    var lngSpan = northEast.lng() - southWest.lng();
+    var latSpan = northEast.lat() - southWest.lat();
+
+    var count;
+
+    for (var i = 0; i < 5; i++) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(southWest.lat() + latSpan * Math.random(), southWest.lng() + lngSpan * Math.random()),
+            map: map
+        });
+
+        marker.info = new google.maps.InfoWindow({
+            content: label[i][0]
+        });
+
+
+        google.maps.event.addListener(marker, 'click', function() {
+            // this = marker
+            var marker_map = this.getMap();
+            this.info.open(marker_map, this);
+            // Note: If you call open() without passing a marker, the InfoWindow will use the position specified upon construction through the InfoWindowOptions object literal.
+        });
+    }
+}
+
+function fail() {
+    alert('navigator.geolocation failed, may not be supported');
+}

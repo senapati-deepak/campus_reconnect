@@ -5,25 +5,35 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ChatRoom - Campus ReConnect</title>
+    <title>AlumLocator - Campus ReConnect</title>
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
     <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/dashboard.css" />
     <link rel="shortcut icon" href="../images/favicon.png" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NXz9eVnyJOA81wimI8WYE08kW_JMe8g&callback=initMap" async defer></script>
+    <style>
+        html,
+        body,
+        #map_canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
-<body class="horizontal-menu">
+<body class="horizontal-menu" onload="locate()">
     <div class=" container-scroller">
         <!-- partial:../partials/_navbar.html -->
         <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-left navbar-brand-wrapper">
-                <a class="navbar-brand brand-logo" href="#">Campus ReConnect</a>
+                <a class="navbar-brand brand-logo" href="/dashboard"><img src="../images/logo_black.png" class="nav-logo-img"></a>
                 <a class="navbar-brand brand-logo-mini" href="#"><i class="mdi mdi-cards-outline"></i></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-self-stretch align-items-center">
                 <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
 
                 <ul class="navbar-nav ml-lg-auto">
 
@@ -33,7 +43,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" href="#">
+                        <a class="nav-link count-indicator" href="/dashboard">
                             <i class="fa fa-home"></i>
                         </a>
                     </li>
@@ -83,18 +93,18 @@
                                     <p class="Sender-message">Need the updates of the project at the end of the week.</p>
                                 </div>
                             </a>
-                            <a href="#" class="dropdown-item view-all">View all</a>
+                            <a href="/chat" class="dropdown-item view-all">View all</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" href="#">
+                        <a class="nav-link count-indicator" href="/alum-locator">
                             <i class="fa fa-bullseye"></i>
                         </a>
                     </li>
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" id="MailDropdown" href="#" data-toggle="dropdown">
-                                Profile<img src="../images/faces/face9.jpg" />
-                        </a>
+                                    Profile<img src="../images/faces/face9.jpg" />
+                            </a>
                         <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
                             <a class="dropdown-item" href="#">
                                 <div class="sender-img">
@@ -116,7 +126,7 @@
                                     <p class="Sende-name"><i class="fa fa-h-square" style="padding-right:14px; font-size: 18px"></i>Help Centre</p>
                                 </div>
                             </a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" id="logout-btn">
                                 <div class="sender">
                                     <p class="Sende-name"><i class="fa fa-sign-out" style="padding-right:14px; font-size: 20px"></i>Sign Out</p>
                                 </div>
@@ -125,8 +135,8 @@
                     </li>
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
             </div>
         </nav>
 
@@ -134,8 +144,9 @@
         <div class="container-fluid page-body-wrapper">
             <div class="row row-offcanvas row-offcanvas-right">
 
-                <div class="content-wrapper">
-                    <h1> </h1>
+                <div class="content-wrapper" id="map_canvas">
+
+
                 </div>
 
 
@@ -159,6 +170,8 @@
     <script src="../js/off-canvas.js"></script>
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
+    <script src="../js/maps.js"></script>
+
 </body>
 
 </html>
