@@ -14,7 +14,7 @@ $(document).ready(function(){
         event.preventDefault();
         $.get("/api/logout", function(data, status) {
             console.log(data);
-            location.href = "/login";
+            location.href = "/";
         });
     });
 

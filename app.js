@@ -38,6 +38,13 @@ db.once('open', function () {
 });
 
 
+require("./app/models/users");
+require("./app/models/rooms");
+require("./app/models/institutes");
+require("./app/models/messages");
+require("./app/models/posts");
+
+
 app.use(function(req, res, next) {
     res.status(404).sendFile(process.cwd() + '/app/views/404.htm');
 });

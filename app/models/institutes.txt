@@ -1,0 +1,64 @@
+[
+    {
+        "_id" : ObjectId("5be9bd88a049a3ba47efa411"),
+        "name" : "College of Engineering and Technology, Bhubaneswar",
+        "address" : "Ghatikia Road, Kalinga Nagar, Bhubaneswar, Odisha 751003",
+        "contact" : "+91 674 2386075",
+        "email" : "info@cet.edu.in",
+        "website" : "https://www.cet.edu.in",
+        "bio" : "Vision:To emerge as a global leader in Technical Education.Mission:To generate on a sustainable basis quality technical human resources commensurate with the dynamic global scenario",
+        "alumcell" : [
+                {
+                        "name" : "Alok Chandra",
+                        "contact" : "9812719346",
+                        "email" : "alokchandra@gmail.com"
+                }
+        ]
+    },
+    {
+        "_id" : ObjectId("5be9bd88a049a3ba47efa412"),
+        "name" : "IIIT Bhubaneswar",
+        "address" : "IIIT Bhubaneswar, Gothapatna, PO: Malipada, Bhubaneswar-751003, India",
+        "contact" : "+91-674-3060500",
+        "email" : " info@iiit-bh.ac.in",
+        "bio" : "Our vision is to be an unique institute imparting education, training, research, and consulting in technology and related fields to develop human resources who will lead the economy and the society in the coming decades.",
+        "alumcell" : [
+                {
+                        "name" : "Vikas Mishra",
+                        "contact" : "9295147938",
+                        "email" : "vikasm@gmail.com"
+                }
+        ]
+    },
+    {
+        "_id" : ObjectId("5be9bd88a049a3ba47efa413"),
+        "name" : "IIT Bhubaneswar",
+        "address" : "Indian Institute of Technology Bhubaneswar Argul, Khordha PIN - 752050, ODISHA ",
+        "contact" : "+91 674 7134448",
+        "email" : "director.office@iitbbs.ac.in",
+        "bio" : "Indian Institute of Technology Bhubaneswar came into existence in July 22, 2008, inheriting the brand name IIT. This fact itself charges the Institute not only to be worthy of its inheritance but also to be distinctive and distinguished on its own by scripting a path towards novelties. Presented below are the statements for Vision, Mission, Goals & Strategies (to achieve the Goals) and the Core Values of IIT Bhubaneswar.",
+        "alumcell" : [
+                {
+                        "name" : "Ayushman Nayak",
+                        "contact" : "9934761391",
+                        "email" : "anayak@gmail.com"
+                }
+        ]
+    },
+    {
+        "_id" : ObjectId("5be9bd88a049a3ba47efa414"),
+        "name" : "NIT Rourkela",
+        "address" : "Sector 1, Rourkela, Odisha 769008",
+        "contact" : "0661-2462001",
+        "email" : "info@nitrkl.ac.in",
+        "bio" : "Vision:To become an internationally acclaimed institution of higher learning that will serve as a source of knowledge and expertise for the society and be a preferred destination for undergraduate and graduate studies.Mission:To advance and spread knowledge in the area of science and technology leading to creation of wealth and welfare of humanity.",
+        "alumcell" : [
+                {
+                        "name" : "Subham Sarkar",
+                        "contact" : "9023781298",
+                        "email" : "ssarkar@gmail.com"
+                }
+        ]
+    }
+
+]

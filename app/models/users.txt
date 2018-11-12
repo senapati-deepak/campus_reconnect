@@ -1,38 +1,83 @@
 [
     {
         "_id" : ObjectId("5bdea39d406abab46426fbee"),
-        "name" : "NVS",
+        "name" : "NVS Abhishek",
         "dob" : "1/02/1998",
         "email" : "nvs@mail.com",
-        "contact" : 12345,
+        "contact" : "12345",
         "password" : "nvs",
-        "connections" : [
-            ObjectId("5be6924f8e61aa2547f232c3"),
-            ObjectId("5be69a51248c5e10c567387a")
-        ]
+        designation: "Student at CET BBSR",
+        bio: "I am a good guy.",
+        gender: "male",
+        institutes: [ObjectId("5be9bd88a049a3ba47efa411"), ObjectId("5be9bd88a049a3ba47efa412")],
+        idetails: [{
+            course: "BTech. in CSE",
+            from: { month: "Aug", year: 2016 },
+            to: { month: "May", year: 2020 }
+        }],
+        skills: [{
+            name: "Being Sad",
+            score: 80
+        }],
+        workex: [{
+            title: "Recess",
+            from: { month: "Oct", year: 2017 },
+            to: { month: "Dec", year: 2017 },
+            body: "Made some shit."
+        }]
     },
     {
         "_id" : ObjectId("5be6924f8e61aa2547f232c3"),
-        "name" : "Ibu",
+        "name" : "Dibyajit Bardhan",
         "dob" : "1/02/1993",
         "email" : "ibu@mail.com",
-        "contact" : 12345,
+        "contact" : "12345",
         "password" : "ibu",
-        "connections" : [
-            ObjectId("5be69a51248c5e10c567387a"),
-            ObjectId("5bdea39d406abab46426fbee")
-        ]
+        designation: "Student at CET BBSR",
+        bio: "I am a good guy.",
+        gender: "male",
+        institutes: [ObjectId("5be9bd88a049a3ba47efa411")],
+        idetails: [{
+            course: "BTech. in CSE",
+            from: { month: "Aug", year: 2016 },
+            to: { month: "May", year: 2020 }
+        }],
+        skills: [{
+            name: "Speaking",
+            score: 100
+        }],
+        workex: [{
+            title: "IAS Intern",
+            from: { month: "May", year: 2018 },
+            to: { month: "Jul", year: 2018 },
+            body: "Did sick research."
+        }]
     },
     {
         "_id" : ObjectId("5be69a51248c5e10c567387a"),
-        "name" : "dipu",
+        "name" : "Deepak Senapati",
         "dob" : "1/02/1983",
         "email" : "dipu@mail.com",
-        "contact" : 12345,
+        "contact" : "12345",
         "password" : "dipu",
-        "connections" : [
-            ObjectId("5bdea39d406abab46426fbee"),
-            ObjectId("5be6924f8e61aa2547f232c3")
-        ]
+        designation: "Student at CET BBSR",
+        bio: "I am a good guy.",
+        gender: "male",
+        institutes: [ObjectId("5be9bd88a049a3ba47efa411")],
+        idetails: [{
+            course: "BTech. in CSE",
+            from: { month: "Aug", year: 2016 },
+            to: { month: "May", year: 2020 }
+        }],
+        skills: [{
+            name: "Being disciplined",
+            score: 100
+        }],
+        workex: [{
+            title: "Freelancer",
+            from: { month: "May", year: 2018 },
+            to: { month: "Jul", year: 2018 },
+            body: "Made sick money."
+        }]
     }
 ]

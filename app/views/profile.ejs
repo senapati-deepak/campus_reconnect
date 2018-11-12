@@ -144,12 +144,11 @@
                                 <img class="profile-card-img" src="../images/faces/face3.jpg" alt="">
                                 <div class="profile-card-name">
                                     <h4><%= userProfile.name %></h4>
-                                    <p>Designation of the person</p>
+                                    <p><%= userProfile.designation %></p>
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <p class="profile-description">Describe Yourself in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis
-                                    mauris convallis, dapibus justo a.</p>
+                                <p class="profile-description"><%= userProfile.bio %></p>
                             </div>
                         </div>
 
@@ -266,8 +265,6 @@
                             <input type="text" name="comment" placeholder="Comment Here" id="cs<%=id%>">
                             <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
                         </div>
-                        <input type="text" class="form-control" placeholder="Comment here..." id="cs<%=id%>">
-                        <button class="btn btn-warning col-md-2 comment" id="c<%=id%>">COMMENT</button>
 
                         <% for(var j = userProfile.posts[i].comments.length - 1; j >= 0 ; j--) { %>
                         <div class="feed-comments" id="cd<%=id%>">

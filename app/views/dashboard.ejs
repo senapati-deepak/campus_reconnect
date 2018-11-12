@@ -139,6 +139,10 @@
                     <button class="btn btn-danger" id="logout-btn">LOGOUT</button>
                     <a href="/profile/<%= user._id %>">PROFILE</a>
                     <a href="/chat">CHAT</a>
+                    <% for(var i = 0; i < user.institutes.length; i++) { %>
+                        <% var institute = user.institutes[i] %>
+                        <button class="btn btn-info workplace" id="<%=institute._id%>"><%=institute.name%></button>
+                    <% } %>
                     <div class="post-box">
                         <div class="form-group">
                             <textarea class="form-control p-input" id="post-body" rows="3" placeholder="Write Something...."></textarea>
@@ -178,11 +182,9 @@
                             <div class="col-md-3"></div>
                         </div>
                         <div id="post-comment-area">
-                            <input type="text" name="comment" placeholder="Comment Here">
-                            <button type="submit" class="btn btn-primary">Comment</button>
+                            <input type="text" name="comment" placeholder="Comment Here" id="cs<%=id%>">
+                            <button type="submit" class="btn btn-primary comment"  id="c<%=id%>">Comment</button>
                         </div>
-                        <textarea class="form-control" rows="2" placeholder="Comment here..." id="cs<%=id%>"></textarea>
-                        <button class="btn btn-warning col-md-2 comment" id="c<%=id%>">COMMENT</button>
 
                         <div  id="cd<%=id%>">
                             <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
@@ -234,6 +236,7 @@
     <script src="../js/misc.js"></script>
     <script src="../js/comments.js"></script>
     <script src="./js/posts.js"></script>
+    <script src="./js/workplace.js"></script>
 
 </body>
 

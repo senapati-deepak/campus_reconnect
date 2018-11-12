@@ -4,6 +4,9 @@
 
 var express = require('express');
 var router = express.Router();
+var mongoose = require("mongoose");
+
+var ObjectId = mongoose.Types.ObjectId;
 
 var postModel = require("../models/posts");
 var userModel = require("../models/users");
@@ -51,7 +54,7 @@ router.get('/profile/:id', function(req, res, next) {
 router.get('/dashboard', function(req, res, next) {
 
     if(req.session.user) {
-        postModel.find({})
+        postModel.find({ institute: ObjectId(req.session.institute) })
                 .populate({ path: 'user' })
                 .populate({ path: 'comments.user' })
                 .exec(function(err, docs) {

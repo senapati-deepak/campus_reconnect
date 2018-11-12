@@ -26,7 +26,7 @@ router.post('/login', function(req, res, next) {
   console.log("email", email);
   console.log("password", password);
   userModel.findOne({ email: email})
-                  .populate("connections", "name")
+                  .populate('institutes')
                   .exec(function(err, doc) {
                     if(err) throw err;
                     if(!doc) {
@@ -36,6 +36,7 @@ router.post('/login', function(req, res, next) {
                         res.json({ success: false, errorMsg: "Wrong Password Entered!" });
                       } else {
                         req.session.user = doc;
+                        req.session.institute = doc["institutes"][0]._id;
                         delete req.session.user["password"];
                         res.json({ success: true, errorMsg: "" });
                       }
@@ -48,7 +49,8 @@ router.post('/new-post', function(req, res, next) {
   var post = {
     body: req.body.postBody,
     user: ObjectId(req.session.user._id),
-    date: new Date()
+    date: new Date(),
+    institute: ObjectId(req.session.institute)
   };
   var newPost = new postModel(post);
   newPost.save(function(err, postDoc) {
@@ -128,6 +130,13 @@ router.get('/del-comm/:pid/:cid', function(req, res, next) {
       res.send("Successfully Deleted Comment!");
     });
   });
+});
+
+
+router.get("/change-workplace/:iid", function(req, res, next) {
+  var iid = req.params.iid;
+  req.session.institute = iid;
+  res.send("workplace changed successfully!");
 });
 
 
