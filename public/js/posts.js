@@ -23,7 +23,7 @@ $(document).ready(function(){
         $btn = $(this)
         var id = $btn.attr("id").slice(1);
         var lou = $btn.text();
-        console.log(id); 
+        console.log(lou); 
         var action = true;
         action = lou === "LIKE"? true : false;
         var data =  {

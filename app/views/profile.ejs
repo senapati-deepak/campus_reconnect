@@ -5,11 +5,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard - Campus ReConnect</title>
+    <title>Profile - Campus ReConnect</title>
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="stylesheet" href="../stylesheets/dashboard.css" />
+    <link rel="stylesheet" href="../stylesheets/profile.css" />
     <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
 
@@ -137,60 +138,155 @@
 
                 <div class="content-wrapper">
 
-                    <div class="post-box">
-                        <div class="form-group">
-                            <textarea class="form-control p-input" id="exampleTextarea" rows="3" placeholder="Write Something...."></textarea>
+                    <div class="feed-card profile-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="profile-card-img" src="../images/faces/face3.jpg" alt="">
+                                <div class="profile-card-name">
+                                    <h4><%= userProfile.name %></h4>
+                                    <p>Designation of the person</p>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <p class="profile-description">Describe Yourself in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis
+                                    mauris convallis, dapibus justo a.</p>
+                            </div>
                         </div>
-                        <hr>
-                        <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+                        <div class="profile-card-details">
+                            <h4>Skills</h4>
+                            <div class="row">
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">HTML</h6>
+                                        <div class="circle-progress" data-value="0.9" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CSS</h5>
+                                        <div class="circle-progress" data-value="0.7" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">jQuery</h5>
+                                        <div class="circle-progress" data-value="0.5" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">JavaScript</h5>
+                                        <div class="circle-progress" data-value="0.3" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Boostrap</h5>
+                                        <div class="circle-progress" data-value="0.7" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Git</h5>
+                                        <div class="circle-progress" data-value="1.0" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Python</h5>
+                                        <div class="circle-progress" data-value="0.4" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                                <div class="card card-circle-progress col-md-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Java</h5>
+                                        <div class="circle-progress" data-value="0.1" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h4>Experiences</h4>
+                            <ul class="experiences">
+                                <li>
+                                    <h6>Exp 1</h6>
+                                    <p>Description</p>
+                                </li>
+                                <li>
+                                    <h6>Exp 1</h6>
+                                    <p>Description</p>
+                                </li>
+                                <li>
+                                    <h6>Exp 1</h6>
+                                    <p>Description</p>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+
                     </div>
-
-
+                    <br>
+                    <h4 class="posts-timeline">Posts Timeline</h4>
+                    <hr style="width: 65%;">
+                    
+                    <% for(var i = 0; i < userProfile.posts.length; i++) { %>
                     <div class="feed-card">
+                        <% var id = userProfile.posts[i]._id %>
                         <div class="feed-head row">
                             <img src="../images/faces/face2.jpg" class="col-md-1">
                             <div class="col-md-9" style="padding-top:2px;">
-                                <h1 class="row">Some Name</h1>
-                                <p class="row">Designation at bla bla</p>
+                                <h1 class="row"><a href="/profile/<%= userProfile._id %>"><%= userProfile.name %></a></h1>
+                                <p class="row"><%= userProfile.posts[i].date %></p>
                             </div>
+                            <% if(userProfile._id == userSession._id) { %>
+                            <button class="btn btn-danger del-post" id="dp<%= userProfile.posts[i]._id %>">DELETE</button> <% } %>
                         </div>
                         <div class="feed-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis mauris convallis, dapibus
-                                justo a, imperdiet magna. Maecenas tristique, eros nec posuere vestibulum, dui dolor tempor erat, nec venenatis ipsum dui sed mi. Duis lobortis molestie massa, id laoreet mi suscipit a. Donec varius pulvinar odio, consequat
-                                sagittis mi fringilla a. Sed ex felis, imperdiet et tincidunt non, aliquet nec lacus. Etiam iaculis finibus nulla vel cursus. Aliquam erat volutpat. Phasellus suscipit nulla vel diam elementum feugiat. Nam sem urna, pharetra
-                                sed arcu eu, porttitor pretium dui.</p>
+                            <p><%= userProfile.posts[i].body %></p>
                         </div>
                         <hr>
                         <div class="feed-footer row">
                             <div class="col-md-3"></div>
-                            <button class="col-md-2"><i class="fa fa-thumbs-up">&nbsp;Like</i></button>
+                            <span id="lc<%=id%>"><%=userProfile.posts[i].likes.length%></span>
+                            <% if(userProfile.posts[i].likes.indexOf(userSession._id) === -1) { %>
+                            <% var l = "LIKE" } else { %>
+                            <% var l = "UNLIKE" } %>
+                            <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up"><%=l%></i></button>
                             <div class="col-md-2"></div>
                             <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">&nbsp;Comment</i></button>
                             <div class="col-md-3"></div>
                         </div>
                         <div id="post-comment-area">
-                            <input type="text" name="comment" placeholder="Comment Here">
-                            <button type="submit" class="btn btn-primary">Comment</button>
+                            <input type="text" name="comment" placeholder="Comment Here" id="cs<%=id%>">
+                            <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
                         </div>
+                        <input type="text" class="form-control" placeholder="Comment here..." id="cs<%=id%>">
+                        <button class="btn btn-warning col-md-2 comment" id="c<%=id%>">COMMENT</button>
 
-                        <div class="feed-comments">
+                        <% for(var j = userProfile.posts[i].comments.length - 1; j >= 0 ; j--) { %>
+                        <div class="feed-comments" id="cd<%=id%>">
                             <div class="row">
                                 <img src="../images/faces/face2.jpg" class="col-sm-1">
                                 <div class="col-sm-9" style="padding-top:2px;">
-                                    <h1 class="row">Some Name</h1>
+                                    <h1 class="row"><a href="/profile/<%= userProfile.posts[i].comments[j].user._id %>"><%= userProfile.posts[i].comments[j].user.name %></a></h1>
                                     <p class="row">Designation at bla bla</p>
                                 </div>
                             </div>
                             <div class="feed-comments-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis mauris convallis, dapibus
-                                    justo a, imperdiet magna. </p>
+                                <p><%= userProfile.posts[i].comments[j].comment %></p>
                             </div>
+                            <% if(userProfile.posts[i].comments[j].user._id == userSession._id) { %>
+                            <button class="btn btn-danger del-comm" id="dc<%= userProfile.posts[i]._id %><%= userProfile.posts[i].comments[j]._id %>">DELETE</button> <% } %>
                         </div>
+                        <% } %>
                     </div>
-
-
-
+                    <% } %>
 
 
                 </div>
@@ -211,13 +307,22 @@
     <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="../node_modules/jquery-circle-progress/dist/circle-progress.min.js"></script>
     <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="../js/sidebar-icon.js"></script>
     <script src="../js/off-canvas.js"></script>
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
     <script src="../js/comments.js"></script>
-
+    <script src="../../js/profile.js"></script>
+    <script src="../../js/posts.js"></script>
+    <script>
+        $('.circle-progress').circleProgress({
+            fill: {
+                color: "#fff"
+            }
+        });
+    </script>
 </body>
 
 </html>

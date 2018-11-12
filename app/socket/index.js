@@ -57,7 +57,8 @@ var ioEvents = function(io) {
 								for(var i = 0; i < data.members.length; i++) {
 									members.push(ObjectId(data.members[i]));
 								}
-								var newRoom = new roomModel(members);
+								console.log("Members", members);
+								var newRoom = new roomModel({name: "", members: members});
 								newRoom.save(function(err, rdoc) {
 									console.log("New-room", rdoc);
 									socket.roomId = rdoc._id;

@@ -15,6 +15,22 @@ var roomModel = require("../models/rooms");
 router.get('/', function(req, res, next) {
     res.render('index');
 });
+/* GET alum_locator page. */
+router.get('/alum-locator', function(req, res, next) {
+    if(req.session.user) {
+        res.render('alum_locator');
+    } else {
+        res.redirect("/");
+    }
+});
+/* GET chat_room page. */
+router.get('/chat-room', function(req, res, next) {
+    if(req.session.user) {
+        res.render('chat_room');
+    } else {
+        res.redirect("/");
+    }
+});
 /* GET profile page. */
 router.get('/profile/:id', function(req, res, next) {
     if(req.session.user) {
@@ -28,11 +44,11 @@ router.get('/profile/:id', function(req, res, next) {
             }
         });
     } else {
-        res.redirect("/login");
+        res.redirect("/");
     }
 });
 /* GET posts page. */
-router.get('/posts', function(req, res, next) {
+router.get('/dashboard', function(req, res, next) {
 
     if(req.session.user) {
         postModel.find({})
@@ -41,17 +57,13 @@ router.get('/posts', function(req, res, next) {
                 .exec(function(err, docs) {
                     if(err) throw err;
                     console.log("the posts: ", docs);
-                    res.render('posts', { posts: docs, user: req.session.user });
+                    res.render('dashboard', { posts: docs, user: req.session.user });
                 });
     } else {
-        res.redirect("/login");
+        res.redirect("/");
     }
 });
 
-/* GET chat page. */
-router.get('/login', function(req, res, next) {
-    res.render('login');
-});
 
 router.get('/chat', function(req, res, next) {
     if(req.session.user) {
@@ -63,7 +75,7 @@ router.get('/chat', function(req, res, next) {
                     res.render('chat', { rooms: doc, userSession: req.session.user });
                 });
     } else {
-        res.redirect("/login");
+        res.redirect("/");
     }
 });
 

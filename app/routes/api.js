@@ -74,7 +74,7 @@ router.post('/new-like', function(req, res, next) {
     } else {
       doc.likes.splice(doc.likes.indexOf(req.session.user._id), 1);
     }
-    console.log("Length", ObjectId(req.session.user._id));
+    console.log("Length", req.body);
     doc.save(function(err, doc) {
       if(err) throw err;
       console.log(doc);

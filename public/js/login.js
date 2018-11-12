@@ -11,7 +11,7 @@ $(document).ready(function(){
         $.post("/api/login", data, function(data, status) {
             console.log(data);
             if(data.success) {
-                location.href = "/posts"; 
+                location.href = "/dashboard"; 
             } else {
                 $("#error").text(data.errorMsg);
             }
