@@ -4,7 +4,7 @@ $(document).ready(function(){
     var socket = io();
 
     function updateScroll(){
-        var element = document.getElementById("display-section");
+        var element = document.getElementById("chat-area");
         element.scrollTop = element.scrollHeight;
     }
 
@@ -36,16 +36,16 @@ $(document).ready(function(){
         console.log(data);
         var txt = ""
         for(var i = 0; i < data.length; i++) {
-            txt += "<div class=\"message\"><a href = '/profile/" + data[i].sender._id + "'>" + data[i].sender.name + "</a> : "+ data[i].body +"</div>"
+            txt += "<h6 class=\"message\"><img src=\"../images/faces/face2.jpg\" class=\"chat-headimage\"><a href = '/profile/" + data[i].sender._id + "'>" + data[i].sender.name + "</a></h6><p>" + data[i].body +"</p>"
         }
-        $("#display-section").html("");
-        $("#display-section").append(txt);
+        $("#chat-area").html("");
+        $("#chat-area").append(txt);
         updateScroll();
     });
     
     socket.on("add-message", function(data) {
         console.log(data.user);
-        $("#display-section").append("<div class=\"message\"><a href = '/profile/" + data.user._id + "'>" + data.user.name + "</a> : "+ data.msg +"</div>");
+        $("#chat-area").append("<h6 class=\"message\"><img src=\"../images/faces/face2.jpg\" class=\"chat-headimage\"><a href = '/profile/" + data.user._id + "'>" + data.user.name + "</a></h6><p>" + data.msg +"</p>");
         updateScroll();
     });
 

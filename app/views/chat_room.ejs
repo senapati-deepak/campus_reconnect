@@ -135,6 +135,10 @@
         <div class="container-fluid page-body-wrapper">
             <div class="row row-offcanvas row-offcanvas-right">
 
+                     <% for(var i = 0; i < userSession.institutes.length; i++) { %>
+                        <% var institute = userSession.institutes[i] %>
+                        <button class="btn btn-info workplace" id="<%=institute._id%>"><%=institute.name%></button>
+                    <% } %>
                 <div class="content-wrapper row">
 
                     <div class="col-md-2"></div>
@@ -143,37 +147,29 @@
                     <div class="chat-card col-md-3" style="overflow: auto;">
                         <h4 class="chat-card-heading">Messaging</h4>
                         <hr class="header-separator">
-                        <button class="chat-name-overview"><h5><img src="../images/faces/face2.jpg" class="chat-image">Some Name 1</h5></button>
-                        <hr>
-                        <button class="chat-name-overview"><h5><img src="../images/faces/face2.jpg" class="chat-image">Some Name 2</h5></button>
-                        <hr>
-                        <button class="chat-name-overview"><h5><img src="../images/faces/face2.jpg" class="chat-image">Some Name 3</h5></button>
-                        <hr>
-                        <button class="chat-name-overview"><h5><img src="../images/faces/face2.jpg" class="chat-image">Some Name 4</h5></button>
-                        <hr>
-                        <button class="chat-name-overview"><h5><img src="../images/faces/face2.jpg" class="chat-image">Some Name 5</h5></button>
-                        <hr>
+                        <div id="connection-list" class="col-md-4 col-lg-4 col-sm-12">
+                        <% for(var i = 0; i < iusers.length; i++) { %>
+                            <button class="chat-name-overview conn-btn" id="<%= userSession._id %><%= iusers[i]._id %>"><h5><img src="../images/faces/face2.jpg" class="chat-image"><%= iusers[i].name %></h5></button>
+                            <hr>
+                        <% } %>
+                        </div>
                     </div>
 
 
                     <div class="chat-card col-md-5">
-                        <h4 class="chat-card-heading">Chat Person's Name</h4>
+                        <h4 class="chat-card-heading"><span id="recipient"></span></h4>
                         <hr class="header-separator">
 
                         <div id="chat-area">
-                            <h6><img src="../images/faces/face2.jpg" class="chat-headimage">Person 1</h6>
-                            <p>The messages</p>
-                            <h6><img src="../images/faces/face2.jpg" class="chat-headimage">Person 2</h6>
-                            <p>The messages reply</p>
                         </div>
 
                         <hr style="border-color:rgb(180, 180, 180);">
                         <div class="form-group">
-                            <textarea class="form-control p-input" id="exampleTextarea" rows="2" placeholder="Write Something...."></textarea>
+                            <textarea class="form-control p-input" id="msg" rows="2" placeholder="Write Something...."></textarea>
                         </div>
                         <hr>
                         <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="send">SEND</button>
                     </div>
 
 
@@ -201,6 +197,9 @@
     <script src="../js/off-canvas.js"></script>
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/workplace.js"></script>
     <script>
         function updateScroll() {
             var element = document.getElementById("chat-area");

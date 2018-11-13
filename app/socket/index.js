@@ -61,9 +61,11 @@ var ioEvents = function(io) {
 								var newRoom = new roomModel({name: "", members: members});
 								newRoom.save(function(err, rdoc) {
 									console.log("New-room", rdoc);
+									if(socket.roomId)
+										socket.leave(socket.roomId);
 									socket.roomId = rdoc._id;
 									socket.join(socket.roomId);
-									io.to(socket.roomId).emit("load-msgs", []);
+									socket.emit("load-msgs", []);
 								});
 							} else {
 								socket.roomId = doc._id;
@@ -74,7 +76,7 @@ var ioEvents = function(io) {
 											.exec(function(err, docs) {
 												console.log("Messages", docs);
 												socket.join(socket.roomId);
-												io.to(socket.roomId).emit("load-msgs", docs);
+												socket.emit("load-msgs", docs);
 											});
 							}
 						});

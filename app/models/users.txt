@@ -54,30 +54,30 @@
         }]
     },
     {
-        "_id" : ObjectId("5be69a51248c5e10c567387a"),
-        "name" : "Deepak Senapati",
+        "name" : "Naina Panda",
         "dob" : "1/02/1983",
-        "email" : "dipu@mail.com",
+        "email" : "naina@mail.com",
         "contact" : "12345",
-        "password" : "dipu",
-        designation: "Student at CET BBSR",
+        "password" : "naina",
+        designation: "Student at IIIT BBSR",
         bio: "I am a good guy.",
         gender: "male",
-        institutes: [ObjectId("5be9bd88a049a3ba47efa411")],
+        institutes: [ObjectId("5be9bd88a049a3ba47efa412")],
         idetails: [{
             course: "BTech. in CSE",
             from: { month: "Aug", year: 2016 },
             to: { month: "May", year: 2020 }
         }],
         skills: [{
-            name: "Being disciplined",
-            score: 100
+            name: "Being polite",
+            score: 80
         }],
         workex: [{
-            title: "Freelancer",
+            title: "HR",
             from: { month: "May", year: 2018 },
             to: { month: "Jul", year: 2018 },
-            body: "Made sick money."
+            body: "Hired Sick People."
         }]
     }
+
 ]

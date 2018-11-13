@@ -86,12 +86,17 @@ router.get('/dashboard', function(req, res, next) {
 
 router.get('/chat', function(req, res, next) {
     if(req.session.user) {
-        roomModel.find({ $where: "this.members.length > 2" })
+        roomModel.find({ institute: ObjectId(req.session.institute) }, { $where: "this.members.length > 2" })
                 .populate("members", "name")
-                .exec(function(err, doc) {
+                .exec(function(err, rdocs) {
                     if(err) throw err;
-                    console.log(doc);
-                    res.render('chat', { rooms: doc, userSession: req.session.user });
+                    console.log(rdocs);
+                    userModel.find({ institutes: ObjectId(req.session.institute) , _id:  { $ne: ObjectId(req.session.user._id) } })
+                            .exec(function(err, udocs) {
+                                if(err) throw err;
+                                console.log(udocs);
+                                res.render('chat_room', { rooms: rdocs, iusers: udocs, userSession: req.session.user });
+                            });
                 });
     } else {
         res.redirect("/");
