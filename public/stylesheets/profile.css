@@ -156,7 +156,6 @@
     color: white;
     transform: rotateY(180deg);
     z-index: 1;
-<<<<<<< HEAD
   }
 
   #counter
@@ -177,6 +176,15 @@
    
     font-size:24px;
   }
-=======
-}
->>>>>>> 1bf7304e382149877e4b468ff71b5bd95e68606e
+  .open-button {
+    background-color:transparent;
+    
+    padding-right:20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+  }
