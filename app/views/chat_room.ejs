@@ -27,26 +27,7 @@
                     <div class="content-wrapper row">
 
 
-                        <div class="col-md-3">
-                            <% for(var i = 0; i < userSession.institutes.length; i++) { %>
-                                <% var institute = userSession.institutes[i] %>
-                                    <div class="workplace workplace-card" id="<%=institute._id%>">
-                                        <h5 class="workplace-head">
-                                            <%=institute.name%>
-                                        </h5>
-                                        <a href="<%=institute.website%>" class="workspace-details">
-                                            <%=institute.website%>
-                                        </a>
-                                        <p class="workspace-details">Email:
-                                            <%=institute.email%>
-                                        </p>
-                                        <p class="workspace-details">Contact:
-                                            <%=institute.contact%>
-                                        </p>
-                                    </div>
-                                    <% } %>
-
-                        </div>
+                        <%- include partials/workspace.ejs %>
 
                         <div class="chat-card col-md-3" style="overflow: auto;">
                             <h4 class="chat-card-heading">Messaging</h4>
