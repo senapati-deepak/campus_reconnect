@@ -179,13 +179,21 @@
 
 
   .open-button {
-      background: transparent;
-      padding: 16px 20px;
-      border: none;
-      cursor: pointer;
-      opacity: 0.8;
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 100px;
+    background-color:transparent;
+    
+    padding-right:20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+  }
+
+  .tick-button{
+    background-color:transparent;
+    width: 120px; 
+    cursor: pointer; 
+    border: none;
   }

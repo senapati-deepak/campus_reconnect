@@ -40,7 +40,36 @@
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Meet for alumni interaction.",
-        institute: ObjectId("5be9bd88a049a3ba47efa412"),
-        poster: ObjectId("5bdea39d406abab46426fbee")
-    }
+        institute: ObjectId("5be9bd88a049a3ba47efa412")
+    },
+    {
+        name: "Career Guidance Talk",
+        venue: "CET Bhubaneswar",
+        date: "24/12/2018",
+        startTime: "2018-03-10T10:00",
+        endTime: "2018-03-10T11:00",
+        isOver: false,
+        content: "Guiding students through career prospectives",
+        institute: ObjectId("5be9bd88a049a3ba47efa411")
+    },
+     {
+        name: "Big-data Project discussion",
+        venue: "CET Bhubaneswar",
+        date: "22/12/2018",
+        startTime: "2018-03-10T10:00",
+        endTime: "2018-03-10T11:00",
+        isOver: false,
+        content: "Assigning big-data projects to students",
+        institute: ObjectId("5be9bd88a049a3ba47efa411")
+    },
+    {
+        name: "Alumni Meet",
+        venue: "IIT Bhubaneswar",
+        date: "21/10/2018",
+        startTime: "2018-03-10T10:00",
+        endTime: "2018-03-10T11:00",
+        isOver: false,
+        content: "Meet for alumni interaction.",
+        institute: ObjectId("5be9bd88a049a3ba47efa412")
+    },
 ]
