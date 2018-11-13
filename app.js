@@ -43,6 +43,7 @@ require("./app/models/rooms");
 require("./app/models/institutes");
 require("./app/models/messages");
 require("./app/models/posts");
+require("./app/models/events");
 
 
 app.use(function(req, res, next) {

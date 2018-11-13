@@ -1,0 +1,42 @@
+[
+    {
+        name: "Alumni Meet",
+        venue: "CET Bhubaneswar",
+        date: "22/10/2018",
+        startTime: "2018-02-10T10:00",
+        endTime: "2018-02-10T11:00",
+        isOver: false,
+        content: "ALumni of 2014 batch are welcome.",
+        institute: ObjectId("5be9bd88a049a3ba47efa411")
+    },
+    {
+        name: "Skill and Entrepreneurship Meet",
+        venue: "IIT Bhubaneswar",
+        date: "26/10/2018",
+        startTime: "2018-03-10T10:00",
+        endTime: "2018-03-10T11:00",
+        isOver: false,
+        content: "Meet for skill awareness.",
+        institute: ObjectId("5be9bd88a049a3ba47efa412")
+    },
+    {
+        name: "Alumni Relation Meet",
+        venue: "CET Bhubaneswar",
+        date: "26/10/2018",
+        startTime: "2018-03-10T10:00",
+        endTime: "2018-03-10T11:00",
+        isOver: false,
+        content: "Meet for promoting alumni relation",
+        institute: ObjectId("5be9bd88a049a3ba47efa411")
+    },
+    {
+        name: "Faculty Alumni Interaction",
+        venue: "IIT Bhubaneswar",
+        date: "26/10/2018",
+        startTime: "2018-03-10T10:00",
+        endTime: "2018-03-10T11:00",
+        isOver: false,
+        content: "Meet for alumni interaction.",
+        institute: ObjectId("5be9bd88a049a3ba47efa412")
+    }
+]
