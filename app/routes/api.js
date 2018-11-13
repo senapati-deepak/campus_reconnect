@@ -11,6 +11,7 @@ var ObjectId = mongoose.Types.ObjectId;
 
 var postModel = require("../models/posts");
 var userModel = require("../models/users");
+var eventModel = require("../models/events");
 
 /* Importing all the controllers. */ 
 
@@ -25,6 +26,12 @@ router.post('/login', function(req, res, next) {
   var password = req.body.password;
   console.log("email", email);
   console.log("password", password);
+
+  if((email === "cetadmin@mail.com") && (password === "cet")) {
+    req.session.user = "admin";
+    req.session.institute = "5be9bd88a049a3ba47efa411";
+    res.json({ success: true, errorMsg: "", admin: true });
+  } else {
   userModel.findOne({ email: email})
                   .populate('institutes')
                   .exec(function(err, doc) {
@@ -42,6 +49,7 @@ router.post('/login', function(req, res, next) {
                       }
                     }
                   });
+  }
 });
 
 
@@ -65,6 +73,34 @@ router.post('/new-post', function(req, res, next) {
   });
 });
 
+router.post('/event-response', function(req, res, next) {
+  var eid = req.body.eid;
+  var aor = req.body.aor;
+  if(aor === "a") {
+    eventModel.findByIdAndUpdate(eid, {isApproved: true}, function(err, doc) {
+      if(err) throw err;
+      res.send("Event accepted successfully!"); 
+    });
+  } else {
+    eventModel.deleteOne({_id: ObjectId(eid)}, function(err, doc) {
+      if(err) throw err;
+      res.send("Event deleted successfully!"); 
+    });
+  }
+});
+
+router.post('/create-event', function(req, res, next) {
+  var data = req.body;
+  data["institute"] = ObjectId(req.session.institute);
+  if(req.session.user !== "admin")
+    data["poster"] = req.session.user;
+  var newEvent = new eventModel(data);
+  newEvent.save(function(err, doc) {
+    if(err) throw err;
+    console.log(doc);
+    res.json(doc);
+  });
+});
 
 
 router.post('/new-like', function(req, res, next) {

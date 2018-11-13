@@ -12,6 +12,7 @@ var postModel = require("../models/posts");
 var userModel = require("../models/users");
 var roomModel = require("../models/rooms");
 var eventModel = require("../models/events");
+var instituteModel = require("../models/institutes");
 
 
 
@@ -27,34 +28,45 @@ router.get('/alum-locator', function(req, res, next) {
         res.redirect("/");
     }
 });
-/* GET events page. */
-router.get('/events', function(req, res, next) {
-    if(req.session.user) {
-        eventModel.find({ institute: ObjectId(req.session.institute) }, function(err, docs) {
-            if(err) throw err;
-            console.log(docs);
-            res.render('events', { events: docs, userSession: req.session.user });;
+/* GET admin-page page. */
+router.get('/institute/:id', function(req, res, next) {
+    if (req.session.user) {
+        instituteModel.findById(req.params.id)
+            .exec(function(err, iDoc) {
+                if (!iDoc) {
+                    res.send("No Such Institute Found!");
+                } else {
+                    postModel.find({ institute: ObjectId(req.params.id) })
+                            .exec(function(err, pdocs) {
+                                if(err) throw err;
+                                console.log(pdocs);
+                                eventModel.find({ institute: ObjectId(req.params.id) })
+                                        .populate("poster", "name")
+                                        .exec(function(err, edocs) {
+                                if(err) throw err;
+                                console.log(edocs);
+                                res.render("institute", { institute: iDoc, userSession: req.session.user, curri: req.session.institute, posts: pdocs, events: edocs });
+                            });
+                    });
+                }
         });
     } else {
         res.redirect("/");
     }
 });
 /* GET events page. */
-router.get('/admin-profile', function(req, res, next) {
-    if (req.session.user) {
-        res.render('admin-profile');
+router.get('/events', function(req, res, next) {
+    if(req.session.user) {
+        eventModel.find({ institute: ObjectId(req.session.institute) }, function(err, docs) {
+            if(err) throw err;
+            console.log(docs);
+            res.render('events', { events: docs, userSession: req.session.user, curri: req.session.institute });;
+        });
     } else {
         res.redirect("/");
     }
 });
-/* GET chat_room page. */
-router.get('/chat-room', function(req, res, next) {
-    if (req.session.user) {
-        res.render('chat_room');
-    } else {
-        res.redirect("/");
-    }
-});
+
 /* GET profile page. */
 router.get('/profile/:id', function(req, res, next) {
     if (req.session.user) {
@@ -81,7 +93,7 @@ router.get('/dashboard', function(req, res, next) {
             .exec(function(err, docs) {
                 if (err) throw err;
                 console.log("the posts: ", docs);
-                res.render('dashboard', { posts: docs, userSession: req.session.user });
+                res.render('dashboard', { posts: docs, userSession: req.session.user, curri: req.session.institute });
             });
     } else {
         res.redirect("/");
@@ -100,7 +112,7 @@ router.get('/chat', function(req, res, next) {
                     .exec(function(err, udocs) {
                         if (err) throw err;
                         console.log(udocs);
-                        res.render('chat_room', { rooms: rdocs, iusers: udocs, userSession: req.session.user });
+                        res.render('chat_room', { rooms: rdocs, iusers: udocs, userSession: req.session.user, curri: req.session.institute });
                     });
             });
     } else {

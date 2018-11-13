@@ -11,7 +11,10 @@ $(document).ready(function(){
         $.post("/api/login", data, function(data, status) {
             console.log(data);
             if(data.success) {
-                location.href = "/dashboard"; 
+                if(data.admin === true)
+                    location.href = "/institute/5be9bd88a049a3ba47efa411";
+                else
+                    location.href = "/dashboard"; 
             } else {
                 $("#error").text(data.errorMsg);
             }

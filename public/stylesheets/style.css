@@ -648,6 +648,10 @@ pre code {
     width: 100%;
 }
 
+.activeWorkplace {
+    box-shadow: 6px 6px 8px rgb(57, 163, 250);
+}
+
 .workplace-card {
     width: 80%;
     height: 150px;
@@ -11850,7 +11854,7 @@ body.avgrund-active {
 
 #ui-slider-custom .noUi-base .noUi-origin .noUi-handle:before,
 #ui-slider-custom .noUi-base .noUi-origin .noUi-handle:after {
-    contet: "";
+    content: "";
     top: 8px;
 }
 

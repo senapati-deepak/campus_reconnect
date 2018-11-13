@@ -17,66 +17,8 @@
 
 <body class="horizontal-menu">
     <div class=" container-scroller">
-            <button class="open-button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
-                </i></button>
-
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Create Event</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="row">
-                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="ename">
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="contact">Venue</label>
-                                    <input type="text" class="form-control" id="evenue">
-                                </div>      
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="email">From</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="efrom">
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="contact">To</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="eto">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="city">Content</label>
-                                    <textarea rows="5" class="form-control"  id="econtent"></textarea>
-                                </div>
-                                
-                            </div>
-                            
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn" id="ecreate">CREATE</button>
-                    </div>
-                    </div>
-                </div>
-            </div>
-     <!-- <button id="event-button">   
-     <i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
-    </i>
-    </button>
-    <form id="eventform">
-            <b>First Name:</b> <input type="text" name="firstName">
-            <b>Last Name: </b><input type="text" name="lastName">
-             <button type="button" id="submit">Submit</button>
-          </form> -->
         <!-- partial:../partials/_navbar.html -->
+            
         <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-left navbar-brand-wrapper">
                 <a class="navbar-brand brand-logo" href="#">Campus ReConnect</a>
@@ -192,6 +134,57 @@
             </div>
         </nav>
 
+        <button class="open-button" data-toggle="modal" data-target="#newEvent"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
+                </i></button>
+
+            <div id="newEvent" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Event</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="ename">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contact">Venue</label>
+                                    <input type="text" class="form-control" id="evenue">
+                                </div>      
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="email">From</label>
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="efrom">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contact">To</label>
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="eto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="city">Content</label>
+                                    <textarea rows="5" class="form-control"  id="econtent"></textarea>
+                                </div>
+                                
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info createEvent" id="acellcreate">CREATE</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <div class="row row-offcanvas row-offcanvas-right">
@@ -263,7 +256,7 @@
                                     </div>
                         
                     <hr style="width: 65%;">
-                    <div class="profile-info-box" style="background-color: white;">
+                    <!--<div class="profile-info-box" style="background-color: white;">
                             <h3 class="page-title">Applicant Details</h3>
                             <div class="row mb-2">
                                 <div class="col-md-10" style="padding-top:2px;">
@@ -305,9 +298,116 @@
                                 </div>
                             </div>
                         </div> 
-
+                    </div>-->
                     
+                <% for(var i = 0; i < posts.length; i++) { %>
+                    <div class="feed-card">
+                        <% var id = posts[i]._id %>
+                            <div class="feed-head row">
+                                <img src="../images/faces/face2.jpg" class="col-md-1">
+                                <div class="col-md-9" style="padding-top:2px;">
+                                    <h1 class="row">
+                                        <a href="/profile/<%= posts[i].user._id %>">
+                                            <%= posts[i].user.name %>
+                                        </a>
+                                    </h1>
+                                    <p class="row">
+                                        <%= posts[i].date %>
+                                    </p>
+                                </div>
+                                <% if((posts[i].user._id == userSession._id) || (userSession === "admin")) { %>
+                                    <button class="btn btn-danger del-post" id="dp<%= posts[i]._id %>"><i class="ti-trash"></i></button>
+                                    <% } %>
+                            </div>
+                            <div class="feed-body">
+                                <p>
+                                    <%= posts[i].body %>
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="feed-footer row">
+                                <div class="col-md-3"></div>
+                                <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
+                                <!-- <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
+                                    <% var l = "LIKE" } else { %>
+                                        <% var l = "Unlike" } %> 
+                                -->
+                                            <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up">LIKES</i></button>
+                                            <div class="col-md-2"></div>
+                                            <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">Comment</i></button>
+                                            <div class="col-md-3"></div>
+                            </div>
+                            <div id="post-comment-area">
+                                <input type="text" name="comment" id="cs<%=id%>" placeholder="Comment Here">
+                                <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
+                            </div>
+                            <div id="cd<%=id%>">
+                                <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
+                                    <div class="feed-comments">
+                                        <div class="row">
+                                            <img src="../images/faces/face2.jpg" class="col-sm-1">
+                                            <div class="col-sm-9" style="padding-top:2px;">
+                                                <h1 class="row">
+                                                    <a href="/profile/<%= posts[i].comments[j].user._id %>">
+                                                        <%= posts[i].comments[j].user.name %>
+                                                    </a>
+                                                </h1>
+                                                <p class="row">Designation at bla bla</p>
+                                            </div>
+                                            <% if((posts[i].comments[j].user._id == userSession._id)  || (userSession === "admin")) { %>
+                                                <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>"><i class="ti-trash"></i></button>
+                                                <% } %>
+                                        </div>
+                                        <div class="feed-comments-body">
+                                            <p>
+                                                <%= posts[i].comments[j].comment %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                            </div>
+                    </div>
+                    <% } %>
 
+
+                    <% for(var i = 0; i < events.length; i++) { %>
+                        <% if(events[i].isApproved == false) {%> 
+                        <div class="feed-card">
+                        <% var id = events[i]._id %>
+                            <div class="feed-head row">
+                                <img src="../images/faces/face2.jpg" class="col-md-1">
+                                <div class="col-md-9" style="padding-top:2px;">
+                                    <h1 class="row">
+                                        <%= events[i].poster.name %>
+                                    </h1>
+                                    <p class="row">
+                                        <%= events[i].date %>
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <div class="feed-body">
+                                <p>
+                                    <%= events[i].content %>
+                                </p>
+                                <p>
+                                    <b>Venue:</b> <%= events[i].venue %>
+                                </p>
+                                <% var temp = events[i].startTim; var from = new Date(temp);  %>
+                                <% var temp = events[i].endTime; var to = new Date(temp);  %>
+                                <% var fday = from.getDate(); var fmonth = from.getMonth(); var ftime = from.getTime(); %>
+                                <% var tday = to.getDate(); var tmonth = to.getMonth(); var ttime = to.getTime(); %>
+                                <p>
+                                    <b> From </b> <%= events[i].startTime %> <b>To</b> <%= events[i].endTime %>
+                                </p>
+                                <button class="btn btn-success response" id="a<%= events[i]._id %>">ACCEPT</button>
+                                <button class="btn btn-danger response" id="r<%= events[i]._id %>">REJECT</button>
+                            </div>
+
+                            
+                        </div>
+                    <% } %>
+                    <% } %>
 
 
 
@@ -335,7 +435,9 @@
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
     <script src="../js/comments.js"></script>
-    <script src="./js/counter.js"></script>
+    <script src="../js/counter.js"></script>
+    <script src="../js/posts.js"></script>
+    <script src="../js/events.js"></script>
   
 
 </body>

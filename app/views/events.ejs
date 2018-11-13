@@ -62,7 +62,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn" id="ecreate">REQUEST</button>
+                        <button type="submit" class="btn createEvent" id="usercreate">REQUEST</button>
                     </div>
                     </div>
                 </div>
@@ -82,6 +82,7 @@
                                 <!-- <div class="feed-card profile-card" > -->
                                 <% for(var i = 0; i < events.length - 1; i++) { %>
                                     <div class="row col-sm-7">
+                                    <% if( events[i].isApproved == true) { %>
                                         <div class="col-md-6">
                                             <div class="flip-card">
                                                 <div class="flip-card-inner">
@@ -111,6 +112,8 @@
                                             </div>
 
                                         </div>
+                                    <% } %>
+                                    <% if( events[i + 1].isApproved == true) { %>
                                         <div class="col-md-6">
                                             <div class="flip-card">
                                                 <div class="flip-card-inner">
@@ -137,6 +140,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    <% } %>
                                     </div>
 
                                     <div class="col-sm-1"></div>
@@ -172,6 +176,7 @@
             <script src="../js/misc.js"></script>
             <script src="../js/comments.js"></script>
             <script src="./js/workplace.js"></script>
+            <script src="./js/events.js"></script>
 
 </body>
 

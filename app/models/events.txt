@@ -7,7 +7,8 @@
         endTime: "2018-02-10T11:00",
         isOver: false,
         content: "ALumni of 2014 batch are welcome.",
-        institute: ObjectId("5be9bd88a049a3ba47efa411")
+        institute: ObjectId("5be9bd88a049a3ba47efa411"),
+        poster: ObjectId("5bdea39d406abab46426fbee")
     },
     {
         name: "Skill and Entrepreneurship Meet",
@@ -17,7 +18,8 @@
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Meet for skill awareness.",
-        institute: ObjectId("5be9bd88a049a3ba47efa412")
+        institute: ObjectId("5be9bd88a049a3ba47efa412"),
+        poster: ObjectId("5bdea39d406abab46426fbee")
     },
     {
         name: "Alumni Relation Meet",
@@ -27,7 +29,8 @@
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Meet for promoting alumni relation",
-        institute: ObjectId("5be9bd88a049a3ba47efa411")
+        institute: ObjectId("5be9bd88a049a3ba47efa411"),
+        poster: ObjectId("5bdea39d406abab46426fbee")
     },
     {
         name: "Faculty Alumni Interaction",
@@ -37,6 +40,7 @@
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Meet for alumni interaction.",
-        institute: ObjectId("5be9bd88a049a3ba47efa412")
+        institute: ObjectId("5be9bd88a049a3ba47efa412"),
+        poster: ObjectId("5bdea39d406abab46426fbee")
     }
 ]
