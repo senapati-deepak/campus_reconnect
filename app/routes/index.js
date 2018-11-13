@@ -20,15 +20,15 @@ router.get('/', function(req, res, next) {
 });
 /* GET alum_locator page. */
 router.get('/alum-locator', function(req, res, next) {
-    if(req.session.user) {
-        res.render('alum_locator');
+    if (req.session.user) {
+        res.render('alum_locator', { userSession: req.session.user });
     } else {
         res.redirect("/");
     }
 });
 /* GET events page. */
 router.get('/events', function(req, res, next) {
-    if(req.session.user) {
+    if (req.session.user) {
         res.render('events');
     } else {
         res.redirect("/");
@@ -36,7 +36,7 @@ router.get('/events', function(req, res, next) {
 });
 /* GET events page. */
 router.get('/admin-profile', function(req, res, next) {
-    if(req.session.user) {
+    if (req.session.user) {
         res.render('admin-profile');
     } else {
         res.redirect("/");
@@ -44,7 +44,7 @@ router.get('/admin-profile', function(req, res, next) {
 });
 /* GET chat_room page. */
 router.get('/chat-room', function(req, res, next) {
-    if(req.session.user) {
+    if (req.session.user) {
         res.render('chat_room');
     } else {
         res.redirect("/");
@@ -52,16 +52,16 @@ router.get('/chat-room', function(req, res, next) {
 });
 /* GET profile page. */
 router.get('/profile/:id', function(req, res, next) {
-    if(req.session.user) {
+    if (req.session.user) {
         userModel.findById(req.params.id)
-        .populate({ path: "posts", populate: {path: "comments.user"} })
-        .exec(function(err, userDoc) {
-            if(!userDoc) {
-                res.send("No Such User Found!");
-            } else {
-                res.render("profile", { userProfile: userDoc, userSession: req.session.user });
-            }
-        });
+            .populate({ path: "posts", populate: { path: "comments.user" } })
+            .exec(function(err, userDoc) {
+                if (!userDoc) {
+                    res.send("No Such User Found!");
+                } else {
+                    res.render("profile", { userProfile: userDoc, userSession: req.session.user });
+                }
+            });
     } else {
         res.redirect("/");
     }
@@ -69,15 +69,15 @@ router.get('/profile/:id', function(req, res, next) {
 /* GET posts page. */
 router.get('/dashboard', function(req, res, next) {
 
-    if(req.session.user) {
+    if (req.session.user) {
         postModel.find({ institute: ObjectId(req.session.institute) })
-                .populate({ path: 'user' })
-                .populate({ path: 'comments.user' })
-                .exec(function(err, docs) {
-                    if(err) throw err;
-                    console.log("the posts: ", docs);
-                    res.render('dashboard', { posts: docs, user: req.session.user });
-                });
+            .populate({ path: 'user' })
+            .populate({ path: 'comments.user' })
+            .exec(function(err, docs) {
+                if (err) throw err;
+                console.log("the posts: ", docs);
+                res.render('dashboard', { posts: docs, userSession: req.session.user });
+            });
     } else {
         res.redirect("/");
     }
@@ -85,19 +85,19 @@ router.get('/dashboard', function(req, res, next) {
 
 
 router.get('/chat', function(req, res, next) {
-    if(req.session.user) {
+    if (req.session.user) {
         roomModel.find({ institute: ObjectId(req.session.institute) }, { $where: "this.members.length > 2" })
-                .populate("members", "name")
-                .exec(function(err, rdocs) {
-                    if(err) throw err;
-                    console.log(rdocs);
-                    userModel.find({ institutes: ObjectId(req.session.institute) , _id:  { $ne: ObjectId(req.session.user._id) } })
-                            .exec(function(err, udocs) {
-                                if(err) throw err;
-                                console.log(udocs);
-                                res.render('chat_room', { rooms: rdocs, iusers: udocs, userSession: req.session.user });
-                            });
-                });
+            .populate("members", "name")
+            .exec(function(err, rdocs) {
+                if (err) throw err;
+                console.log(rdocs);
+                userModel.find({ institutes: ObjectId(req.session.institute), _id: { $ne: ObjectId(req.session.user._id) } })
+                    .exec(function(err, udocs) {
+                        if (err) throw err;
+                        console.log(udocs);
+                        res.render('chat_room', { rooms: rdocs, iusers: udocs, userSession: req.session.user });
+                    });
+            });
     } else {
         res.redirect("/");
     }

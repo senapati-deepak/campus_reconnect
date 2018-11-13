@@ -7,7 +7,7 @@
     background-color: white;
     border: 1px solid aliceblue;
     box-shadow: 5px 5px 8px rgb(190, 188, 188);
-    height: 85%;
+    height: 550px;
     padding: 0px !important;
 }
 
@@ -48,7 +48,7 @@ h5 {
     overflow: auto;
 }
 
-#exampleTextarea {
+.exampleTextarea {
     border: none;
     background-color: white;
     overflow: hidden;
