@@ -17,6 +17,65 @@
 
 <body class="horizontal-menu">
     <div class=" container-scroller">
+            <button class="open-button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
+                </i></button>
+
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Event</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="ename">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contact">Venue</label>
+                                    <input type="text" class="form-control" id="evenue">
+                                </div>      
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="email">From</label>
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="efrom">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contact">To</label>
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="eto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="city">Content</label>
+                                    <textarea rows="5" class="form-control"  id="econtent"></textarea>
+                                </div>
+                                
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn" id="ecreate">CREATE</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+     <!-- <button id="event-button">   
+     <i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
+    </i>
+    </button>
+    <form id="eventform">
+            <b>First Name:</b> <input type="text" name="firstName">
+            <b>Last Name: </b><input type="text" name="lastName">
+             <button type="button" id="submit">Submit</button>
+          </form> -->
         <!-- partial:../partials/_navbar.html -->
         <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-left navbar-brand-wrapper">
@@ -266,7 +325,6 @@
             </div>
         </div>
     </div>
-
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -278,6 +336,7 @@
     <script src="../js/misc.js"></script>
     <script src="../js/comments.js"></script>
     <script src="./js/counter.js"></script>
+  
 
 </body>
 
