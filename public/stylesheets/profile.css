@@ -188,3 +188,10 @@
     right: 0;
     width: 120px;
   }
+
+  .tick-button{
+    background-color:transparent;
+    width: 120px; 
+    cursor: pointer; 
+    border: none;
+  }
