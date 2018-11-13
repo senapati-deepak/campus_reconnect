@@ -29,17 +29,12 @@ router.get('/alum-locator', function(req, res, next) {
 });
 /* GET events page. */
 router.get('/events', function(req, res, next) {
-<<<<<<< Updated upstream
-    if (req.session.user) {
-        res.render('events');
-=======
     if(req.session.user) {
         eventModel.find({ institute: ObjectId(req.session.institute) }, function(err, docs) {
             if(err) throw err;
             console.log(docs);
             res.render('events', { events: docs, userSession: req.session.user });;
         });
->>>>>>> Stashed changes
     } else {
         res.redirect("/");
     }
