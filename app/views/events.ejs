@@ -20,175 +20,108 @@
         <!-- partial:../partials/_navbar.html -->
         <%- include partials/nav.ejs %>
 
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <div class="row row-offcanvas row-offcanvas-right">
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <div class="row row-offcanvas row-offcanvas-right">
 
-                <div class="content-wrapper">
-                <% for(var i = 0; i < userSession.institutes.length; i++) { %>
-                    <% var institute = userSession.institutes[i] %>
-                    <button class="btn btn-info workplace" id="<%=institute._id%>"><%=institute.name%></button>
-                <% } %>
-                    <!-- <div class="feed-card profile-card" > -->
-                    <% for(var i = 0; i < events.length - 1; i++) { %>
-                    <div class="row" style="margin-left: 100px;">
-                        <div class="col-md-4" style="padding-left: 260px;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
-                                    </div>
-                                    <div class="flip-card-back">
-                                    
-                                    <h4><%= events[i].name%></h4> 
-                                    <p><%= events[i].content %></p> 
-                                    <p>Venue: <%= events[i].venue%></p> 
-                                    <p>Starts: <%= events[i].startTime%></p> 
-                                    <p>Ends: <%= events[i].endTime%></p>
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <%- include partials/workspace.ejs %>
 
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-4" style="padding-left: 270px;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
-                                    </div>
-                                    <div class="flip-card-back">
-                                    <h4><%= events[i + 1].name%></h4> 
-                                    <p><%= events[i + 1].content %></p> 
-                                    <p>Venue: <%= events[i + 1].venue%></p> 
-                                    <p>Starts: <%= events[i + 1].startTime%></p> 
-                                    <p>Ends: <%= events[i + 1].endTime%></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <% } %>
-                    
-                    <!-- <br>
-                    <h4 class="page-title" style="margin-left: 18%;">Our Statistics</h4>
-                    <hr style="width: 65%;">
-                    <div class="profile-info-box" style="background-color: white;">
-                            <h3 class="page-title">Applicant Details</h3>
-                            <div class="row mb-2">
-                                <div class="col-md-10" style="padding-top:2px;">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <!-- <h5 class="card-title">Basic validation</h5> -->
-                                            <!-- <form class="cmxform" id="commentForm" method="get" action="">
-                                                <fieldset>
-                                                    <div class="form-group">
-                                                        <label for="cfirst">First Name </label>
-                                                        <input id="cfirst" class="form-control" name="first" minlength="2" type="text" required>
+                                <!-- <div class="feed-card profile-card" > -->
+                                <% for(var i = 0; i < events.length - 1; i++) { %>
+                                    <div class="row col-sm-7">
+                                        <div class="col-md-6">
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="clast">Last Name </label>
-                                                        <input id="clast" class="form-control" name="last" minlength="2" type="text" required>
+                                                    <div class="flip-card-back">
+
+                                                        <h4>
+                                                            <%= events[i].name%>
+                                                        </h4>
+                                                        <p>
+                                                            <%= events[i].content %>
+                                                        </p>
+                                                        <p>Venue:
+                                                            <%= events[i].venue%>
+                                                        </p>
+                                                        <p>Starts:
+                                                            <%= events[i].startTime%>
+                                                        </p>
+                                                        <p>Ends:
+                                                            <%= events[i].endTime%>
+                                                        </p>
+
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="cemail">E-Mail </label>
-                                                        <input id="cemail" class="form-control" type="email" minlength="2" name="email" required>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
                                                     </div>
-                                                    
-                                                    <div class="form-group">
-                                                        <label for="cprogram">Program</label>
-                                                        <input id="cprogram" class="form-control" type="text" minlength="2" name="program" required>
+                                                    <div class="flip-card-back">
+                                                        <h4>
+                                                            <%= events[i + 1].name%>
+                                                        </h4>
+                                                        <p>
+                                                            <%= events[i + 1].content %>
+                                                        </p>
+                                                        <p>Venue:
+                                                            <%= events[i + 1].venue%>
+                                                        </p>
+                                                        <p>Starts:
+                                                            <%= events[i + 1].startTime%>
+                                                        </p>
+                                                        <p>Ends:
+                                                            <%= events[i + 1].endTime%>
+                                                        </p>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="cbranch">Branch </label>
-                                                        <input id="cbranch" class="form-control" type="text"  name="branch">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="cyear">Graduation Year </label>
-                                                        <input id="cyear" class="form-control" type="number" minlength="4" name="number" min="1950" max="2050" required>
-                                                    </div>
-    
-                                                    <input class="btn btn-primary" type="submit" value="Add Member">
-                                                </fieldset>
-                                            </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>  -->
 
-                    <!-- <div class="stats-body">
-                        <div class="feed-head row">
-                            <img src="../images/faces/face2.jpg" class="col-md-1">
-                            <div class="col-md-9" style="padding-top:2px;">
-                                <h1 class="row">Some Name</h1>
-                                <p class="row">Designation at bla bla</p>
-                            </div>
-                        </div>
-                        <div class="feed-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis mauris convallis, dapibus
-                                justo a, imperdiet magna. Maecenas tristique, eros nec posuere vestibulum, dui dolor tempor erat, nec venenatis ipsum dui sed mi. Duis lobortis molestie massa, id laoreet mi suscipit a. Donec varius pulvinar odio, consequat
-                                sagittis mi fringilla a. Sed ex felis, imperdiet et tincidunt non, aliquet nec lacus. Etiam iaculis finibus nulla vel cursus. Aliquam erat volutpat. Phasellus suscipit nulla vel diam elementum feugiat. Nam sem urna, pharetra
-                                sed arcu eu, porttitor pretium dui.</p>
-                        </div>
-                        <hr>
-                        <div class="feed-footer row">
-                            <div class="col-md-3"></div>
-                            <button class="col-md-2"><i class="fa fa-thumbs-up">&nbsp;Like</i></button>
-                            <div class="col-md-2"></div>
-                            <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">&nbsp;Comment</i></button>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div id="post-comment-area">
-                            <input type="text" name="comment" placeholder="Comment Here">
-                            <button type="submit" class="btn btn-primary">Comment</button>
+                                    <div class="col-sm-1"></div>
+
+                                    <br>
+                                    <% } %>
+
+
                         </div>
 
-                        <div class="feed-comments">
-                            <div class="row">
-                                <img src="../images/faces/face2.jpg" class="col-sm-1">
-                                <div class="col-sm-9" style="padding-top:2px;">
-                                    <h1 class="row">Some Name</h1>
-                                    <p class="row">Designation at bla bla</p>
-                                </div>
-                            </div>
-                            <div class="feed-comments-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis mauris convallis, dapibus
-                                    justo a, imperdiet magna. </p>
-                            </div>
-                        </div>
-                    </div> -->
 
 
-
-
-
-                </div>
-
-
-                <footer class="footer">
-                    <div class="container-fluid clearfix">
-                        <span class="float-right">
-                        <a href="#">Flying Neurons</a> &copy; 2018
-                    </span>
                     </div>
-                </footer>
-            </div>
-        </div>
-    </div>
 
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-    <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../js/sidebar-icon.js"></script>
-    <script src="../js/off-canvas.js"></script>
-    <script src="../js/hoverable-collapse.js"></script>
-    <script src="../js/misc.js"></script>
-    <script src="../js/comments.js"></script>
-    <script src="./js/workplace.js"></script>
+                    <footer class="footer">
+                        <div class="container-fluid clearfix">
+                            <span class="float-right">
+                                <a href="#">Flying Neurons</a> &copy; 2018
+                            </span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+            <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+            <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+            <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+            <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+            <script src="../js/sidebar-icon.js"></script>
+            <script src="../js/off-canvas.js"></script>
+            <script src="../js/hoverable-collapse.js"></script>
+            <script src="../js/misc.js"></script>
+            <script src="../js/comments.js"></script>
+            <script src="./js/workplace.js"></script>
 
 </body>
 
