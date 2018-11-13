@@ -652,14 +652,14 @@ pre code {
     width: 80%;
     height: 150px;
     margin: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 6px 6px 8px rgb(190, 188, 188);
     text-align: center;
     cursor: pointer;
-    transition: box-shadow 0.2s ease-in; 
+    transition: box-shadow 0.2s ease-in;
 }
 
 .workplace-card:hover {

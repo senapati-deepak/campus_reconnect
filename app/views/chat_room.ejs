@@ -29,36 +29,36 @@
 
                         <%- include partials/workspace.ejs %>
 
-                        <div class="chat-card col-md-3" style="overflow: auto;">
-                            <h4 class="chat-card-heading">Messaging</h4>
-                            <hr class="header-separator">
-                            <div id="connection-list">
-                                <% for(var i = 0; i < iusers.length; i++) { %>
-                                    <button class="chat-name-overview conn-btn" id="<%= userSession._id %><%= iusers[i]._id %>"><h5><img src="../images/faces/face2.jpg" class="chat-image"><%= iusers[i].name %></h5></button>
-                                    <hr>
-                                    <% } %>
-                            </div>
-                        </div>
-
-
-                        <div class="chat-card col-md-5">
-                            <h4 class="chat-card-heading"><span id="recipient"></span></h4>
-                            <hr class="header-separator">
-
-                            <div id="chat-area">
+                            <div class="chat-card col-md-3" style="overflow: auto;">
+                                <h4 class="chat-card-heading">Messaging</h4>
+                                <hr class="header-separator">
+                                <div id="connection-list">
+                                    <% for(var i = 0; i < iusers.length; i++) { %>
+                                        <button class="chat-name-overview conn-btn" id="<%= userSession._id %><%= iusers[i]._id %>"><h5><img src="../images/faces/face2.jpg" class="chat-image"><%= iusers[i].name %></h5></button>
+                                        <hr>
+                                        <% } %>
+                                </div>
                             </div>
 
-                            <hr style="border-color:rgb(180, 180, 180);">
-                            <div class="form-group">
-                                <textarea class="form-control p-input exampleTextarea" id="msg" rows="2" placeholder="Write Something...."></textarea>
+
+                            <div class="chat-card col-md-5">
+                                <h4 class="chat-card-heading"><span id="recipient"></span></h4>
+                                <hr class="header-separator">
+
+                                <div id="chat-area">
+                                </div>
+
+                                <hr style="border-color:rgb(180, 180, 180);">
+                                <div class="form-group">
+                                    <textarea class="form-control p-input exampleTextarea" id="msg" rows="2" placeholder="Write Something...."></textarea>
+                                </div>
+                                <hr>
+                                <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
+                                <button type="submit" class="btn btn-primary" id="send">SEND</button>
                             </div>
-                            <hr>
-                            <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
-                            <button type="submit" class="btn btn-primary" id="send">SEND</button>
-                        </div>
 
 
-                        <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
                     </div>
 
 
@@ -92,6 +92,8 @@
         }
         setInterval(updateScroll, 1000);
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="../js/translate.js"></script>
 </body>
 
 </html>

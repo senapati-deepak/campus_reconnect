@@ -5,13 +5,19 @@ function locate() {
 }
 
 var label = [
-    ['person 1'],
-    ['person 2'],
-    ['person 3'],
+    ['Dibyajit Bardhan'],
+    ['Deepak Senapati'],
+    ['Naina Singh'],
     ['person 4'],
     ['person 5'],
     ['person 6'],
     ['person 7']
+]
+
+var last_seen = [
+    ['2 hours ago'],
+    ['current location'],
+    ['31 minutes ago']
 ]
 
 function initialize(position) {
@@ -29,21 +35,28 @@ function initialize(position) {
         icon: im
     });
 
-    var southWest = new google.maps.LatLng(position.coords.latitude + 0.0004, position.coords.longitude + 0.0006);
-    var northEast = new google.maps.LatLng(position.coords.latitude - 0.0002, position.coords.longitude - 0.0003);
+    var southWest = new google.maps.LatLng(position.coords.latitude + 0.00005, position.coords.longitude + 0.00005);
+    var northEast = new google.maps.LatLng(position.coords.latitude - 0.00005, position.coords.longitude - 0.00005);
     var lngSpan = northEast.lng() - southWest.lng();
     var latSpan = northEast.lat() - southWest.lat();
 
     var count;
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 3; i++) {
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(southWest.lat() + latSpan * Math.random(), southWest.lng() + lngSpan * Math.random()),
             map: map
         });
 
+        var contentString = '<h5>' +
+            label[i][0] +
+            '</h5>' +
+            '<p style="color: #6f6f70;">' +
+            last_seen[i][0] +
+            '</p>';
+
         marker.info = new google.maps.InfoWindow({
-            content: label[i][0]
+            content: contentString
         });
 
 
