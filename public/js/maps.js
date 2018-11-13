@@ -1,4 +1,4 @@
-var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
+var im = 'http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png';
 
 function locate() {
     navigator.geolocation.getCurrentPosition(initialize, fail);

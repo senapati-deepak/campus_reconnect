@@ -138,71 +138,51 @@
             <div class="row row-offcanvas row-offcanvas-right">
 
                 <div class="content-wrapper">
-
+                <% for(var i = 0; i < userSession.institutes.length; i++) { %>
+                    <% var institute = userSession.institutes[i] %>
+                    <button class="btn btn-info workplace" id="<%=institute._id%>"><%=institute.name%></button>
+                <% } %>
                     <!-- <div class="feed-card profile-card" > -->
-                        <div class="row" style="margin-left: 100px";>
-                            <div class="col-md-4" style="padding-left: 260px;">
-                                <div class="flip-card">
-                                    <div class="flip-card-inner">
-                                      <div class="flip-card-front">
-                                         <img src="../images/faces/meet.jpg" alt="Avatar" style="width:300px;height:300px;">
-                                      </div>
-                                      <div class="flip-card-back">
-                                        <h1>Alum Meet</h1> 
-                                        <p>Computer Science</p> 
-                                        <p>Branch meet for CSE students in the auditorium</p>
-                                      </div>
+                    <% for(var i = 0; i < events.length - 1; i++) { %>
+                    <div class="row" style="margin-left: 100px;">
+                        <div class="col-md-4" style="padding-left: 260px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
+                                    </div>
+                                    <div class="flip-card-back">
+                                    
+                                    <h4><%= events[i].name%></h4> 
+                                    <p><%= events[i].content %></p> 
+                                    <p>Venue: <%= events[i].venue%></p> 
+                                    <p>Starts: <%= events[i].startTime%></p> 
+                                    <p>Ends: <%= events[i].endTime%></p>
+
                                     </div>
                                 </div>
-                                
-                           </div>
-                            <div class="col-md-4" style="padding-left: 270px;">
-                                <div class="flip-card">
-                                    <div class="flip-card-inner">
-                                      <div class="flip-card-front">
-                                         <img src="../images/faces/meet2.jpg" alt="Avatar" style="width:300px;height:300px;">
-                                      </div>
-                                      <div class="flip-card-back">
-                                        <h1>Alum Meet</h1> 
-                                        <p>Architecture Branch</p> 
-                                        <p>Branch meet for Architecture students in the auditorium</p>
-                                      </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-4" style="padding-left: 270px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
+                                    </div>
+                                    <div class="flip-card-back">
+                                    <h4><%= events[i + 1].name%></h4> 
+                                    <p><%= events[i + 1].content %></p> 
+                                    <p>Venue: <%= events[i + 1].venue%></p> 
+                                    <p>Starts: <%= events[i + 1].startTime%></p> 
+                                    <p>Ends: <%= events[i + 1].endTime%></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <div class="row" style="margin-left: 100px";>
-                            <div class="col-md-4" style="padding-left: 260px;">
-                                <div class="flip-card">
-                                    <div class="flip-card-inner">
-                                      <div class="flip-card-front">
-                                         <img src="../images/faces/hacka1.png" alt="Avatar" style="width:300px;height:300px;">
-                                      </div>
-                                      <div class="flip-card-back">
-                                        <h1>Hackathon</h1> 
-                                        <p>All the branches</p> 
-                                        <p>Students along with their mentors can form a team of 4 and register for it.</p>
-                                      </div>
-                                    </div>
-                                </div>
-                                
-                           </div>
-                            <div class="col-md-4" style="padding-left: 270px;">
-                                <div class="flip-card">
-                                    <div class="flip-card-inner">
-                                      <div class="flip-card-front">
-                                         <img src="../images/faces/study.jpg" alt="Avatar" style="width:300px;height:300px;">
-                                      </div>
-                                      <div class="flip-card-back">
-                                        <h1>Study Jam</h1> 
-                                        <p>Speaker- Dr.Sucharita Das</p> 
-                                        <p>A talk by Dr. Sucharita Das on the archie lobby on career guidance.</p>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <br>
+                    <% } %>
                     
                     <!-- <br>
                     <h4 class="page-title" style="margin-left: 18%;">Our Statistics</h4>
@@ -321,6 +301,7 @@
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
     <script src="../js/comments.js"></script>
+    <script src="./js/workplace.js"></script>
 
 </body>
 

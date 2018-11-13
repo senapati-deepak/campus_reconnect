@@ -1,10 +1,11 @@
 .post-box,
 .feed-card {
-    width: 65%;
+    width: 100%;
     margin: auto;
     margin-bottom: 40px;
     background-color: white;
     border: 1px solid aliceblue;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 4px 4px 6px rgb(190, 188, 188);
 }

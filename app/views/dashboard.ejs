@@ -17,225 +17,134 @@
 <body class="horizontal-menu">
     <div class=" container-scroller">
         <!-- partial:../partials/_navbar.html -->
-        <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-            <div class="text-left navbar-brand-wrapper">
-                <a class="navbar-brand brand-logo" href="/dashboard"><img src="../images/logo_black.png" class="nav-logo-img"></a>
-                <a class="navbar-brand brand-logo-mini" href="#"><i class="mdi mdi-cards-outline"></i></a>
-            </div>
-            <div class="navbar-menu-wrapper d-flex align-self-stretch align-items-center">
-                <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+        <%- include partials/nav.ejs %>
 
-                <ul class="navbar-nav ml-lg-auto">
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <div class="row row-offcanvas row-offcanvas-right">
 
-                    <li class="nav-item  mt-2 mt-md-0 d-none d-lg-block">
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/dashboard" class="nav-link count-indicator" href="#">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
-                            <i class="fa fa-comments-o"></i>
-                            <span class="count">4</span>
-                        </a>
-                        <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face6.jpg" alt="">
-                                    <span class="badge badge-success">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">John Doe</p>
-                                    <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face2.jpg" alt="">
-                                    <span class="badge badge-success">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">Leanne Jones</p>
-                                    <p class="Sender-message">Can we schedule a call this afternoon?</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face3.jpg" alt="">
-                                    <span class="badge badge-primary">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">Stella</p>
-                                    <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face4.jpg" alt="">
-                                    <span class="badge badge-warning">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">James Brown</p>
-                                    <p class="Sender-message">Need the updates of the project at the end of the week.</p>
-                                </div>
-                            </a>
-                            <a href="/chat" class="dropdown-item view-all">View all</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link count-indicator" href="/alum-locator">
-                            <i class="fa fa-bullseye"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item nav-profile dropdown">
-                        <a class="nav-link" href="#" id="MailDropdown" href="#" data-toggle="dropdown">
-                                Profile<img src="../images/faces/face9.jpg" />
-                        </a>
-                        <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-                            <a class="dropdown-item" href="/profile/<%= user._id %>">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face2.jpg" alt="">
-                                    <span class="badge badge-success">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">Name Something</p>
-                                    <p class="Sender-message">View Profile</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender">
-                                    <p class="Sende-name"><i class="fa fa-gears" style="padding-right:14px; font-size: 18px"></i>Settings</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender">
-                                    <p class="Sende-name"><i class="fa fa-h-square" style="padding-right:14px; font-size: 18px"></i>Help Centre</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" id="logout-btn">
-                                <div class="sender">
-                                    <p class="Sende-name"><i class="fa fa-sign-out" style="padding-right:14px; font-size: 20px"></i>Sign Out</p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <div class="row row-offcanvas row-offcanvas-right">
-
-                <div class="content-wrapper">
-                    <% for(var i = 0; i < user.institutes.length; i++) { %>
-                        <% var institute = user.institutes[i] %>
-                        <button class="btn btn-info workplace" id="<%=institute._id%>"><%=institute.name%></button>
-                    <% } %>
-                    <div class="post-box">
-                        <div class="form-group">
-                            <textarea class="form-control p-input" id="post-body" rows="3" placeholder="Write Something...."></textarea>
-                        </div>
-                        <hr>
-                        <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
-                        <button type="submit" class="btn btn-primary" id="post-btn">&nbsp;Post&nbsp;</button>
-                    </div>
-
-
-
-                    <% for(var i = 0; i < posts.length; i++) { %>
-                        <div class="feed-card">
-                            <% var id = posts[i]._id %>
-                                <div class="feed-head row">
-                                    <img src="../images/faces/face2.jpg" class="col-md-1">
-                                    <div class="col-md-9" style="padding-top:2px;">
-                                        <h1 class="row">
-                                            <a href="/profile/<%= posts[i].user._id %>">
-                                                <%= posts[i].user.name %>
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-3">
+                                <% for(var i = 0; i < userSession.institutes.length; i++) { %>
+                                    <% var institute = userSession.institutes[i] %>
+                                        <div class="workplace workplace-card" id="<%=institute._id%>">
+                                            <h5 class="workplace-head">
+                                                <%=institute.name%>
+                                            </h5>
+                                            <a href="<%=institute.website%>" class="workspace-details">
+                                                <%=institute.website%>
                                             </a>
-                                        </h1>
-                                        <p class="row">
-                                            <%= posts[i].date %>
-                                        </p>
-                                    </div>
-                                    <% if(posts[i].user._id == user._id) { %>
-                                        <button class="btn btn-danger del-post" id="dp<%= posts[i]._id %>"><i class="ti-trash"></i></button>
-                                        <% } %>
-                                </div>
-                                <div class="feed-body">
-                                    <p>
-                                        <%= posts[i].body %>
-                                    </p>
-                                </div>
-                                <hr>
-                                <div class="feed-footer row">
-                                    <div class="col-md-3"></div>
-                                    <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
-                                    <% if(posts[i].likes.indexOf(user._id) === -1) { %>
-                                        <% var l = "LIKE" } else { %>
-                                            <% var l = "Unlike" } %>
-                                                <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up"><%=l%></i></button>
-                                                <div class="col-md-2"></div>
-                                                <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">Comment</i></button>
-                                                <div class="col-md-3"></div>
-                                </div>
-                                <div id="post-comment-area">
-                                    <input type="text" name="comment" id="cs<%=id%>" placeholder="Comment Here">
-                                    <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
-                                </div>
-                                <div id="cd<%=id%>">
-                                    <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
-                                        <div class="feed-comments">
-                                            <div class="row">
-                                                <img src="../images/faces/face2.jpg" class="col-sm-1">
-                                                <div class="col-sm-9" style="padding-top:2px;">
-                                                    <h1 class="row">
-                                                        <a href="/profile/<%= posts[i].comments[j].user._id %>">
-                                                            <%= posts[i].comments[j].user.name %>
-                                                        </a>
-                                                    </h1>
-                                                    <p class="row">Designation at bla bla</p>
-                                                </div>
-                                                <% if(posts[i].comments[j].user._id == user._id) { %>
-                                                    <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>"><i class="ti-trash"></i></button>
-                                                    <% } %>
-                                            </div>
-                                            <div class="feed-comments-body">
-                                                <p>
-                                                    <%= posts[i].comments[j].comment %>
-                                                </p>
-                                            </div>
+                                            <p class="workspace-details">Email:
+                                                <%=institute.email%>
+                                            </p>
+                                            <p class="workspace-details">Contact:
+                                                <%=institute.contact%>
+                                            </p>
                                         </div>
                                         <% } %>
+
+                            </div>
+
+                            <div class="col-sm-7">
+                                <div class="post-box">
+                                    <div class="form-group">
+                                        <textarea class="form-control p-input" id="post-body" rows="3" placeholder="Write Something...."></textarea>
+                                    </div>
+                                    <hr>
+                                    <button class="uploader"><i class="fa fa-plus" style="padding-right:14px;"></i>Upload File</button>
+                                    <button type="submit" class="btn btn-primary" id="post-btn">&nbsp;Post&nbsp;</button>
                                 </div>
+
+
+
+                                <% for(var i = 0; i < posts.length; i++) { %>
+                                    <div class="feed-card">
+                                        <% var id = posts[i]._id %>
+                                            <div class="feed-head row">
+                                                <img src="../images/faces/face2.jpg" class="col-md-1">
+                                                <div class="col-md-9" style="padding-top:2px;">
+                                                    <h1 class="row">
+                                                        <a href="/profile/<%= posts[i].user._id %>">
+                                                            <%= posts[i].user.name %>
+                                                        </a>
+                                                    </h1>
+                                                    <p class="row">
+                                                        <%= posts[i].date %>
+                                                    </p>
+                                                </div>
+                                                <% if(posts[i].user._id == userSession._id) { %>
+                                                    <button class="btn btn-danger del-post" id="dp<%= posts[i]._id %>"><i class="ti-trash"></i></button>
+                                                    <% } %>
+                                            </div>
+                                            <div class="feed-body">
+                                                <p>
+                                                    <%= posts[i].body %>
+                                                </p>
+                                            </div>
+                                            <hr>
+                                            <div class="feed-footer row">
+                                                <div class="col-md-3"></div>
+                                                <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
+                                                <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
+                                                    <% var l = "LIKE" } else { %>
+                                                        <% var l = "Unlike" } %>
+                                                            <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up"><%=l%></i></button>
+                                                            <div class="col-md-2"></div>
+                                                            <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">Comment</i></button>
+                                                            <div class="col-md-3"></div>
+                                            </div>
+                                            <div id="post-comment-area">
+                                                <input type="text" name="comment" id="cs<%=id%>" placeholder="Comment Here">
+                                                <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
+                                            </div>
+                                            <div id="cd<%=id%>">
+                                                <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
+                                                    <div class="feed-comments">
+                                                        <div class="row">
+                                                            <img src="../images/faces/face2.jpg" class="col-sm-1">
+                                                            <div class="col-sm-9" style="padding-top:2px;">
+                                                                <h1 class="row">
+                                                                    <a href="/profile/<%= posts[i].comments[j].userSession._id %>">
+                                                                        <%= posts[i].comments[j].userSession.name %>
+                                                                    </a>
+                                                                </h1>
+                                                                <p class="row">Designation at bla bla</p>
+                                                            </div>
+                                                            <% if(posts[i].comments[j].userSession._id == userSession._id) { %>
+                                                                <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>"><i class="ti-trash"></i></button>
+                                                                <% } %>
+                                                        </div>
+                                                        <div class="feed-comments-body">
+                                                            <p>
+                                                                <%= posts[i].comments[j].comment %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+                                            </div>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="col-sm-1"></div>
+
                         </div>
-                        <% } %>
 
 
+                    </div>
 
 
-
-                </div>
-
-
-                <footer class="footer">
-                    <div class="container-fluid clearfix">
-                        <span class="float-right">
+                    <footer class="footer">
+                        <div class="container-fluid clearfix">
+                            <span class="float-right">
                         <a href="#">Flying Neurons</a> &copy; 2018
                     </span>
-                    </div>
-                </footer>
+                        </div>
+                    </footer>
+                </div>
             </div>
-        </div>
     </div>
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>

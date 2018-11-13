@@ -648,6 +648,30 @@ pre code {
     width: 100%;
 }
 
+.workplace-card {
+    width: 80%;
+    height: 150px;
+    margin: 0px;
+    margin-bottom: 30px;
+    background-color: white;
+    border: 1px solid aliceblue;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 4px 6px rgb(190, 188, 188);
+    text-align: center;
+}
+
+.workplace-head {
+    color: #0672b6;
+    margin: 15px 0px;
+}
+
+.workspace-details {
+    font-size: 14px;
+    color: rgb(141, 140, 140);
+    margin: 2px 0px;
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
