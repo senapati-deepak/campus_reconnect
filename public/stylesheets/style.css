@@ -654,11 +654,16 @@ pre code {
     margin: 0px;
     margin-bottom: 30px;
     background-color: white;
-    border: 1px solid aliceblue;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 4px 4px 6px rgb(190, 188, 188);
+    box-shadow: 6px 6px 8px rgb(190, 188, 188);
     text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in; 
+}
+
+.workplace-card:hover {
+    box-shadow: 3px 3px 3px rgb(126, 125, 125);
 }
 
 .workplace-head {
