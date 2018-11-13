@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard - Campus ReConnect</title>
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/dashboard.css" />
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../stylesheets/profile.css" />
+
+</head>
+
+<body class="horizontal-menu">
+    <div class=" container-scroller">
+        <!-- partial:../partials/_navbar.html -->
+        <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-left navbar-brand-wrapper">
+                <a class="navbar-brand brand-logo" href="#">Campus ReConnect</a>
+                <a class="navbar-brand brand-logo-mini" href="#"><i class="mdi mdi-cards-outline"></i></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-self-stretch align-items-center">
+                <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="navbar-nav ml-lg-auto">
+
+                    <li class="nav-item  mt-2 mt-md-0 d-none d-lg-block">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" href="#">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
+                            <i class="fa fa-comments-o"></i>
+                            <span class="count">4</span>
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
+                            <a class="dropdown-item" href="#">
+                                <div class="sender-img">
+                                    <img src="../images/faces/face6.jpg" alt="">
+                                    <span class="badge badge-success">&nbsp;</span>
+                                </div>
+                                <div class="sender">
+                                    <p class="Sende-name">John Doe</p>
+                                    <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="sender-img">
+                                    <img src="../images/faces/face2.jpg" alt="">
+                                    <span class="badge badge-success">&nbsp;</span>
+                                </div>
+                                <div class="sender">
+                                    <p class="Sende-name">Leanne Jones</p>
+                                    <p class="Sender-message">Can we schedule a call this afternoon?</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="sender-img">
+                                    <img src="../images/faces/face3.jpg" alt="">
+                                    <span class="badge badge-primary">&nbsp;</span>
+                                </div>
+                                <div class="sender">
+                                    <p class="Sende-name">Stella</p>
+                                    <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="sender-img">
+                                    <img src="../images/faces/face4.jpg" alt="">
+                                    <span class="badge badge-warning">&nbsp;</span>
+                                </div>
+                                <div class="sender">
+                                    <p class="Sende-name">James Brown</p>
+                                    <p class="Sender-message">Need the updates of the project at the end of the week.</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item view-all">View all</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" href="#">
+                            <i class="fa fa-bullseye"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link" href="#" id="MailDropdown" href="#" data-toggle="dropdown">
+                                Profile<img src="../images/faces/CET.png" />
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
+                            <a class="dropdown-item" href="#">
+                                <div class="sender-img">
+                                    <img src="../images/faces/face2.jpg" alt="">
+                                    <span class="badge badge-success">&nbsp;</span>
+                                </div>
+                                <div class="sender">
+                                    <p class="Sende-name">Name Something</p>
+                                    <p class="Sender-message">View Profile</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="sender">
+                                    <p class="Sende-name"><i class="fa fa-gears" style="padding-right:14px; font-size: 18px"></i>Settings</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="sender">
+                                    <p class="Sende-name"><i class="fa fa-h-square" style="padding-right:14px; font-size: 18px"></i>Help Centre</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="sender">
+                                    <p class="Sende-name"><i class="fa fa-sign-out" style="padding-right:14px; font-size: 20px"></i>Sign Out</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <div class="row row-offcanvas row-offcanvas-right">
+
+                <div class="content-wrapper">
+
+                    <!-- <div class="feed-card profile-card" > -->
+                        <div class="row" style="margin-left: 100px";>
+                            <div class="col-md-4" style="padding-left: 260px;">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                      <div class="flip-card-front">
+                                         <img src="../images/faces/meet.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                      </div>
+                                      <div class="flip-card-back">
+                                        <h1>Alum Meet</h1> 
+                                        <p>Computer Science</p> 
+                                        <p>Branch meet for CSE students in the auditorium</p>
+                                      </div>
+                                    </div>
+                                </div>
+                                
+                           </div>
+                            <div class="col-md-4" style="padding-left: 270px;">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                      <div class="flip-card-front">
+                                         <img src="../images/faces/meet2.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                      </div>
+                                      <div class="flip-card-back">
+                                        <h1>Alum Meet</h1> 
+                                        <p>Architecture Branch</p> 
+                                        <p>Branch meet for Architecture students in the auditorium</p>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style="margin-left: 100px";>
+                            <div class="col-md-4" style="padding-left: 260px;">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                      <div class="flip-card-front">
+                                         <img src="../images/faces/hacka1.png" alt="Avatar" style="width:300px;height:300px;">
+                                      </div>
+                                      <div class="flip-card-back">
+                                        <h1>Hackathon</h1> 
+                                        <p>All the branches</p> 
+                                        <p>Students along with their mentors can form a team of 4 and register for it.</p>
+                                      </div>
+                                    </div>
+                                </div>
+                                
+                           </div>
+                            <div class="col-md-4" style="padding-left: 270px;">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                      <div class="flip-card-front">
+                                         <img src="../images/faces/study.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                      </div>
+                                      <div class="flip-card-back">
+                                        <h1>Study Jam</h1> 
+                                        <p>Speaker- Dr.Sucharita Das</p> 
+                                        <p>A talk by Dr. Sucharita Das on the archie lobby on career guidance.</p>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <!-- <br>
+                    <h4 class="page-title" style="margin-left: 18%;">Our Statistics</h4>
+                    <hr style="width: 65%;">
+                    <div class="profile-info-box" style="background-color: white;">
+                            <h3 class="page-title">Applicant Details</h3>
+                            <div class="row mb-2">
+                                <div class="col-md-10" style="padding-top:2px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <!-- <h5 class="card-title">Basic validation</h5> -->
+                                            <!-- <form class="cmxform" id="commentForm" method="get" action="">
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="cfirst">First Name </label>
+                                                        <input id="cfirst" class="form-control" name="first" minlength="2" type="text" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="clast">Last Name </label>
+                                                        <input id="clast" class="form-control" name="last" minlength="2" type="text" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cemail">E-Mail </label>
+                                                        <input id="cemail" class="form-control" type="email" minlength="2" name="email" required>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="cprogram">Program</label>
+                                                        <input id="cprogram" class="form-control" type="text" minlength="2" name="program" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cbranch">Branch </label>
+                                                        <input id="cbranch" class="form-control" type="text"  name="branch">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cyear">Graduation Year </label>
+                                                        <input id="cyear" class="form-control" type="number" minlength="4" name="number" min="1950" max="2050" required>
+                                                    </div>
+    
+                                                    <input class="btn btn-primary" type="submit" value="Add Member">
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  -->
+
+                    <!-- <div class="stats-body">
+                        <div class="feed-head row">
+                            <img src="../images/faces/face2.jpg" class="col-md-1">
+                            <div class="col-md-9" style="padding-top:2px;">
+                                <h1 class="row">Some Name</h1>
+                                <p class="row">Designation at bla bla</p>
+                            </div>
+                        </div>
+                        <div class="feed-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis mauris convallis, dapibus
+                                justo a, imperdiet magna. Maecenas tristique, eros nec posuere vestibulum, dui dolor tempor erat, nec venenatis ipsum dui sed mi. Duis lobortis molestie massa, id laoreet mi suscipit a. Donec varius pulvinar odio, consequat
+                                sagittis mi fringilla a. Sed ex felis, imperdiet et tincidunt non, aliquet nec lacus. Etiam iaculis finibus nulla vel cursus. Aliquam erat volutpat. Phasellus suscipit nulla vel diam elementum feugiat. Nam sem urna, pharetra
+                                sed arcu eu, porttitor pretium dui.</p>
+                        </div>
+                        <hr>
+                        <div class="feed-footer row">
+                            <div class="col-md-3"></div>
+                            <button class="col-md-2"><i class="fa fa-thumbs-up">&nbsp;Like</i></button>
+                            <div class="col-md-2"></div>
+                            <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">&nbsp;Comment</i></button>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div id="post-comment-area">
+                            <input type="text" name="comment" placeholder="Comment Here">
+                            <button type="submit" class="btn btn-primary">Comment</button>
+                        </div>
+
+                        <div class="feed-comments">
+                            <div class="row">
+                                <img src="../images/faces/face2.jpg" class="col-sm-1">
+                                <div class="col-sm-9" style="padding-top:2px;">
+                                    <h1 class="row">Some Name</h1>
+                                    <p class="row">Designation at bla bla</p>
+                                </div>
+                            </div>
+                            <div class="feed-comments-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non ante leo. Mauris at est urna. Phasellus viverra tincidunt accumsan. Quisque venenatis arcu non malesuada semper. Suspendisse quis mauris convallis, dapibus
+                                    justo a, imperdiet magna. </p>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+
+
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="float-right">
+                        <a href="#">Flying Neurons</a> &copy; 2018
+                    </span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/sidebar-icon.js"></script>
+    <script src="../js/off-canvas.js"></script>
+    <script src="../js/hoverable-collapse.js"></script>
+    <script src="../js/misc.js"></script>
+    <script src="../js/comments.js"></script>
+
+</body>
+
+</html>

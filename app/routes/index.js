@@ -26,6 +26,22 @@ router.get('/alum-locator', function(req, res, next) {
         res.redirect("/");
     }
 });
+/* GET events page. */
+router.get('/events', function(req, res, next) {
+    if(req.session.user) {
+        res.render('events');
+    } else {
+        res.redirect("/");
+    }
+});
+/* GET events page. */
+router.get('/admin-profile', function(req, res, next) {
+    if(req.session.user) {
+        res.render('admin-profile');
+    } else {
+        res.redirect("/");
+    }
+});
 /* GET chat_room page. */
 router.get('/chat-room', function(req, res, next) {
     if(req.session.user) {
