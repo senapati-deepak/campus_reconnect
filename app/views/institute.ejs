@@ -379,7 +379,53 @@
                             </div>
                         </div> 
                     </div>-->
+<ul class="row eventPosts" style="margin-left: 15%;">
+                    <li><button class="btn active adminBtn">EVENT REQUESTS</button></li> &nbsp;
+                    <li><button class="btn adminBtn">POSTS</button></li>
+                </ul>
 
+                <br>
+                <div id="events">
+                <% for(var i = 0; i < events.length; i++) { %>
+                        <% if(events[i].isApproved == false) {%> 
+                        <div class="feed-card">
+                        <% var id = events[i]._id %>
+                            <div class="feed-head row">
+                                <img src="../images/faces/face2.jpg" class="col-md-1">
+                                <div class="col-md-9" style="padding-top:2px;">
+                                    <h1 class="row">
+                                        <%= events[i].poster.name %>
+                                    </h1>
+                                    <p class="row">
+                                        <%= events[i].date %>
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <div class="feed-body">
+                                <p>
+                                    <%= events[i].content %>
+                                </p>
+                                <p>
+                                    <b>Venue:</b> <%= events[i].venue %>
+                                </p>
+                                <% var temp = events[i].startTim; var from = new Date(temp);  %>
+                                <% var temp = events[i].endTime; var to = new Date(temp);  %>
+                                <% var fday = from.getDate(); var fmonth = from.getMonth(); var ftime = from.getTime(); %>
+                                <% var tday = to.getDate(); var tmonth = to.getMonth(); var ttime = to.getTime(); %>
+                                <p>
+                                    <b> From </b> <%= events[i].startTime %> <b>To</b> <%= events[i].endTime %>
+                                </p>
+                                <button class="btn btn-success response" id="a<%= events[i]._id %>">ACCEPT</button>
+                                <button class="btn btn-danger response" id="r<%= events[i]._id %>">REJECT</button>
+                            </div>
+
+                            
+                        </div>
+                    <% } %>
+                    <% } %>
+                </div>
+                <div id="posts">
                     <% for(var i = 0; i < posts.length; i++) { %>
                         <div class="feed-card">
                             <% var id = posts[i]._id %>
@@ -407,12 +453,12 @@
                                 <hr>
                                 <div class="feed-footer row">
                                     <div class="col-md-3"></div>
-                                    <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
                                     <!-- <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
                                     <% var l = "LIKE" } else { %>
                                         <% var l = "Unlike" } %> 
                                 -->
-                                    <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up">LIKES</i></button>
+                                    <button class="col-md-2 like" id="l<%=id%>">
+                                    <span id="lc<%=id%>"><%=posts[i].likes.length%></span>&nbsp;<i class="fa fa-thumbs-up">LIKES</i></button>
                                     <div class="col-md-2"></div>
                                     <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">Comment</i></button>
                                     <div class="col-md-3"></div>
@@ -432,7 +478,7 @@
                                                             <%= posts[i].comments[j].user.name %>
                                                         </a>
                                                     </h1>
-                                                    <p class="row">Designation at bla bla</p>
+                                                    <p class="row"><%= posts[i].comments[j].user.designation %></p>
                                                 </div>
                                                 <% if((posts[i].comments[j].user._id == userSession._id)  || (userSession === "admin")) { %>
                                                     <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>"><i class="ti-trash"></i></button>
@@ -450,47 +496,7 @@
                         <% } %>
 
 
-                            <% for(var i = 0; i < events.length; i++) { %>
-                                <% if(events[i].isApproved == false) {%>
-                                    <div class="feed-card">
-                                        <% var id = events[i]._id %>
-                                            <div class="feed-head row">
-                                                <img src="../images/faces/face2.jpg" class="col-md-1">
-                                                <div class="col-md-9" style="padding-top:2px;">
-                                                    <h1 class="row">
-                                                        <%= events[i].poster.name %>
-                                                    </h1>
-                                                    <p class="row">
-                                                        <%= events[i].date %>
-                                                    </p>
-                                                </div>
-
-                                            </div>
-                                            <div class="feed-body">
-                                                <p>
-                                                    <%= events[i].content %>
-                                                </p>
-                                                <p>
-                                                    <b>Venue:</b>
-                                                    <%= events[i].venue %>
-                                                </p>
-                                                <% var temp = events[i].startTim; var from = new Date(temp);  %>
-                                                    <% var temp = events[i].endTime; var to = new Date(temp);  %>
-                                                        <% var fday = from.getDate(); var fmonth = from.getMonth(); var ftime = from.getTime(); %>
-                                                            <% var tday = to.getDate(); var tmonth = to.getMonth(); var ttime = to.getTime(); %>
-                                                                <p>
-                                                                    <b> From </b>
-                                                                    <%= events[i].startTime %> <b>To</b>
-                                                                        <%= events[i].endTime %>
-                                                                </p>
-                                                                <button class="btn btn-success response" id="a<%= events[i]._id %>">ACCEPT</button>
-                                                                <button class="btn btn-danger response" id="r<%= events[i]._id %>">REJECT</button>
-                                            </div>
-
-
-                                    </div>
-                                    <% } %>
-                                        <% } %>
+                </div>
 
 
 
@@ -524,6 +530,8 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript" src="../js/translate.js"></script>
 
+    <script src="../js/institute.js"></script>
+  
 
 </body>
 

@@ -37,6 +37,8 @@ router.get('/institute/:id', function(req, res, next) {
                     res.send("No Such Institute Found!");
                 } else {
                     postModel.find({ institute: ObjectId(req.params.id) })
+                        .populate({ path: 'user' })
+                        .populate({ path: 'comments.user' })
                         .exec(function(err, pdocs) {
                             if (err) throw err;
                             console.log(pdocs);

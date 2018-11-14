@@ -10,7 +10,7 @@ var postSchema = new Schema({
         {
             user: {type: Schema.Types.ObjectId, ref: 'user'},
             comment: String
-        }
+        } 
     ],
     institute: { type: Schema.Types.ObjectId, ref: 'institute' }
 });
