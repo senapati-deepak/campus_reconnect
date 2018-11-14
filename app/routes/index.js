@@ -37,28 +37,28 @@ router.get('/institute/:id', function(req, res, next) {
                     res.send("No Such Institute Found!");
                 } else {
                     postModel.find({ institute: ObjectId(req.params.id) })
-                            .exec(function(err, pdocs) {
-                                if(err) throw err;
-                                console.log(pdocs);
-                                eventModel.find({ institute: ObjectId(req.params.id) })
-                                        .populate("poster", "name")
-                                        .exec(function(err, edocs) {
-                                if(err) throw err;
-                                console.log(edocs);
-                                res.render("institute", { institute: iDoc, userSession: req.session.user, curri: req.session.institute, posts: pdocs, events: edocs });
-                            });
-                    });
+                        .exec(function(err, pdocs) {
+                            if (err) throw err;
+                            console.log(pdocs);
+                            eventModel.find({ institute: ObjectId(req.params.id) })
+                                .populate("poster", "name")
+                                .exec(function(err, edocs) {
+                                    if (err) throw err;
+                                    console.log(edocs);
+                                    res.render("institute", { institute: iDoc, userSession: req.session.user, curri: req.session.institute, posts: pdocs, events: edocs });
+                                });
+                        });
                 }
-        });
+            });
     } else {
         res.redirect("/");
     }
 });
 /* GET events page. */
 router.get('/events', function(req, res, next) {
-    if(req.session.user) {
+    if (req.session.user) {
         eventModel.find({ institute: ObjectId(req.session.institute) }, function(err, docs) {
-            if(err) throw err;
+            if (err) throw err;
             console.log(docs);
             res.render('events', { events: docs, userSession: req.session.user, curri: req.session.institute });;
         });
@@ -76,6 +76,7 @@ router.get('/profile/:id', function(req, res, next) {
                 if (!userDoc) {
                     res.send("No Such User Found!");
                 } else {
+                    console.log("User Docs: ", userDoc);
                     res.render("profile", { userProfile: userDoc, userSession: req.session.user });
                 }
             });

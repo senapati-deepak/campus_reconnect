@@ -24,7 +24,11 @@
             from: { month: "Oct", year: 2017 },
             to: { month: "Dec", year: 2017 },
             body: "Made some shit."
-        }]
+        }],
+        "posts" : [
+            ObjectId("5bead42b5a576029b44bc01d"),
+            ObjectId("5bead4755a576029b44bc01e")
+        ]
     },
     {
         "_id" : ObjectId("5be6924f8e61aa2547f232c3"),
@@ -51,9 +55,13 @@
             from: { month: "May", year: 2018 },
             to: { month: "Jul", year: 2018 },
             body: "Did sick research."
-        }]
+        }],
+    "posts" : [
+            ObjectId("5bead68f90aa8e2c3da6bc5d")
+        ]
     },
     {
+	"_id" : ObjectId("5beb9c39a90abcab95401642"),
         "name" : "Naina Panda",
         "dob" : "1/02/1983",
         "email" : "naina@mail.com",
@@ -77,7 +85,10 @@
             from: { month: "May", year: 2018 },
             to: { month: "Jul", year: 2018 },
             body: "Hired Sick People."
-        }]
+        }],
+	"posts" : [
+		ObjectId("5bead89690aa8e2c3da6bc61")
+	]
     },
     {
         "_id" : ObjectId("5be69a51248c5e10c567387a"),
@@ -124,7 +135,10 @@
                         },
                         "body" : "Made sick money."
                 }
-        ]
+        ],
+"posts" : [
+		ObjectId("5bead73390aa8e2c3da6bc5f")
+	]
     }
 
 ]

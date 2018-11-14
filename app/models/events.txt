@@ -12,7 +12,7 @@
     },
     {
         name: "Skill and Entrepreneurship Meet",
-        venue: "IIT Bhubaneswar",
+        venue: "IIIT Bhubaneswar",
         date: "26/10/2018",
         startTime: "2018-03-10T10:00",
         endTime: "2018-03-10T11:00",
@@ -34,13 +34,14 @@
     },
     {
         name: "Faculty Alumni Interaction",
-        venue: "IIT Bhubaneswar",
+        venue: "IIIT Bhubaneswar",
         date: "26/10/2018",
         startTime: "2018-03-10T10:00",
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Meet for alumni interaction.",
-        institute: ObjectId("5be9bd88a049a3ba47efa412")
+        institute: ObjectId("5be9bd88a049a3ba47efa412"),
+	poster: ObjectId("5bdea39d406abab46426fbee")
     },
     {
         name: "Career Guidance Talk",
@@ -50,7 +51,8 @@
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Guiding students through career prospectives",
-        institute: ObjectId("5be9bd88a049a3ba47efa411")
+        institute: ObjectId("5be9bd88a049a3ba47efa411"),
+	poster: ObjectId("5be6924f8e61aa2547f232c3")
     },
      {
         name: "Big-data Project discussion",
@@ -60,16 +62,18 @@
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Assigning big-data projects to students",
-        institute: ObjectId("5be9bd88a049a3ba47efa411")
+        institute: ObjectId("5be9bd88a049a3ba47efa411"),
+	poster: ObjectId("5be69a51248c5e10c567387a")
     },
     {
         name: "Alumni Meet",
-        venue: "IIT Bhubaneswar",
+        venue: "IIIT Bhubaneswar",
         date: "21/10/2018",
         startTime: "2018-03-10T10:00",
         endTime: "2018-03-10T11:00",
         isOver: false,
         content: "Meet for alumni interaction.",
-        institute: ObjectId("5be9bd88a049a3ba47efa412")
+        institute: ObjectId("5be9bd88a049a3ba47efa412"),
+	poster: ObjectId("5beb9c39a90abcab95401642")
     },
 ]
