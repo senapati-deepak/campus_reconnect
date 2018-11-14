@@ -17,14 +17,14 @@
 
 <body class="horizontal-menu">
     <div class=" container-scroller">
-            <button class="open-button" style="bottom: 60px;" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
+        <button class="open-button" style="bottom: 60px;" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
                 </i></button>
 
-            <div id="myModal2" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                
-                    <!-- Modal content-->
-                    <div class="modal-content">
+        <div id="myModal2" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Add User</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -37,45 +37,45 @@
                                     <input type="text" class="form-control" id="ename">
                                 </div>
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <label for="contact">E-Mail</label>
-                                        <input type="text" class="form-control" id="cemail">
-                                    </div>     
+                                    <label for="contact">E-Mail</label>
+                                    <input type="text" class="form-control" id="cemail">
+                                </div>
                             </div>
                             <div class="row">
-                                    <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="contact">Branch</label>
-                                            <input type="text" class="form-control" id="ebranch">
-                                        </div> 
-                                        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <label for="contact">Program</label>
-                                                <input type="text" class="form-control" id="eprogram">
-                                            </div> 
-                            </div>  
-                            
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contact">Branch</label>
+                                    <input type="text" class="form-control" id="ebranch">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contact">Program</label>
+                                    <input type="text" class="form-control" id="eprogram">
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="city">Graduation year</label>
-                                    <input type="number" class="form-control" id="eyear"   name="number" min="1950" max="2050" >
+                                    <input type="number" class="form-control" id="eyear" name="number" min="1950" max="2050">
                                 </div>
-                                
+
                             </div>
-                            
+
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn" id="ecreate">ADD</button>
                     </div>
-                    </div>
                 </div>
             </div>
-            <button class="open-button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
+        </div>
+        <button class="open-button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
                 </i></button>
 
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                
-                    <!-- Modal content-->
-                    <div class="modal-content">
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Create Event</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -90,35 +90,35 @@
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="contact">Venue</label>
                                     <input type="text" class="form-control" id="evenue">
-                                </div>      
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="email">From</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="efrom">
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00" id="efrom">
                                 </div>
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="contact">To</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="eto">
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00" id="eto">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="city">Content</label>
-                                    <textarea rows="5" class="form-control"  id="econtent"></textarea>
+                                    <textarea rows="5" class="form-control" id="econtent"></textarea>
                                 </div>
-                                
+
                             </div>
-                            
+
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn" id="ecreate">CREATE</button>
                     </div>
-                    </div>
                 </div>
             </div>
-     <!-- <button id="event-button">   
+        </div>
+        <!-- <button id="event-button">   
      <i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
     </i>
     </button>
@@ -128,16 +128,16 @@
              <button type="button" id="submit">Submit</button>
           </form> -->
         <!-- partial:../partials/_navbar.html -->
-            
+
         <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-left navbar-brand-wrapper">
-                <a class="navbar-brand brand-logo" href="#">Campus ReConnect</a>
+                <a class="navbar-brand brand-logo" href="/dashboard"><img src="../images/logo_black.png" class="nav-logo-img"></a>
                 <a class="navbar-brand brand-logo-mini" href="#"><i class="mdi mdi-cards-outline"></i></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-self-stretch align-items-center">
                 <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
 
                 <ul class="navbar-nav ml-lg-auto">
 
@@ -147,70 +147,36 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" href="#">
+                        <a href="/dashboard" class="nav-link count-indicator" href="#">
                             <i class="fa fa-home"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
+                    <li class="nav-item">
+                        <a href="/chat" class="nav-link count-indicator" href="#">
                             <i class="fa fa-comments-o"></i>
-                            <span class="count">4</span>
                         </a>
-                        <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face6.jpg" alt="">
-                                    <span class="badge badge-success">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">John Doe</p>
-                                    <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face2.jpg" alt="">
-                                    <span class="badge badge-success">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">Leanne Jones</p>
-                                    <p class="Sender-message">Can we schedule a call this afternoon?</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face3.jpg" alt="">
-                                    <span class="badge badge-primary">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">Stella</p>
-                                    <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div class="sender-img">
-                                    <img src="../images/faces/face4.jpg" alt="">
-                                    <span class="badge badge-warning">&nbsp;</span>
-                                </div>
-                                <div class="sender">
-                                    <p class="Sende-name">James Brown</p>
-                                    <p class="Sender-message">Need the updates of the project at the end of the week.</p>
-                                </div>
-                            </a>
-                            <a href="#" class="dropdown-item view-all">View all</a>
-                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" href="#">
+                        <a class="nav-link count-indicator" href="/alum-locator">
                             <i class="fa fa-bullseye"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" href="/events">
+                            <i class="fa fa-calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" href="/skill-comparator">
+                            <i class="fa fa-balance-scale"></i>
                         </a>
                     </li>
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" id="MailDropdown" href="#" data-toggle="dropdown">
-                                Profile<img src="../images/faces/CET.png" />
-                        </a>
+                                        Profile<img src="../images/faces/face9.jpg" />
+                                </a>
                         <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/profile/<%= userSession._id %>">
                                 <div class="sender-img">
                                     <img src="../images/faces/face2.jpg" alt="">
                                     <span class="badge badge-success">&nbsp;</span>
@@ -230,7 +196,7 @@
                                     <p class="Sende-name"><i class="fa fa-h-square" style="padding-right:14px; font-size: 18px"></i>Help Centre</p>
                                 </div>
                             </a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" id="logout-btn">
                                 <div class="sender">
                                     <p class="Sende-name"><i class="fa fa-sign-out" style="padding-right:14px; font-size: 20px"></i>Sign Out</p>
                                 </div>
@@ -239,19 +205,22 @@
                     </li>
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                <div id="google_translate_element"></div>
             </div>
+
+
         </nav>
 
         <button class="open-button" data-toggle="modal" data-target="#newEvent"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
                 </i></button>
 
-            <div id="newEvent" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                
-                    <!-- Modal content-->
-                    <div class="modal-content">
+        <div id="newEvent" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Create Event</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -266,34 +235,34 @@
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="contact">Venue</label>
                                     <input type="text" class="form-control" id="evenue">
-                                </div>      
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="email">From</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="efrom">
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00" id="efrom">
                                 </div>
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="contact">To</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="eto">
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00" id="eto">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="city">Content</label>
-                                    <textarea rows="5" class="form-control"  id="econtent"></textarea>
+                                    <textarea rows="5" class="form-control" id="econtent"></textarea>
                                 </div>
-                                
+
                             </div>
-                            
+
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-info createEvent" id="acellcreate">CREATE</button>
                     </div>
-                    </div>
                 </div>
             </div>
+        </div>
 
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
@@ -305,16 +274,17 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <img class="profile-card-img" src="../images/faces/CET.png" alt="">
-                                <div class="profile-info-name"  >
-                                    <h4 >Almnus Cell</h4>
+                                <div class="profile-info-name">
+                                    <h4>Almnus Cell</h4>
                                     <p style="color: #888888;">Admin</p>
                                 </div>
                             </div>
                             <div class="col-md-7">
                                 <div class="profile-info-description">
-                                    <p >College Of Engineering and Technology<p>
-                                    <p ><a href="www.cet.edu.in">www.cet.edu.in</a></p>
-                                    <p style="word-spacing: 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-feature-settings: 'onum' ;" >+9100222341 +9122240404</p>
+                                    <p>College Of Engineering and Technology
+                                        <p>
+                                            <p><a href="www.cet.edu.in">www.cet.edu.in</a></p>
+                                            <p style="word-spacing: 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-feature-settings: 'onum' ;">+9100222341 +9122240404</p>
 
                                 </div>
                             </div>
@@ -323,48 +293,48 @@
                     <br>
                     <h4 class="page-title" style="margin-left: 18%;">Our Statistics</h4>
                     <div class="row" style=" width: 65%;margin: auto;margin-bottom: 40px;overflow: hidden;">
-                        <div class="card card-circle-progress col-md-3" >
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="font-size: 18px;">Alumnus registered</h5>
-                                                <div class="container" style= "padding-left: 0px; padding-right: 0px;">
-                                                    <div class="score alumnus">
-                                                            <div id="counter"><span class="count">120</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card card-circle-progress col-md-3" >
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="font-size: 18px;">Students registered</h5>
-                                                <div class="container" style= "padding-left: 0px; padding-right: 0px;">
-                                                    <div class="score students">
-                                                            <div id="counter"><span class="count">2345</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card card-circle-progress col-md-3" >
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="font-size: 18px;">Projects registered</h5>
-                                                <div class="container" style= "padding-left: 0px; padding-right: 0px;">
-                                                    <div class="score tech-members">
-                                                            <div id="counter"><span class="count">72</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card card-circle-progress col-md-3" >
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="font-size: 18px;">AlumCell members</h5>
-                                                <div class="container" style= "padding-left: 0px; padding-right: 0px;">
-                                                    <div class="score cell-members">
-                                                            <div id="shiva"><span class="count">48</span></div>
-                                                    </div>    
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="card card-circle-progress col-md-3">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 18px;">Alumnus registered</h5>
+                                <div class="container" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="score alumnus">
+                                        <div id="counter"><span class="count">120</span></div>
                                     </div>
-                        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-circle-progress col-md-3">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 18px;">Students registered</h5>
+                                <div class="container" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="score students">
+                                        <div id="counter"><span class="count">2345</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-circle-progress col-md-3">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 18px;">Projects registered</h5>
+                                <div class="container" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="score tech-members">
+                                        <div id="counter"><span class="count">72</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-circle-progress col-md-3">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 18px;">AlumCell members</h5>
+                                <div class="container" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="score cell-members">
+                                        <div id="shiva"><span class="count">48</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <hr style="width: 65%;">
                     <!--<div class="profile-info-box" style="background-color: white;">
                             <h3 class="page-title">Applicant Details</h3>
@@ -409,115 +379,118 @@
                             </div>
                         </div> 
                     </div>-->
-                    
-                <% for(var i = 0; i < posts.length; i++) { %>
-                    <div class="feed-card">
-                        <% var id = posts[i]._id %>
-                            <div class="feed-head row">
-                                <img src="../images/faces/face2.jpg" class="col-md-1">
-                                <div class="col-md-9" style="padding-top:2px;">
-                                    <h1 class="row">
-                                        <a href="/profile/<%= posts[i].user._id %>">
-                                            <%= posts[i].user.name %>
-                                        </a>
-                                    </h1>
-                                    <p class="row">
-                                        <%= posts[i].date %>
+
+                    <% for(var i = 0; i < posts.length; i++) { %>
+                        <div class="feed-card">
+                            <% var id = posts[i]._id %>
+                                <div class="feed-head row">
+                                    <img src="../images/faces/face2.jpg" class="col-md-1">
+                                    <div class="col-md-9" style="padding-top:2px;">
+                                        <h1 class="row">
+                                            <a href="/profile/<%= posts[i].user._id %>">
+                                                <%= posts[i].user.name %>
+                                            </a>
+                                        </h1>
+                                        <p class="row">
+                                            <%= posts[i].date %>
+                                        </p>
+                                    </div>
+                                    <% if((posts[i].user._id == userSession._id) || (userSession === "admin")) { %>
+                                        <button class="btn btn-danger del-post" id="dp<%= posts[i]._id %>"><i class="ti-trash"></i></button>
+                                        <% } %>
+                                </div>
+                                <div class="feed-body">
+                                    <p>
+                                        <%= posts[i].body %>
                                     </p>
                                 </div>
-                                <% if((posts[i].user._id == userSession._id) || (userSession === "admin")) { %>
-                                    <button class="btn btn-danger del-post" id="dp<%= posts[i]._id %>"><i class="ti-trash"></i></button>
-                                    <% } %>
-                            </div>
-                            <div class="feed-body">
-                                <p>
-                                    <%= posts[i].body %>
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="feed-footer row">
-                                <div class="col-md-3"></div>
-                                <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
-                                <!-- <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
+                                <hr>
+                                <div class="feed-footer row">
+                                    <div class="col-md-3"></div>
+                                    <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
+                                    <!-- <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
                                     <% var l = "LIKE" } else { %>
                                         <% var l = "Unlike" } %> 
                                 -->
-                                            <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up">LIKES</i></button>
-                                            <div class="col-md-2"></div>
-                                            <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">Comment</i></button>
-                                            <div class="col-md-3"></div>
-                            </div>
-                            <div id="post-comment-area">
-                                <input type="text" name="comment" id="cs<%=id%>" placeholder="Comment Here">
-                                <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
-                            </div>
-                            <div id="cd<%=id%>">
-                                <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
-                                    <div class="feed-comments">
-                                        <div class="row">
-                                            <img src="../images/faces/face2.jpg" class="col-sm-1">
-                                            <div class="col-sm-9" style="padding-top:2px;">
-                                                <h1 class="row">
-                                                    <a href="/profile/<%= posts[i].comments[j].user._id %>">
-                                                        <%= posts[i].comments[j].user.name %>
-                                                    </a>
-                                                </h1>
-                                                <p class="row">Designation at bla bla</p>
+                                    <button class="col-md-2 like" id="l<%=id%>"><i class="fa fa-thumbs-up">LIKES</i></button>
+                                    <div class="col-md-2"></div>
+                                    <button class="col-md-2" onclick="comment()"><i class="fa fa-comment">Comment</i></button>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div id="post-comment-area">
+                                    <input type="text" name="comment" id="cs<%=id%>" placeholder="Comment Here">
+                                    <button type="submit" class="btn btn-primary comment" id="c<%=id%>">Comment</button>
+                                </div>
+                                <div id="cd<%=id%>">
+                                    <% for(var j = posts[i].comments.length - 1; j >= 0 ; j--) { %>
+                                        <div class="feed-comments">
+                                            <div class="row">
+                                                <img src="../images/faces/face2.jpg" class="col-sm-1">
+                                                <div class="col-sm-9" style="padding-top:2px;">
+                                                    <h1 class="row">
+                                                        <a href="/profile/<%= posts[i].comments[j].user._id %>">
+                                                            <%= posts[i].comments[j].user.name %>
+                                                        </a>
+                                                    </h1>
+                                                    <p class="row">Designation at bla bla</p>
+                                                </div>
+                                                <% if((posts[i].comments[j].user._id == userSession._id)  || (userSession === "admin")) { %>
+                                                    <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>"><i class="ti-trash"></i></button>
+                                                    <% } %>
                                             </div>
-                                            <% if((posts[i].comments[j].user._id == userSession._id)  || (userSession === "admin")) { %>
-                                                <button class="btn btn-danger del-comm" id="dc<%= posts[i]._id %><%= posts[i].comments[j]._id %>"><i class="ti-trash"></i></button>
-                                                <% } %>
+                                            <div class="feed-comments-body">
+                                                <p>
+                                                    <%= posts[i].comments[j].comment %>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="feed-comments-body">
-                                            <p>
-                                                <%= posts[i].comments[j].comment %>
-                                            </p>
-                                        </div>
+                                        <% } %>
+                                </div>
+                        </div>
+                        <% } %>
+
+
+                            <% for(var i = 0; i < events.length; i++) { %>
+                                <% if(events[i].isApproved == false) {%>
+                                    <div class="feed-card">
+                                        <% var id = events[i]._id %>
+                                            <div class="feed-head row">
+                                                <img src="../images/faces/face2.jpg" class="col-md-1">
+                                                <div class="col-md-9" style="padding-top:2px;">
+                                                    <h1 class="row">
+                                                        <%= events[i].poster.name %>
+                                                    </h1>
+                                                    <p class="row">
+                                                        <%= events[i].date %>
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="feed-body">
+                                                <p>
+                                                    <%= events[i].content %>
+                                                </p>
+                                                <p>
+                                                    <b>Venue:</b>
+                                                    <%= events[i].venue %>
+                                                </p>
+                                                <% var temp = events[i].startTim; var from = new Date(temp);  %>
+                                                    <% var temp = events[i].endTime; var to = new Date(temp);  %>
+                                                        <% var fday = from.getDate(); var fmonth = from.getMonth(); var ftime = from.getTime(); %>
+                                                            <% var tday = to.getDate(); var tmonth = to.getMonth(); var ttime = to.getTime(); %>
+                                                                <p>
+                                                                    <b> From </b>
+                                                                    <%= events[i].startTime %> <b>To</b>
+                                                                        <%= events[i].endTime %>
+                                                                </p>
+                                                                <button class="btn btn-success response" id="a<%= events[i]._id %>">ACCEPT</button>
+                                                                <button class="btn btn-danger response" id="r<%= events[i]._id %>">REJECT</button>
+                                            </div>
+
+
                                     </div>
                                     <% } %>
-                            </div>
-                    </div>
-                    <% } %>
-
-
-                    <% for(var i = 0; i < events.length; i++) { %>
-                        <% if(events[i].isApproved == false) {%> 
-                        <div class="feed-card">
-                        <% var id = events[i]._id %>
-                            <div class="feed-head row">
-                                <img src="../images/faces/face2.jpg" class="col-md-1">
-                                <div class="col-md-9" style="padding-top:2px;">
-                                    <h1 class="row">
-                                        <%= events[i].poster.name %>
-                                    </h1>
-                                    <p class="row">
-                                        <%= events[i].date %>
-                                    </p>
-                                </div>
-                                
-                            </div>
-                            <div class="feed-body">
-                                <p>
-                                    <%= events[i].content %>
-                                </p>
-                                <p>
-                                    <b>Venue:</b> <%= events[i].venue %>
-                                </p>
-                                <% var temp = events[i].startTim; var from = new Date(temp);  %>
-                                <% var temp = events[i].endTime; var to = new Date(temp);  %>
-                                <% var fday = from.getDate(); var fmonth = from.getMonth(); var ftime = from.getTime(); %>
-                                <% var tday = to.getDate(); var tmonth = to.getMonth(); var ttime = to.getTime(); %>
-                                <p>
-                                    <b> From </b> <%= events[i].startTime %> <b>To</b> <%= events[i].endTime %>
-                                </p>
-                                <button class="btn btn-success response" id="a<%= events[i]._id %>">ACCEPT</button>
-                                <button class="btn btn-danger response" id="r<%= events[i]._id %>">REJECT</button>
-                            </div>
-
-                            
-                        </div>
-                    <% } %>
-                    <% } %>
+                                        <% } %>
 
 
 
@@ -548,7 +521,9 @@
     <script src="../js/counter.js"></script>
     <script src="../js/posts.js"></script>
     <script src="../js/events.js"></script>
-  
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="../js/translate.js"></script>
+
 
 </body>
 

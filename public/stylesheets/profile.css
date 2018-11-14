@@ -20,10 +20,12 @@
     display: block;
     margin: 10px auto;
 }
+
 .profile-info-name {
     text-align: center;
 }
-.profile-info-name>h4{
+
+.profile-info-name>h4 {
     font-family: inherit;
     font-weight: 900px;
 }
@@ -35,10 +37,10 @@
     transform: translateY(-50%);
     margin-right: 25px;
     color: rgb(105, 103, 103);
-    font-size:19px;
+    font-size: 19px;
 }
-.profile-info-box {
 
+.profile-info-box {
     width: 65%;
     margin: auto;
     margin-bottom: 40px;
@@ -48,7 +50,6 @@
     box-shadow: 4px 4px 6px rgb(190, 188, 188);
     background-color: rgb(217, 237, 255);
 }
-
 
 .profile-card-name {
     text-align: center;
@@ -156,32 +157,28 @@
     color: white;
     transform: rotateY(180deg);
     z-index: 1;
-  }
+}
 
-  #counter
-  {
+#counter {
     width: 70px;
-      height: 50px;
-      background: #2fa1e9;
-      -moz-border-radius: 50px;
-      -webkit-border-radius: 50px;
-      border-radius: 50px;
-    float:center;
-    margin:5px;
-  }
-  .count
-  {
+    height: 50px;
+    background: #2fa1e9;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    float: center;
+    margin: 5px;
+}
+
+.count {
     line-height: 70px;
-    color:white;
-   
-    font-size:24px;
-  }
+    color: white;
+    font-size: 24px;
+}
 
-
-  .open-button {
-    background-color:transparent;
-    
-    padding-right:20px;
+.open-button {
+    background-color: transparent;
+    padding-right: 20px;
     border: none;
     cursor: pointer;
     opacity: 0.8;
@@ -189,11 +186,11 @@
     bottom: 0;
     right: 0;
     width: 120px;
-  }
+}
 
-  .tick-button{
-    background-color:transparent;
-    width: 120px; 
-    cursor: pointer; 
+.tick-button {
+    background-color: transparent;
+    width: 120px;
+    cursor: pointer;
     border: none;
-  }
+}

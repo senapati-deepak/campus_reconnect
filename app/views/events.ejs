@@ -17,14 +17,15 @@
 
 <body class="horizontal-menu">
     <div class=" container-scroller">
-            <button class="open-button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
+
+        <button class="open-button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"  style="font-size:48px;color:#2fa1e9; padding-right:20px;" aria-hidden="true">
                 </i></button>
 
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                
-                    <!-- Modal content-->
-                    <div class="modal-content">
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Request Event</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -39,35 +40,35 @@
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="contact">Venue</label>
                                     <input type="text" class="form-control" id="evenue">
-                                </div>      
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="email">From</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="efrom">
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00" id="efrom">
                                 </div>
                                 <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="contact">To</label>
-                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00"  id="eto">
+                                    <input type="datetime-local" class="form-control" value="2018-01-01T00:00" id="eto">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="city">Content</label>
-                                    <textarea rows="5" class="form-control"  id="econtent"></textarea>
+                                    <textarea rows="5" class="form-control" id="econtent"></textarea>
                                 </div>
-                                
+
                             </div>
-                            
-                            
+
+
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn createEvent" id="usercreate">REQUEST</button>
                     </div>
-                    </div>
                 </div>
             </div>
+        </div>
         <!-- partial:../partials/_navbar.html -->
         <%- include partials/nav.ejs %>
 
@@ -81,76 +82,48 @@
                             <%- include partials/workspace.ejs %>
 
                                 <!-- <div class="feed-card profile-card" > -->
-                                <% for(var i = 0; i < events.length - 1; i++) { %>
-                                    <div class="row col-sm-7">
-                                    <% if( events[i].isApproved == true) { %>
-                                        <div class="col-md-6">
-                                            <div class="flip-card">
-                                                <div class="flip-card-inner">
-                                                    <div class="flip-card-front">
-                                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
-                                                    </div>
-                                                    <div class="flip-card-back">
+                                <div class="row col-sm-7">
+                                    <% for(var i = 0; i < events.length; i++) { %>
 
-                                                        <h4>
-                                                            <%= events[i].name%>
-                                                        </h4>
-                                                        <p>
-                                                            <%= events[i].content %>
-                                                        </p>
-                                                        <p>Venue:
-                                                            <%= events[i].venue%>
-                                                        </p>
-                                                        <p>Starts:
-                                                            <%= events[i].startTime%>
-                                                        </p>
-                                                        <p>Ends:
-                                                            <%= events[i].endTime%>
-                                                        </p>
-                                                        <button class="tick-button"  ><i class="fa fa-check"  style="font-size:20px;color:white; padding-right:20px;" aria-hidden="true">
+                                        <% if( events[i].isApproved == true) { %>
+                                            <div class="col-md-6">
+                                                <div class="flip-card" style="margin-bottom: 15px;">
+                                                    <div class=" flip-card-inner ">
+                                                        <div class="flip-card-front ">
+                                                            <img src="../images/events.png " alt="Avatar " style="width:100%;height:100%; ">
+                                                        </div>
+                                                        <div class="flip-card-back ">
+
+                                                            <h4>
+                                                                <%= events[i].name%>
+                                                            </h4>
+                                                            <p>
+                                                                <%= events[i].content %>
+                                                            </p>
+                                                            <p>Venue:
+                                                                <%= events[i].venue%>
+                                                            </p>
+                                                            <p>Starts:
+                                                                <%= events[i].startTime%>
+                                                            </p>
+                                                            <p>Ends:
+                                                                <%= events[i].endTime%>
+                                                            </p>
+                                                            <button class="tick-button "><i class="fa fa-check "  style="font-size:20px;color:white; padding-right:20px; " aria-hidden="true ">
                                                             </i></button>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                             </div>
+                                            <% }} %>
 
-                                        </div>
-                                    <% } %>
-                                    <% if( events[i + 1].isApproved == true) { %>
-                                        <div class="col-md-6">
-                                            <div class="flip-card">
-                                                <div class="flip-card-inner">
-                                                    <div class="flip-card-front">
-                                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
-                                                    </div>
-                                                    <div class="flip-card-back">
-                                                        <h4>
-                                                            <%= events[i + 1].name%>
-                                                        </h4>
-                                                        <p>
-                                                            <%= events[i + 1].content %>
-                                                        </p>
-                                                        <p>Venue:
-                                                            <%= events[i + 1].venue%>
-                                                        </p>
-                                                        <p>Starts:
-                                                            <%= events[i + 1].startTime%>
-                                                        </p>
-                                                        <p>Ends:
-                                                            <%= events[i + 1].endTime%>
-                                                        </p>
-                                                        <button class="tick-button"   ><i class="fa fa-check"  style="font-size:20px; padding-bottom: 10px;color:white; " aria-hidden="true">
-                                                            </i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <% } %>
-                                    </div>
+                                </div>
 
-                                    <div class="col-sm-1"></div>
+                                <div class="col-sm-1 "></div>
 
-                                    <br>
-                                    <% } %>
+
+
 
 
                         </div>
@@ -159,30 +132,30 @@
 
                     </div>
 
-                    <footer class="footer">
-                        <div class="container-fluid clearfix">
-                            <span class="float-right">
-                                <a href="#">Flying Neurons</a> &copy; 2018
+                    <footer class="footer ">
+                        <div class="container-fluid clearfix ">
+                            <span class="float-right ">
+                                <a href="# ">Flying Neurons</a> &copy; 2018
                             </span>
                         </div>
                     </footer>
                 </div>
             </div>
 
-            <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-            <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-            <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-            <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-            <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
-            <script src="../js/sidebar-icon.js"></script>
-            <script src="../js/off-canvas.js"></script>
-            <script src="../js/hoverable-collapse.js"></script>
-            <script src="../js/misc.js"></script>
-            <script src="../js/comments.js"></script>
-            <script src="./js/workplace.js"></script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <script type="text/javascript" src="../js/translate.js"></script>
-
+            <script src="../node_modules/jquery/dist/jquery.min.js "></script>
+            <script src="../node_modules/popper.js/dist/umd/popper.min.js "></script>
+            <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+            <script src="../node_modules/chart.js/dist/Chart.min.js "></script>
+            <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js "></script>
+            <script src="../js/sidebar-icon.js "></script>
+            <script src="../js/off-canvas.js "></script>
+            <script src="../js/hoverable-collapse.js "></script>
+            <script src="../js/misc.js "></script>
+            <script src="../js/comments.js "></script>
+            <script src="./js/workplace.js "></script>
+            <script type="text/javascript " src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit "></script>
+            <script type="text/javascript " src="../js/translate.js "></script>
+            <script src="../js/events.js "></script>
 </body>
 
 </html>
