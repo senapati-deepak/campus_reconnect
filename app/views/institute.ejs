@@ -404,28 +404,11 @@
                                         <%= posts[i].body %>
                                     </p>
                                 </div>
-<<<<<<< Updated upstream
                                 <hr>
                                 <div class="feed-footer row">
                                     <div class="col-md-3"></div>
                                     <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
                                     <!-- <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
-=======
-                                <% if((posts[i].user._id == userSession._id) || (userSession === "admin")) { %>
-                                    <button class="btn btn-warning del-post" id="dp<%= posts[i]._id %>"><i class="ti-trash"></i></button>
-                                    <% } %>
-                            </div>
-                            <div class="feed-body">
-                                <p>
-                                    <%= posts[i].body %>
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="feed-footer row">
-                                <div class="col-md-3"></div>
-                                <span id="lc<%=id%>"><%=posts[i].likes.length%></span>
-                                <!-- <% if(posts[i].likes.indexOf(userSession._id) === -1) { %>
->>>>>>> Stashed changes
                                     <% var l = "LIKE" } else { %>
                                         <% var l = "Unlike" } %> 
                                 -->
@@ -500,9 +483,12 @@
                                                                     <%= events[i].startTime %> <b>To</b>
                                                                         <%= events[i].endTime %>
                                                                 </p>
-                                                                <button class="btn btn-info response" id="a<%= events[i]._id %>">ACCEPT</button>
-                                                                <button class="btn btn-warning response" id="r<%= events[i]._id %>">REJECT</button>
-                                            </div>
+                                                                <div class="admin-buttons" style="float:right; padding-bottom:10px;">
+                                                                <button class="btn btn-info response"   id="a<%= events[i]._id %>">ACCEPT</button>
+                                                                &nbsp;
+                                                                <button class="btn btn-warning response"  id="r<%= events[i]._id %>">REJECT</button>
+                                                                </div>
+                                                            </div>
 
 
                                     </div>
