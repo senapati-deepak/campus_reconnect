@@ -43,6 +43,7 @@
 .profile-info-box {
     width: 65%;
     margin: auto;
+    margin-top: 60px;
     margin-bottom: 40px;
     background-color: white;
     border: 1px solid aliceblue;
@@ -193,4 +194,9 @@
     width: 120px;
     cursor: pointer;
     border: none;
+}
+
+.admin-buttons{
+    float: right; 
+    padding-bottom: 10px;
 }
