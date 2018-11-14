@@ -657,7 +657,7 @@ pre code {
     height: auto;
     margin: 0px;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: #0672b6;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 6px 6px 8px rgb(190, 188, 188);
@@ -671,7 +671,7 @@ pre code {
 }
 
 .workplace-head {
-    color: #0672b6;
+    color: white;
     margin: 15px 0px;
 }
 
@@ -12583,7 +12583,6 @@ body.avgrund-active {
     background-size: cover;
     background-position: right bottom;
 }
-
 
 li .active {
     background-color: #0056b3;
