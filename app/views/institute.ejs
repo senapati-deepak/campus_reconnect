@@ -154,7 +154,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" href="/events">
+                        <a class="nav-link count-indicator" href="#">
                             <i class="fa fa-calendar"></i>
                         </a>
                     </li>
@@ -395,8 +395,10 @@
                                 <p>
                                     <b> From </b> <%= events[i].startTime %> <b>To</b> <%= events[i].endTime %>
                                 </p>
-                                <button class="btn btn-success response" id="a<%= events[i]._id %>">ACCEPT</button>
-                                <button class="btn btn-danger response" id="r<%= events[i]._id %>">REJECT</button>
+                                <div class="admin-buttons">
+                                    <button class="btn btn-info response" id="a<%= events[i]._id %>">ACCEPT</button> &nbsp;
+                                    <button class="btn btn-warning response" id="r<%= events[i]._id %>">REJECT</button>
+                                </div>
                             </div>
 
                             

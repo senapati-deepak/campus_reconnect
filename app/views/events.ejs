@@ -90,7 +90,7 @@
                                                 <div class="flip-card" style="margin-bottom: 15px;">
                                                     <div class=" flip-card-inner ">
                                                         <div class="flip-card-front ">
-                                                            <img src="../images/events.png " alt="Avatar " style="width:100%;height:100%; ">
+                                                            <img src="../images/faces/<%= i %>.jpg" alt="Avatar " style="width:100%;height:100%; ">
                                                         </div>
                                                         <div class="flip-card-back ">
 
@@ -109,8 +109,8 @@
                                                             <p>Ends:
                                                                 <%= events[i].endTime%>
                                                             </p>
-                                                            <button class="tick-button "><i class="fa fa-check "  style="font-size:20px;color:white; padding-right:20px; " aria-hidden="true ">
-                                                            </i></button>
+                                                            <span id="counter">0</span>
+                                                            <button class="tick-button"><i class="fa fa-check" style="font-size:20px;color:white; padding-right:20px; " aria-hidden="true "></i></button>
                                                         </div>
                                                     </div>
                                                 </div>
