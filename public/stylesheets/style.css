@@ -655,7 +655,7 @@ pre code {
     height: auto;
     margin: 0px;
     margin-bottom: 20px;
-    background-color: #0672b6;
+    background-color: #fff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 6px 6px 8px rgb(190, 188, 188);
@@ -669,7 +669,7 @@ pre code {
 }
 
 .workplace-head {
-    color: white;
+    color: 0672b6;
     margin: 15px 0px;
 }
 
