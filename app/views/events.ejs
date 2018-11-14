@@ -82,7 +82,6 @@
                             <%- include partials/workspace.ejs %>
 
                                 <!-- <div class="feed-card profile-card" > -->
-<<<<<<< Updated upstream
                                 <div class="row col-sm-7">
                                     <% for(var i = 0; i < events.length; i++) { %>
 
@@ -111,35 +110,6 @@
                                                                 <%= events[i].endTime%>
                                                             </p>
                                                             <button class="tick-button "><i class="fa fa-check "  style="font-size:20px;color:white; padding-right:20px; " aria-hidden="true ">
-=======
-                                <% for(var i = 0; i < events.length - 1; i++) { %>
-                                    <div class="row col-sm-7">
-                                    <% if( events[i].isApproved == true) { %>
-                                        <div class="col-md-6">
-                                            <div class="flip-card">
-                                                <div class="flip-card-inner">
-                                                    <div class="flip-card-front">
-                                                        <img src="../images/events.png" alt="Avatar" style="width:300px;height:300px;">
-                                                    </div>
-                                                    <div class="flip-card-back">
-
-                                                        <h4>
-                                                            <%= events[i].name%>
-                                                        </h4>
-                                                        <p>
-                                                            <%= events[i].content %>
-                                                        </p>
-                                                        <p>Venue:
-                                                            <%= events[i].venue%>
-                                                        </p>
-                                                        <p>Starts:
-                                                            <%= events[i].startTime%>
-                                                        </p>
-                                                        <p>Ends:
-                                                            <%= events[i].endTime%>
-                                                        </p>
-                                                        <button class="tick-button"  ><i class="fa fa-check"  style="font-size:20px;color:white; " aria-hidden="true">
->>>>>>> Stashed changes
                                                             </i></button>
                                                         </div>
                                                     </div>
