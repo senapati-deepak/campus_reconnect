@@ -40,16 +40,16 @@ $(document).ready(function(){
 
     $(".tick-button").click(function() {
         $btn = $(this);
-        var ctr = parseInt($("#counter").text());
+        var i = $btn.attr("id")[4];
+        var ctr = parseInt($("#counter" + i).text());
         var t = $btn.children(".fa").html();
-        alert(t);
         if(t === "You're Going") {
             ctr -= 1;
-            $("#counter").text(ctr);
+            $("#counter" + i).text(ctr);
             $btn.html("<i class='fa fa-check' style='font-size:20px;color:white; padding-right:20px; ' aria-hidden='true '></i>");
         } else {
             ctr += 1;
-            $("#counter").text(ctr);
+            $("#counter" + i).text(ctr);
             $btn.html("<i class='fa fa-check-circle' style='font-size:20px;color:white; padding-right:20px; ' aria-hidden='true '>You're Going</i>");
         }
     });
