@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .feed-card {
     width: 65%;
     margin: auto;
@@ -81,7 +83,9 @@
 
 .profile-card-details>h4 {
     padding: 20px 20px 0px;
-    text-decoration: underline;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px #444;
 }
 
 .profile-card-details>.row {
