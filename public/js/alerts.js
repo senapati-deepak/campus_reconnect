@@ -7,7 +7,7 @@
         } else if (type === 'title-and-text') {
             swal(
                 'The Internet?',
-                'That thing is still around?',
+                'That thing is still around?', 
                 'question'
             )
 

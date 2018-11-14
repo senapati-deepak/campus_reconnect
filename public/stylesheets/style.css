@@ -654,7 +654,7 @@ pre code {
 
 .workplace-card {
     width: 80%;
-    height: 150px;
+    height: auto;
     margin: 0px;
     margin-bottom: 20px;
     background-color: white;
@@ -12127,7 +12127,7 @@ body.avgrund-active {
 }
 
 .sample-page .landing-section {
-    background: url("../images/assets_landing page/Bgs.jpg") repeat;
+    background: url("../images/bg2.jpg") repeat;
     background-size: cover;
     overflow: hidden;
 }

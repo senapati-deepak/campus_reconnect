@@ -5,7 +5,7 @@ particlesJS("particles-js", {
             "value": 200,
             "density": {
                 "enable": true,
-                "value_area": 800
+                "value_area": 500
             }
         },
         "color": {
@@ -73,7 +73,7 @@ particlesJS("particles-js", {
         "events": {
             "onhover": {
                 "enable": true,
-                "mode": "repulse"
+                "mode": "attract"
             },
             "onclick": {
                 "enable": true,
