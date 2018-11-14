@@ -7,23 +7,41 @@
         "contact" : "12345",
         "password" : "nvs",
         designation: "Student at CET BBSR",
-        bio: "I am a good guy.",
+        bio: "I am a machine learning enthusiast and a web developer based in bhubaneswar. I am in the pre-final of my B.Tech degree.",
         gender: "male",
         institutes: [ObjectId("5be9bd88a049a3ba47efa411"), ObjectId("5be9bd88a049a3ba47efa412")],
         idetails: [{
             course: "BTech. in CSE",
             from: { month: "Aug", year: 2016 },
             to: { month: "May", year: 2020 }
+        }, {
+            course: "MTech. in CSE",
+            from: { month: "Aug", year: 2020 },
+            to: { month: "May", year: 2022 }
+            
         }],
         skills: [{
-            name: "Being Sad",
+            name: "HTML/CSS",
+            score: 90
+        },
+        {
+            name: "Python",
+            score: 75
+        },
+        {
+            name: "C/C++",
             score: 80
-        }],
+        },
+        {
+            name: "NodeJS",
+            score: 65
+        }
+        ],
         workex: [{
             title: "Recess",
             from: { month: "Oct", year: 2017 },
             to: { month: "Dec", year: 2017 },
-            body: "Made some shit."
+            body: "Gained valuable experience in front-end development."
         }],
         "posts" : [
             ObjectId("5bead42b5a576029b44bc01d"),
@@ -38,7 +56,7 @@
         "contact" : "12345",
         "password" : "ibu",
         designation: "Student at CET BBSR",
-        bio: "I am a good guy.",
+        bio: "I am an aspiring future leader whose professional goals aim towards a career in management consulting and personal goals align with the whim of becoming an acclaimed writer.",
         gender: "male",
         institutes: [ObjectId("5be9bd88a049a3ba47efa411")],
         idetails: [{
@@ -48,13 +66,25 @@
         }],
         skills: [{
             name: "Speaking",
-            score: 100
+            score: 95
+        },
+        {
+            name: "Writing",
+            score: 90
+        },
+        {
+            name: "Leadership",
+            score: 60
+        },
+        {
+            name: "Management",
+            score: 70
         }],
         workex: [{
             title: "IAS Intern",
             from: { month: "May", year: 2018 },
             to: { month: "Jul", year: 2018 },
-            body: "Did sick research."
+            body: "Gained some insights into the field of Cryptography."
         }],
     "posts" : [
             ObjectId("5bead68f90aa8e2c3da6bc5d")
@@ -68,8 +98,8 @@
         "contact" : "12345",
         "password" : "naina",
         designation: "Student at IIIT BBSR",
-        bio: "I am a good guy.",
-        gender: "male",
+        bio: "I am a open source contributor and tech enthusiast. I am a web developer and comfortable in MEAN stack.",
+        gender: "female",
         institutes: [ObjectId("5be9bd88a049a3ba47efa412")],
         idetails: [{
             course: "BTech. in CSE",
@@ -77,14 +107,26 @@
             to: { month: "May", year: 2020 }
         }],
         skills: [{
-            name: "Being polite",
+            name: "ReactJS",
             score: 80
+        },
+        {
+            name: "MongoDB",
+            score: 85
+        },
+        {
+            name: "HTML/CSS",
+            score: 95
+        },
+        {
+            name: "Ruby on Rails",
+            score: 60
         }],
         workex: [{
             title: "HR",
             from: { month: "May", year: 2018 },
             to: { month: "Jul", year: 2018 },
-            body: "Hired Sick People."
+            body: "Acquired valuable Management experience."
         }],
 	"posts" : [
 		ObjectId("5bead89690aa8e2c3da6bc61")
@@ -98,7 +140,7 @@
         "contact" : "12345",
         "password" : "dipu",
         "designation" : "Student at CET BBSR",
-        "bio" : "I am a good guy.",
+        "bio" : "Experienced developer with a demonstrated history of working in web development industry, skilled in python, C and JavaScript.",
         "gender" : "male",
         "institutes" : [
                 ObjectId("5be9bd88a049a3ba47efa411")
@@ -118,9 +160,21 @@
         ],
         "skills" : [
                 {
-                        "name" : "Being disciplined",
-                        "score" : 100
-                }
+            name: "Python",
+            score: 90
+        },
+        {
+            name: "Java",
+            score: 70
+        },
+        {
+            name: "AngularJS",
+            score: 85
+        },
+        {
+            name: "MongoDB",
+            score: 75
+        }
         ],
         "workex" : [
                 {
@@ -133,7 +187,7 @@
                                 "month" : "Jul",
                                 "year" : 2018
                         },
-                        "body" : "Made sick money."
+                        "body" : "Honed my Web development skills."
                 }
         ],
 "posts" : [

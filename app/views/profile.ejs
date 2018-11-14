@@ -48,50 +48,47 @@
                             </div>
 
 
-                        <div class="profile-card-details">
-                            <h4>Skills</h4>
-                            <div class="row">
-                                <% for(var i = 0; i < userSession.skills.length; i++) { %>
-                                <% var skill = userSession.skills[i] %>
-                                <div class="card card-circle-progress col-md-3">
-                                    <div class="card-body">
-                                        <h6 class="card-title"><%=skill.name%></h6>
-                                        <% var p = skill.score / 100 %>
-                                        <div class="circle-progress" data-value="<%= p %>" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
-                                    </div>
+                            <div class="profile-card-details">
+                                <h4>Skills</h4>
+                                <div class="row">
+                                    <% for(var i = 0; i < userSession.skills.length; i++) { %>
+                                        <% var skill = userSession.skills[i] %>
+                                            <div class="card card-circle-progress col-md-3" style="border-radius: 500px">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">
+                                                        <%=skill.name%>
+                                                    </h6>
+                                                    <% var p = skill.score / 100 %>
+                                                        <div class="circle-progress" data-value="<%= p %>" data-size="30" data-thickness="5" data-animation-start-value="2.0" data-reverse="true"></div>
+                                                </div>
+                                            </div>
+                                            <% } %>
                                 </div>
-                                <% } %>
-                            </div>
 
-                            <hr>
+                                <hr>
 
-                            <h4>Work Experiences</h4>
-                            <% for(var i = 0; i < userSession.workex.length; i++) { %>
-                            <% var wex = userSession.workex[i] %>
-                            <ul class="experiences">
-                                <li>
-                                    <h6><%= wex.title %></h6>
-                                    <p>From <%= wex.from.month %> <%= wex.from.year %> To <%= wex.to.month %> <%= wex.to.year %></p>
-                                    <p><%= wex.body %></p>
-                                </li>
-                            </ul>
-                            <% } %>
+                                <h4>Work Experiences</h4>
+                                <% for(var i = 0; i < userSession.workex.length; i++) { %>
+                                    <% var wex = userSession.workex[i] %>
+                                        <ul class="experiences">
+                                            <li>
+                                                <h6>
+                                                    <%= wex.title %>
+                                                </h6>
+                                                <p>From
+                                                    <%= wex.from.month %>
+                                                        <%= wex.from.year %> To
+                                                            <%= wex.to.month %>
+                                                                <%= wex.to.year %>
+                                                </p>
+                                                <p>
+                                                    <%= wex.body %>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <% } %>
 
-                                <h4>Experiences</h4>
-                                <ul class="experiences">
-                                    <li>
-                                        <h6>Exp 1</h6>
-                                        <p>Description</p>
-                                    </li>
-                                    <li>
-                                        <h6>Exp 1</h6>
-                                        <p>Description</p>
-                                    </li>
-                                    <li>
-                                        <h6>Exp 1</h6>
-                                        <p>Description</p>
-                                    </li>
-                                </ul>
+
 
                             </div>
 
