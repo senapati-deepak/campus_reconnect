@@ -32,7 +32,10 @@ $(document).ready(function(){
         }; 
         $.post("/api/create-event", data, function(data, status) {
             console.log(data);
-            alert("New Event Created!");
+            if(isApproved)
+                alert("New Event Created!");
+            else
+                alert("Event Request Made!");
             location.reload();
         });
     });

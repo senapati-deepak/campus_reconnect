@@ -9,6 +9,7 @@
 @import url(../bower_components/themify-icons/css/themify-icons.css);
 @import url(../node_modules/mdi/css/materialdesignicons.css);
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Comfortaa|Concert+One|Righteous');
 @media print {
     *,
@@ -17,6 +18,7 @@
         text-shadow: none !important;
         box-shadow: none !important;
     }
+
     a,
     a:visited {
         text-decoration: underline;
@@ -105,7 +107,7 @@ section {
 
 body {
     margin: 0;
-    font-family: 'Comfortaa', cursive !important;
+    font-family: 'Open Sans', cursive !important;
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
@@ -646,10 +648,6 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
-}
-
-.activeWorkplace {
-    box-shadow: 6px 6px 8px rgb(57, 163, 250);
 }
 
 .workplace-card {
@@ -3349,7 +3347,6 @@ tbody.collapse.show {
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
-    font-family: 'Comfortaa', cursive !important;
     font-weight: bold;
 }
 
@@ -12214,7 +12211,8 @@ body.avgrund-active {
 }
 
 .sample-page .content-section .features-heading {
-    font-size: 40px;
+    padding-top: 10px;
+    font-size: 50px;
     font-stretch: condensed;
     line-height: 1.25;
     text-align: center;
@@ -12222,6 +12220,8 @@ body.avgrund-active {
     margin-top: 130px;
     margin-left: auto;
     margin-left: auto;
+    font-family: 'Open Sans', cursive;
+    font-weight: regular;
 }
 
 .sample-page .content-section .features-subheading {
@@ -12586,6 +12586,12 @@ body.avgrund-active {
 
 li .active {
     background-color: #0056b3;
+}
+
+.icons-section {
+    background: url("../images/bg3.jpg") repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
 

@@ -1,9 +1,17 @@
+
+
 <div class="col-sm-3">
+<h5 style="font-family: 'Open Sans', cursive; text-align: center; font-weight: bolder;  padding-right: 50px;">Workspaces</h5>
+
 <% for(var i = 0; i < userSession.institutes.length; i++) { %>
+    <% var active = ""; %>
     <% var institute = userSession.institutes[i] %>
-        <div class="workplace workplace-card" id="<%=institute._id%>">
+        <% if(institute._id == curri) {%>
+        <% active = "border: 4px solid #0056b3;" %>
+        <% } %>
+        <div class="workplace workplace-card" style="<%= active %>" id="<%=institute._id%>">
             <h5 class="workplace-head">
-                <%=institute.name%>
+                <%=institute.name%> 
             </h5>
         </div>
         <% } %>
